@@ -1,0 +1,36 @@
+body{
+    background-image: url(https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2019/05/20/15583640301177.jpg)
+}
+
+.caja{
+    width: 60%;
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    display: flex;
+    border-radius: 7px;
+}
+
+#contra2{
+    position: relative;
+    bottom: 34%;
+}
+
+.form-group{
+    display: inline-block;
+    margin-right: 60px;
+}
+
+#registro{
+    position: relative;
+    width: 70%;
+    padding: 0px 5px;
+    opacity: 0.85;
+    background-color: white;
+}
+
+#color{
+    background-color: #36fb36;
+    width: 30%;
+    opacity: 0.85;
+}
