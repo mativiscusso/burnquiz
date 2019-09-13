@@ -1,0 +1,21 @@
+#menu {
+    background-color: rgb(165,0,0);
+}
+
+#menu a {
+    color: white;
+}
+#menu span {
+    text-align: end;
+}
+#portada {
+    background-color: rgb(255, 152  , 52);
+    padding: 5% 0 5% 0;
+}
+#portada .row img {
+    width: 70%;
+    
+}
+#left {
+    text-align: center;
+}
