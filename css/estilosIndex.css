@@ -13,9 +13,7 @@
     padding: 5% 0 5% 0;
 }
 #portada .row img {
-    width: 30%;
-    
-    
+    width: 40%;
 }
 #left {
     line-height: 0.5;
@@ -29,14 +27,36 @@ span#titulo {
     font-size: 6em;
     font-family: "Permanent Marker", cursive;
 }
-#menu a:hover {
+#menu a:focus {
    background-color: rgba(255, 255, 255, 0.1);
-
+}
+#menu a:active {
+    background-color: rgba(255, 255, 255, 0.4);
 }
 main.row {
     align-items: center;
 }
+#contacto {
+    text-align: center;
+    background-color: rgb(50, 50, 50);
+    color: white;
+}
+.descripcion {
+    font-family: Tahoma, monospace;
+    font-size: 2em;
+    
+}
+
+
+
+@media (min-width:380px) {
+    span#titulo {
+    font-size: 9em;
+}
+}
 @media (min-width:680px) {
     span#titulo {
-    font-size: 10em;
+    font-size: 11em;
+}
+
 }
