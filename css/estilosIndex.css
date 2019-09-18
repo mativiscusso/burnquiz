@@ -13,9 +13,30 @@
     padding: 5% 0 5% 0;
 }
 #portada .row img {
-    width: 70%;
+    width: 30%;
+    
     
 }
 #left {
+    line-height: 0.5;
     text-align: center;
+}
+#right {
+    text-align: center;
+}
+span#titulo {
+    color: black;
+    font-size: 6em;
+    font-family: "Permanent Marker", cursive;
+}
+#menu a:hover {
+   background-color: rgba(255, 255, 255, 0.1);
+
+}
+main.row {
+    align-items: center;
+}
+@media (min-width:680px) {
+    span#titulo {
+    font-size: 10em;
 }
