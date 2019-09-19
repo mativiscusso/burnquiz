@@ -1,0 +1,53 @@
+body{
+    background-color: rgb(255,150,50)!important;
+}
+
+.barra{
+    background-color: rgb(165,0,0);
+    height: 45px;
+}
+
+.barra ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: white;
+    list-style: none;
+    position: relative;
+    top: 22%;
+}
+
+.barra li{
+    padding: 0% 1%;
+}
+
+.barra #border{
+    border-right: 1px solid white;
+}
+
+a{
+    text-decoration: none!important;
+    color: white!important;
+}
+
+#color{
+    color: black;
+}
+
+.card{
+    background-color: rgb(255,150,50);
+    margin: 5% 0%;
+    width: 75%;
+    border: none;
+    display: contents;
+}
+
+.card-header{
+    width: 35%;
+    background-color: rgba(255,150,50,1);
+    border: none;
+}
+
+.card-body{
+    width: 55%;
+}

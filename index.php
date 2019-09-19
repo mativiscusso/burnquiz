@@ -9,32 +9,32 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/burnquiz_logow.png">
     <title>Burn Quiz</title>
 </head>
 <body>
-    
-        <nav id="menu" class="navbar navbar-expand-lg">
-            
-            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon "></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
+  <header> 
+  <nav id="menu" class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span id="iconboton" class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.php">HOME</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">FAQs</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">REGISTRO</a>
+                  <a class="nav-link" href="registro.php">REGISTRO</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">LOGIN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACTO</a>
+                    <a class="nav-link" href="">CONTACTO</a>
                 </li>  
               </ul>
               <span class="navbar-text">
@@ -42,25 +42,33 @@
               </span>
             </div>
           </nav>
+   </header>
     
     <div id="portada" class="container.fluid">
         <main class="row">
-            <div id="left" class="col-12py-5">
-                <img src="img/burnquiz_portada.png" alt="">
+            <div id="left" class="col-12 col-md-6 py-5">
+                <span id="titulo">BURN</span>
+                <span id="titulo">Quiz</span>
             </div>
-            
+            <div id="right" class="col-12 col-md-6 py-5">
+                <img src="img/burnquiz_logo.png"  alt="">
+            </div>
         </main>
     </div>
     <div class="container py-5">
         <section>
             <!-- descripcion -->
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti distinctio ducimus voluptates eum dolorum fuga voluptatum, cupiditate ex perferendis, molestiae inventore, ea soluta veniam. Sapiente quo commodi ducimus sint esse cum adipisci dolore voluptatum corrupti laudantium explicabo ratione modi quibusdam expedita repudiandae molestiae quia, illo corporis officia exercitationem possimus? Eaque quo quam id commodi doloremque modi temporibus cum laboriosam illum voluptate accusamus, deserunt, ex praesentium ea dolorem earum molestias aperiam architecto natus. Repellendus nesciunt hic provident corrupti molestiae, porro, beatae iusto cum recusandae illo reprehenderit debitis vero ex in tempora ullam illum culpa perferendis? Enim ad odit itaque repellat consequuntur.</p>
+            <p class="descripcion">Burn Quiz es un juego desarrollado con el fin de ser presentado como trabajo integrador en el curso de Diseño Web FullStack dictado por Digital House.</p>
+            <p class="descripcion">La trivia estara compuesta por preguntas capciosas o de pensamiento logico, las cuales tendran 3 posibles respuestas. El objetivo del juego es acumular la mayor cantidad de preguntas acertadas en un lapso de tiempo determinado.</p>
         </section>
     </div>
-    <div class="container">
+    
         <footer>
-
+          <div id="contacto" class="container-fluid py-3">
+            <span>BURN QUIZ | Un juego para pensar</span>
+            
+          </div>
         </footer>
-    </div>
+    
 </body>
 </html>
