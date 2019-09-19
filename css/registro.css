@@ -1,14 +1,36 @@
 body{
-    background-image: url(https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2019/05/20/15583640301177.jpg)
+    background-color: rgb(255,150,50)!important;
+}
+
+.barra{
+    background-color: rgb(165,0,0);
+    height: 45px;
+}
+
+.barra ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: white;
+    list-style: none;
+    position: relative;
+    top: 22%;
+}
+
+.barra li{
+    padding: 0% 1%;
+}
+
+.barra #border{
+    border-right: 1px solid white;
 }
 
 .caja{
     width: 60%;
     position: absolute;
-    left: 30%;
-    top: 10%;
+    left: 40%;
+    top: 15%;
     display: flex;
-    border-radius: 7px;
 }
 
 #contra2{
@@ -24,13 +46,25 @@ body{
 #registro{
     position: relative;
     width: 70%;
-    padding: 0px 5px;
-    opacity: 0.85;
+    opacity: 0.9;
     background-color: white;
 }
 
 #color{
-    background-color: #36fb36;
-    width: 30%;
+    background-color: rgb(165,0,0);
+    width: 20%;
     opacity: 0.85;
+}
+
+form{
+    padding: 0px 5px;
+}
+
+h1{
+    padding: 0px 5px;
+}
+
+a{
+    text-decoration: none!important;
+    color: white!important;
 }
