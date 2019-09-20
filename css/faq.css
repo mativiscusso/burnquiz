@@ -39,15 +39,12 @@ a{
     margin: 5% 0%;
     width: 75%;
     border: none;
-    display: contents;
+    display: flex;
 }
 
 .card-header{
     width: 35%;
     background-color: rgba(255,150,50,1);
     border: none;
-}
-
-.card-body{
-    width: 55%;
+    display: flex;
 }

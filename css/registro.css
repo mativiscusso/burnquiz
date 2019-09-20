@@ -50,12 +50,6 @@ body{
     background-color: white;
 }
 
-#color{
-    background-color: rgb(165,0,0);
-    width: 20%;
-    opacity: 0.85;
-}
-
 form{
     padding: 0px 5px;
 }
