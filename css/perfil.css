@@ -1,0 +1,18 @@
+
+
+#datos li{
+    border-bottom: 1px solid red;
+    padding: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
+}
+.text-center.card-title{
+    font-size: 30px;
+    font-family: 'Righteous', cursive;
+    /* font-family: 'Roboto Condensed', sans-serif; */
+}
+
+p{
+    font-size: 15px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
