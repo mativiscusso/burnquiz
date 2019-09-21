@@ -21,26 +21,26 @@
         <form action="validar.php" method="POST" class="needs-validation" novalidate>
           <div class="form-row">
             <div class="col-md-4 mb-3">
-              <label for="validationCustom01">Nombre</label>
-              <input type="text" class="form-control" id="validationCustom01" name="nombre" placeholder="Nombre" required>
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
               <div class="valid-feedback">
                 Se ve bien!
               </div>
             </div>
             <div class="col-md-4 mb-3">
-              <label for="validationCustom02">Apellido</label>
-              <input type="text" class="form-control" id="validationCustom02" name="apellido" placeholder="Apellido" required>
+              <label for="apellido">Apellido</label>
+              <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
               <div class="valid-feedback">
               Se ve bien!
               </div>
             </div>
             <div class="col-md-4 mb-3">
-              <label for="validationCustomUsername">Usuario</label>
+              <label for="usuario">Usuario</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroupPrepend">@</span>
                 </div>
-                <input type="text" class="form-control" id="validationCustomUsername" name="usuario" placeholder="Usuario" aria-describedby="inputGroupPrepend" required>
+                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                   Por favor elige un nombre de usuario valido.
                   </div>
@@ -48,37 +48,37 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="inputPassword6">Contraseña</label>
-              <input type="password" id="inputPassword6" class="form-control mx-sm-3" name="contra" aria-describedby="passwordHelpInline">
+              <label for="contra">Contraseña</label>
+              <input type="password" id="contra" class="form-control mx-sm-3" name="contra" aria-describedby="passwordHelpInline">
               <small id="passwordHelpInline" class="text-muted">
                 Debe tener entre 8-20 caracteres.
               </small>
             </div>
             <div class="form-group" id="contra2">
-              <label for="inputPassword6">Repetir Contraseña</label>
-              <input type="password" id="inputPassword6" class="form-control mx-sm-3" name="rcontra" aria-describedby="passwordHelpInline">
+              <label for="rcontra">Repetir Contraseña</label>
+              <input type="password" id="rcontra" class="form-control mx-sm-3" name="rcontra" aria-describedby="passwordHelpInline">
               <small id="passwordHelpInline" class="text-muted">
                 Debe tener entre 8-20 caracteres.
               </small>
             </div>
           <div class="form-row">
             <div class="col-md-6 mb-3">
-              <label for="validationCustom03">Ciudad</label>
-              <input type="text" class="form-control" id="validationCustom03" name="ciudad" placeholder="Ciudad" required>
+              <label for="ciudad">Ciudad</label>
+              <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad" required>
               <div class="invalid-feedback">
                   Por favor elige una ciudad valida.
               </div>
             </div>
             <div class="col-md-3 mb-3">
-              <label for="validationCustom04">Provincia</label>
-              <input type="text" class="form-control" id="validationCustom04" name="provincia" placeholder="Provincia" required>
+              <label for="provincia">Provincia</label>
+              <input type="text" class="form-control" id="provincia" name="provincia" placeholder="Provincia" required>
                 <div class="invalid-feedback">
                     Por favor elige una provincia valida.
                 </div>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="validationCustom05">País</label>
-                <input type="text" class="form-control" id="validationCustom05" name="pais" placeholder="País" required>
+                <label for="pais">País</label>
+                <input type="text" class="form-control" id="pais" name="pais" placeholder="País" required>
                 <div class="invalid-feedback">
                   Por favor elige un país valido.
                 </div>
