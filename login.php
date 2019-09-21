@@ -12,9 +12,8 @@
     <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Righteous|Roboto+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/login.css">
-    
-
-    <title>Document</title>
+    <link rel="shortcut icon" href="img/burnquiz_logow.png">
+    <title>Burn Quiz | LOGIN </title>
 </head>
 <body>
     <?php include("header.php"); ?>

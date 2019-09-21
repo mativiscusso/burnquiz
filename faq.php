@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="css/faq.css">
     <link rel="stylesheet" href="css/estilosIndex.css">
     <link rel="shortcut icon" href="img/burnquiz_logow.png">
-
-    <title>Preguntas Frecuentes</title>
+    <link rel="shortcut icon" href="img/burnquiz_logow.png">
+    <title>Burn Quiz | FAQs</title>
 </head>
 <body>
   

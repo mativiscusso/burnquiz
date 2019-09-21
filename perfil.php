@@ -14,8 +14,8 @@
   
   <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Righteous|Roboto+Condensed&display=swap" rel="stylesheet"> 
-
-<title>Perfil</title>
+  <link rel="shortcut icon" href="img/burnquiz_logow.png">
+    <title>Burn Quiz | PERFIL</title>
 </head>
 <body>
   <?php include("header.php"); ?>
