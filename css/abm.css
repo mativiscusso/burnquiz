@@ -5,8 +5,7 @@
 form{
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    width: 50%;
+    padding: 10%;
 }
 
 button.btn-primary{
@@ -22,14 +21,27 @@ button.btn-primary:hover{
 }
 
 #img{
+    display: none;
     position: absolute;
     top: 40%;
     left: 62%;
 }
 
-@media (min-width:380px) {
+textarea{
+    border-radius: 5px;
+}
+
+input{
+    border-radius: 5px;
+}
+
+label{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media (min-width:320px) {
     form {
-    padding: 10px;
+    padding: 10%;
     width: 100%;
     }
 
@@ -37,13 +49,27 @@ button.btn-primary:hover{
         display: none;
     }
 }
-@media (min-width:680px) {
+
+@media (min-width:720px) {
     form {
-    padding: 10px;
-    width: 100%;
+    padding: 10%;
+    width: 70%;
     }
 
     #img{
-        display: none;
+    width: 40%;
+    display: block;
+    }
+}
+
+@media (min-width:990px) {
+    form {
+    padding: 10%;
+    width: 70%;
+    }
+
+    #img{
+    width: 40%;
+    display: block;
     }
 }

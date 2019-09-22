@@ -17,7 +17,7 @@
 
     <div class="preguntas">
         <img src="img/burnquiz_logo.png" id="img" alt="logo">
-    <form action="action.php" method="get">
+    <form action="validar.php" method="get">
         <label for="pregunta">Sumá tu pregunta.</label>
         <br>
         <textarea name="pregunta" id="pregunta" cols="10" rows="5"></textarea>
