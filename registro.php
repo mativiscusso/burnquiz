@@ -93,7 +93,7 @@
                 <div class="invalid-feedback">
                   Tienes que aceptar antes de enviar.
                 </div>
-            <button type="submit" style="margin-left: 20px; background-color: rgb(165,0,0); border-color: rgb(165,0,0);" class="btn btn-primary">Registrarse</button>
+            <button type="submit" class="btn-primary">Registrarse</button>
             </form>
             </div>
           </div>

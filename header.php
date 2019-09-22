@@ -23,6 +23,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="perfil.php">PERFIL</a>
                 </li>   
+                <li class="nav-item">
+                    <a class="nav-link" href="abm.php">ABM</a>
+                </li>
               </ul>
               <span class="navbar-text">
                 <img src="img/burnquiz_logow.png" width="10%" alt="">

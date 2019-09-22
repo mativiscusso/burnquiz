@@ -1,0 +1,49 @@
+.preguntas{
+    background-color: rgb(255, 152, 52);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 50%;
+}
+
+button.btn-primary{
+    background-color: rgb(165,0,0); 
+    border-color: rgb(165,0,0);
+    border-radius: 5px;
+    width: 90px;
+}
+
+button.btn-primary:hover{
+    background-color: rgb(165,0,0); 
+    border-color: rgb(165,0,0);
+}
+
+#img{
+    position: absolute;
+    top: 40%;
+    left: 62%;
+}
+
+@media (min-width:380px) {
+    form {
+    padding: 10px;
+    width: 100%;
+    }
+
+    #img{
+        display: none;
+    }
+}
+@media (min-width:680px) {
+    form {
+    padding: 10px;
+    width: 100%;
+    }
+
+    #img{
+        display: none;
+    }
+}
