@@ -28,7 +28,7 @@
    if (is_numeric($telefono) == false) {
      $validacion = "El campo no es un numero telefonico";
    }
-   echo $validacion;
+   
    return $validacion;
  }  
  

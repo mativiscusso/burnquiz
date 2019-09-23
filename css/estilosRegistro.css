@@ -28,3 +28,6 @@ button.btn-primary:hover{
     background-color: rgb(165,0,0); 
     border-color: rgb(165,0,0);
 }
+input#usuario.form-control {
+    width: 100%;
+}

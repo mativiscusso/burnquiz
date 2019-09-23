@@ -19,6 +19,42 @@ if ($_POST) {
     $pais = $_POST['pais'];
 }
 
+$validCampo = "";
+$validApellido = "";
+$validUsuario = "";
+$validTel = "";
+$retorno = "";
+
+if ($_POST) {
+        if ($_POST['nombre'] == "") {
+          $validCampo = "El campo esta vacio";
+        }
+        if ($_POST['apellido'] == "") {
+          $validCampo = "El campo esta vacio";
+        }
+        if ($_POST['ciudad'] == "") {
+          $validCampo = "El campo esta vacio";
+        }
+        if ($_POST['provincia'] == "") {
+          $validCampo = "El campo esta vacio";
+        }
+        if ($_POST['ciudad'] == "") {
+          $validCampo = "El campo esta vacio";
+        }
+        if (filter_var($_POST['usuario'], FILTER_VALIDATE_EMAIL) == false) {
+          $validUsuario = "El campo no contiene un email correcto";
+        }
+        if (($_POST['pass'] == "") && ($_POST['rpass'] == "")) {
+          $retorno = "Los dos campos de contraseña estan vacios";
+        } else if ($_POST['pass'] == "") {
+          $retorno = "La contraseña esta vacia";
+        } else if ($_POST['rpass'] == "") {
+          $retorno = "Falta la confirmacion de contraseña";
+        } else if ($_POST['pass'] != $_POST['rpass']) {
+          $retorno = "Las contraseñas no verifican";
+        }
+        else header('Location: http://www.google.com/');
+      }
 
 ?>
 
@@ -47,66 +83,63 @@ if ($_POST) {
           <div class="form-row">
             <div class="col-md-4 mb-3">
               <label for="nombre">Nombre</label>
-              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" value="$nombre" required>
-              <div class="valid-feedback">
-                Se ve bien!
-              </div>
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" value="<?=$nombre?>" required>
+              <small class="text-muted">
+              <?=$validCampo?>.
+              </small>
             </div>
             <div class="col-md-4 mb-3">
               <label for="apellido">Apellido</label>
-              <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" value="$apellido" required>
-              <div class="valid-feedback">
-              Se ve bien!
-              </div>
+              <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" value="<?=$apellido?>" required>
+              <small class="text-muted">
+              <?=$validCampo?>.
+              </small>
             </div>
             <div class="col-md-4 mb-3">
               <label for="usuario">Usuario</label>
               <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupPrepend">@</span>
-                </div>
-                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" value="$usuario" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                  Por favor elige un nombre de usuario valido.
-                  </div>
+                <input type="email" class="form-control" id="usuario" name="usuario" placeholder="Usuario" value="<?=$usuario?>" aria-describedby="inputGroupPrepend" required>
+                <small class="text-muted">
+                <?=$validUsuario?>
+                </small>
                 </div>
               </div>
             </div>
             <div class="form-group">
               <label for="contra">Contraseña</label>
-              <input type="password" id="contra" class="form-control mx-sm-3" name="pass" value="$pass" aria-describedby="passwordHelpInline">
+              <input type="password" id="contra" class="form-control mx-sm-3" name="pass" value="<?=$pass?>" aria-describedby="passwordHelpInline">
               <small id="passwordHelpInline" class="text-muted">
-                Debe tener entre 8-20 caracteres.
+              <?=$retorno?>
               </small>
             </div>
             <div class="form-group" id="contra2">
               <label for="rcontra">Repetir Contraseña</label>
-              <input type="password" id="rcontra" class="form-control mx-sm-3" name="rpass" value="$rpass" aria-describedby="passwordHelpInline">
+              <input type="password" id="rcontra" class="form-control mx-sm-3" name="rpass" value="<?=$rpass?>" aria-describedby="passwordHelpInline">
               <small id="passwordHelpInline" class="text-muted">
-                Debe tener entre 8-20 caracteres.
+              <?=$retorno?>.
               </small>
             </div>
           <div class="form-row">
             <div class="col-md-6 mb-3">
               <label for="ciudad">Ciudad</label>
-              <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad" value="$ciudad" required>
-              <div class="invalid-feedback">
-                  Por favor elige una ciudad valida.
-              </div>
+              <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad" value="<?=$ciudad?>" required>
+              <small class="text-muted">
+              <?=$validCampo?>.
+              </small>
             </div>
             <div class="col-md-3 mb-3">
               <label for="provincia">Provincia</label>
-              <input type="text" class="form-control" id="provincia" name="provincia" placeholder="Provincia" value="$provincia" required>
-                <div class="invalid-feedback">
-                    Por favor elige una provincia valida.
-                </div>
+              <input type="text" class="form-control" id="provincia" name="provincia" placeholder="Provincia" value="<?=$provincia?>" required>
+              <small class="text-muted">
+              <?=$validCampo?>.
+              </small>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="pais">País</label>
-                <input type="text" class="form-control" id="pais" name="pais" placeholder="País" value="$pais" required>
-                <div class="invalid-feedback">
-                  Por favor elige un país valido.
-                </div>
+                <input type="text" class="form-control" id="pais" name="pais" placeholder="País" value="<?=$pais?>" required>
+                <small class="text-muted">
+              <?=$validCampo?>.
+              </small>
               </div>
             </div>
             <div class="form-group">
@@ -124,7 +157,7 @@ if ($_POST) {
           </div>
         </div>
         </div>
-          <script>
+          <!-- <script>
           (function() {
             'use strict';
             window.addEventListener('load', function() {
@@ -145,7 +178,7 @@ if ($_POST) {
           </script>
       </div>
     </div>
-
+ -->
 <?php include("footer.php"); ?>
 
 </body>
