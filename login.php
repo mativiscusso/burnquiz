@@ -6,7 +6,18 @@ if ($_POST) {
     $pass = $_POST['pass'];
 }
 
-include ('validar.php');
+$resultado = '';
+if ($_POST) {
+    if ($_POST['usuario'] == '') {
+        $resultado = "El campo esta vacio";
+    }
+    if ($_POST['pass'] == '') {
+        $resultado = "El campo esta vacio";
+    }
+    else {
+        header('Location:http://www.google.com');
+    }
+}
 
 
 ?>
@@ -33,13 +44,16 @@ include ('validar.php');
     <?php include("header.php"); ?>
     
         <div id="portada" class= "container-fluid">
-                <form class="container" action="login.php" method="get">
+                <form class="container" action="login.php" method="POST">
                         <h1>Login</h1>
                         
                     <input class="completar" type="text" name="usuario" id="" placeholder="Email"><br>
+                    <?=$resultado?>
                     <input class="completar" type="password" name="pass" id="" placeholder="Contraseña"><br>
-                    <input class="check" type="checkbox" name="" id="">
-                    <div class="a2" ><a href=""><p></p> Olvido su cotraseña o email?</p></a></div>
+                    <?=$resultado?><br>
+                    <br>    
+                    <input class="check" type="checkbox" name="recordar" id="">Recordarme
+                    <div class="a2" ><a href=""><p></p> Olvido su contraseña o email?</p></a></div>
                     <div class="a2" ><a href=""><p></p> Aún no se ha registrado?</p></a></div>
                     <div class="btn"><input type="submit" value="Iniciar Sesión"><br></div>
                     <div class="parrafo"><p>Al hacer clic en Iniciar sesión, confirmo que he leído y acepto los Términos de servicio y la Política de privacidad de  ESTE JUEGO INCREIBLE</p></div>
