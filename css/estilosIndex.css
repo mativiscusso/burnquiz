@@ -41,8 +41,8 @@ main.row {
     align-items: center;
 }
 #contacto {
+    padding-left: 2%;
     text-align: center;
-    align-items: center;
     background-color: rgb(50, 50, 50);
     color: white;
 }
@@ -58,6 +58,7 @@ div#contacto.container-fluid.py-3{
     font-size: 2em;
     
 }
+
 
 
 

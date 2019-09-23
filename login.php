@@ -18,38 +18,18 @@
 <body>
     <?php include("header.php"); ?>
     
-   <div id="portada" class= "container-fluid">
-    <div class="log-in">
-        <form action="" method="get">
-            <div class="logo"><img src="image/gamecontroller_23721.png" alt=""></div>
-            
-            <div class="letra">
+<div id="portada" class= "container-fluid">
+        <form class="container" action="validar.php" method="get">
                 <h1>Login</h1>
-                <p>iniciar juego</p>
-            </div>
-  
-            
-
-            
-            
-        
+                
             <input class="completar" type="text" name="name" id="" placeholder="correo electronico"><br>
-
             <input class="completar" type="password" name="pass" id="" placeholder="contraseña"><br>
-
             <input class="check" type="checkbox" name="" id="">
-
-
             <div class="a2" ><a href=""><p></p> Olvido su cotraseña o email?</p></a></div>
             <div class="a2" ><a href=""><p></p> Aún no se ha registrado?</p></a></div>
-
             <div class="btn"><input type="submit" value="Iniciar Sesión"><br></div>
-            
             <div class="parrafo"><p>Al hacer clic en Iniciar sesión, confirmo que he leído y acepto los Términos de servicio y la Política de privacidad de  ESTE JUEGO INCREIBLE</p></div>
-
-        
-        </form>
-    </div>
+       </form>
 </div>  
     
 <?php include("footer.php"); ?>
