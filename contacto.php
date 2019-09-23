@@ -1,3 +1,31 @@
+<?php
+$nombre = '';
+$email = '';
+$telefono = '';
+if ($_POST) {
+    $nombre = $_POST['nombre'];
+    $email = $_POST['email'];
+    $telefono = $_POST['telefono'];
+
+}
+$validNombre = "";
+$validEmail = "";
+$validTel = "";
+if ($_POST) {
+        if ($_POST['nombre'] == "") {
+          $validNombre = "El campo esta vacio";
+        }
+        if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) == false) {
+          $validEmail = "El campo no contiene un email correcto";
+        }
+        if (is_numeric($_POST['telefono']) == false) {
+          $validTel = "El campo no es un numero telefonico";
+        }
+        else header('Location: http://www.google.com/');
+      }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,18 +47,21 @@
     <p class="descripcion" id="contacto">CONTACTANOS</p>
         <main class="row">
             <div id="left" class="container py-5">
-                <form>
+                <form action="contacto.php" method="POST">
                     <div class="form-group">
                         <label for="formGroupExampleInput">Nombre</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                        <input type="text" class="form-control" id="formGroupExampleInput" name="nombre" value="<?=$nombre?>">
+                       <?= $validNombre;?>    
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Email</label>
-                        <input type="email" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                        <input type="text" class="form-control" id="formGroupExampleInput2" name="email" value="<?=$email?>">
+                        <?= $validEmail;?>
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Telefono</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                        <input type="text" class="form-control" id="formGroupExampleInput2" name="telefono" value="<?=$telefono?>">
+                        <?= $validTel;?>
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2"></label>
