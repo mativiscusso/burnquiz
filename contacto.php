@@ -11,6 +11,7 @@ if ($_POST) {
 $validNombre = "";
 $validEmail = "";
 $validTel = "";
+$retorno = "";
 if ($_POST) {
         if ($_POST['nombre'] == "") {
           $validNombre = "El campo esta vacio";
@@ -21,7 +22,8 @@ if ($_POST) {
         if (is_numeric($_POST['telefono']) == false) {
           $validTel = "El campo no es un numero telefonico";
         }
-        else header('Location: http://www.google.com/');
+        else {   $retorno = "Su mensaje fue enviado con exito";
+                 header( "refresh:3; url=index.php" ); }
       }
 
 
@@ -68,7 +70,8 @@ if ($_POST) {
                         <textarea name="comentario" id="" cols="90" rows="20"></textarea>
                     </div>
                     <button class="btn btn-dark" type="submit">Enviar</button>
-                </form>
+                    <?=$retorno?>
+                </form>                
             </div>
      
             <div class="container py-5">

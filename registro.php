@@ -24,6 +24,7 @@ $validApellido = "";
 $validUsuario = "";
 $validTel = "";
 $retorno = "";
+$retornoE = '';
 
 if ($_POST) {
         if ($_POST['nombre'] == "") {
@@ -53,7 +54,8 @@ if ($_POST) {
         } else if ($_POST['pass'] != $_POST['rpass']) {
           $retorno = "Las contraseñas no verifican";
         }
-        else header('Location: http://www.google.com/');
+        else {  $retornoE = "El registro fue exitoso";
+                header('refresh:3; url= index.php'); }
       }
 
 ?>
@@ -80,6 +82,7 @@ if ($_POST) {
         <div id="registro" class="container-fluid">
         <h1>REGISTRO</h1>   
         <form action="registro.php" method="POST" class="needs-validation" novalidate>
+          <?=$retornoE?>
           <div class="form-row">
             <div class="col-md-4 mb-3">
               <label for="nombre">Nombre</label>
