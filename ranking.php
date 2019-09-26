@@ -14,20 +14,8 @@
     <title>Burn Quiz</title>
 </head>
 <?php include("header.php"); ?>
-<!--     <div id="portada" class="container.fluid">
-        <main class="row">
-            <div id="left" class="col-12 col-md-6 py-5">
-                <span id="titulo">BURN</span>
-                <span id="titulo">Quiz</span>
-            </div>
-            <div id="right" class="col-12 col-md-6 py-5">
-                <img src="img/burnquiz_logo.png"  alt="">
-            </div>
-        </main>
-    </div> -->
     <div class="container py-5">
         <section>
-            <!-- descripcion -->
             <p class="descripcion" id="contacto">RANKING DE USUARIOS</p>
         </section>
     </div>
