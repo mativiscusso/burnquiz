@@ -24,3 +24,6 @@ button.btn-primary:hover{
 input#usuario.form-control {
     width: 100%;
 }
+#imagenDePerfil{
+    padding-bottom: 5%;
+}
