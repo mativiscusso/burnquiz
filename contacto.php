@@ -61,8 +61,8 @@ if ($_POST) {
                         <?= $validEmail;?>
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput2">Telefono</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" name="telefono" value="<?=$telefono?>">
+                        <label for="formGroupExampleInput3">Telefono</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput3" name="telefono" value="<?=$telefono?>">
                         <?= $validTel;?>
                     </div>
                     <div class="form-group">
