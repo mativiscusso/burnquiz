@@ -10,7 +10,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/faq.css">
     <link rel="shortcut icon" href="img/burnquiz_logow.png">
-    <link rel="shortcut icon" href="img/burnquiz_logow.png">
     <title>Burn Quiz | FAQs</title>
 </head>
 <body>

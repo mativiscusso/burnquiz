@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(255, 152, 52)!important;
+}
+
+#formulario{
+    margin: 15%;
+    background-color: rgb(255, 152, 52);
+}
+
+form{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#boton{
+    width: 60px;
+    position: relative;
+    top: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(165,0,0); 
+    border-color: rgb(165,0,0);
+}
+
+#email{
+    border-radius: 5px;
+    width: 70%;
+}
