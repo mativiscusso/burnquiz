@@ -7,6 +7,7 @@ $rpass = '';
 $ciudad = '';
 $provincia = '';
 $pais = '';
+$imagenDePerfil = '';
 
 if ($_POST) {
     $nombre = $_POST['nombre'];
@@ -17,6 +18,7 @@ if ($_POST) {
     $ciudad = $_POST['ciudad'];
     $provincia = $_POST['provincia'];
     $pais = $_POST['pais'];
+    $pais = $_POST['imagenDePerfil'];
 }
 
 $validCampo = "";
@@ -25,6 +27,7 @@ $validUsuario = "";
 $validTel = "";
 $retorno = "";
 $retornoE = '';
+$validImagenDePerfil= "";
 
 if ($_POST) {
         if ($_POST['nombre'] == "") {
@@ -41,6 +44,9 @@ if ($_POST) {
         }
         if ($_POST['ciudad'] == "") {
           $validCampo = "El campo esta vacio";
+        }
+        if ($_POST['imagenDePerfil'] == "") {
+          $validImagenDePerfil = "No se cargó imagen de perfil";
         }
         if (filter_var($_POST['usuario'], FILTER_VALIDATE_EMAIL) == false) {
           $validUsuario = "El campo no contiene un email correcto";
@@ -137,6 +143,13 @@ if ($_POST) {
                 <input type="text" class="form-control" id="pais" name="pais" placeholder="País" value="<?=$pais?>" required>
                 <small class="text-muted">
               <?=$validCampo?>.
+              </small>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label class="imagenDePerfil"for="imagenDePerfil" id="imagenDePerfil">Foto de perfil</label>
+                <input type="file" class="form-control" id="imagenDePerfil" name="imagenDePerfil" placeholder="imagenDePerfil" value="<?=$imagenDePerfil?>" required>
+                <small class="text-muted">
+              <?=$validImagenDePerfil?>.
               </small>
               </div>
             </div>
