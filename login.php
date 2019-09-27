@@ -51,7 +51,7 @@ if ($_POST) {
                     <input class="completar" type="password" name="pass" id="" placeholder="Contraseña"><br>
                     <?=$resultado?><br>
                     <br>    
-                    <input class="check" type="checkbox" name="recordar" id="">Recordarme
+                    <input class="check" type="checkbox" name="recordar" id="Recordarme" checked>Recordarme
                     <div class="a2" ><a href="recuperar.php"><p> Olvido su contraseña o email?</p></a></div>
                     <div class="a2" ><a href="registro.php"><p> Aún no se ha registrado?</p></a></div>
                     <div class="btn"><input type="submit" value="Iniciar Sesión"><br></div>
