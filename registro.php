@@ -18,7 +18,7 @@ if ($_POST) {
     $ciudad = $_POST['ciudad'];
     $provincia = $_POST['provincia'];
     $pais = $_POST['pais'];
-    $pais = $_POST['imagenDePerfil'];
+    $imagenDePerfil = $_POST['imagenDePerfil'];
 }
 
 $validCampo = "";
