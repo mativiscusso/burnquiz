@@ -1,4 +1,6 @@
 <?php
+include('validar.php');
+
 $nombre = '';
 $email = '';
 $telefono = '';
@@ -8,24 +10,10 @@ if ($_POST) {
     $telefono = $_POST['telefono'];
 
 }
-$validNombre = "";
-$validEmail = "";
-$validTel = "";
-$retorno = "";
-if ($_POST) {
-        if ($_POST['nombre'] == "") {
-          $validNombre = "El campo esta vacio";
-        }
-        if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) == false) {
-          $validEmail = "El campo no contiene un email correcto";
-        }
-        if (is_numeric($_POST['telefono']) == false) {
-          $validTel = "El campo no es un numero telefonico";
-        }
-        else {   $retorno = "Su mensaje fue enviado con exito";
-                 header( "refresh:3; url=index.php" ); }
-      }
-
+/* if ($_POST) {
+     validarContacto($_POST['nombre'], $_POST['email'], $_POST['telefono']);
+      } */
+      
 
 ?>
 <!DOCTYPE html>
@@ -49,29 +37,31 @@ if ($_POST) {
     <p class="descripcion" id="contacto">CONTACTANOS</p>
         <main class="row">
             <div id="left" class="container py-5">
-                <form action="contacto.php" method="POST">
+               <form action="contacto.php" method="POST">
                     <div class="form-group">
                         <label for="formGroupExampleInput">Nombre</label>
                         <input type="text" class="form-control" id="formGroupExampleInput" name="nombre" value="<?=$nombre?>">
-                       <?= $validNombre;?>    
+                      
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Email</label>
                         <input type="text" class="form-control" id="formGroupExampleInput2" name="email" value="<?=$email?>">
-                        <?= $validEmail;?>
+                       
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput3">Telefono</label>
                         <input type="text" class="form-control" id="formGroupExampleInput3" name="telefono" value="<?=$telefono?>">
-                        <?= $validTel;?>
+                        
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2"></label>
                         <textarea name="comentario" id="" cols="90" rows="20"></textarea>
                     </div>
                     <button class="btn btn-dark" type="submit">Enviar</button>
-                    <?=$retorno?>
-                </form>                
+                </form> <br> 
+                <?php if ($_POST) {
+                            validarContacto($_POST['nombre'], $_POST['email'], $_POST['telefono']);
+                            };?>              
             </div>
      
             <div class="container py-5">

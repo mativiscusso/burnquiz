@@ -19,16 +19,19 @@
  
 
  function validarContacto($nombre, $email, $telefono) {
-   if ($nombre == "") {
-     $validacion = "El campo esta vacio";
-   }
-   if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+  
+       if ($nombre == "") {
+     $validacion = "Hay campos vacios";
+    }
+    else if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
      $validacion = "El campo no contiene un email correcto";
-   }
-   if (is_numeric($telefono) == false) {
+    }
+    else if (is_numeric($telefono) == false) {
      $validacion = "El campo no es un numero telefonico";
-   }
-   
+    }
+    else $validacion = "Todo ok"; 
+  
+   echo $validacion;
    return $validacion;
  }  
  
