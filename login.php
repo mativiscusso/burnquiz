@@ -1,4 +1,11 @@
 <?php
+include('validar.php');
+
+if ($_POST) {
+    validarLogin ($_POST['usuario'], $_POST['pass']);    
+    }
+
+    
 $usuario = '';
 $pass = '';
 if ($_POST) {
@@ -6,18 +13,6 @@ if ($_POST) {
     $pass = $_POST['pass'];
 }
 
-$resultado = '';
-if ($_POST) {
-    if ($_POST['usuario'] == '') {
-        $resultado = "El campo esta vacio";
-    }
-    if ($_POST['pass'] == '') {
-        $resultado = "El campo esta vacio";
-    }
-    else {
-        header('Location:http://www.google.com');
-    }
-}
 
 
 ?>
@@ -45,11 +40,11 @@ if ($_POST) {
         <div id="portada" class= "container-fluid">
                 <form class="container" action="login.php" method="POST">
                         <h1>Login</h1>
-                        
+                      
                     <input class="completar" type="text" name="usuario" id="" placeholder="Email"><br>
-                    <?=$resultado?>
+                    
                     <input class="completar" type="password" name="pass" id="" placeholder="Contraseña"><br>
-                    <?=$resultado?><br>
+                    
                     <br>    
                     <input class="check" type="checkbox" name="recordar" id="Recordarme" checked>Recordarme
                     <div class="a2" ><a href="recuperar.php"><p> Olvido su contraseña o email?</p></a></div>

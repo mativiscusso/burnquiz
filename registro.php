@@ -1,4 +1,11 @@
 <?php
+include ('validar.php');
+if ($_POST) {
+  validarRegistro ($_POST['nombre'],$_POST['apellido'],$usuario = $_POST['usuario'],$_POST['ciudad'],$_POST['provincia'],$_POST['pais'],$_POST['imagenDePerfil']);
+  validarPass ($_POST['pass'],$rpass = $_POST['rpass']);
+      };
+
+
 $nombre = '';
 $apellido = '';
 $usuario = '';
@@ -21,48 +28,6 @@ if ($_POST) {
     $imagenDePerfil = $_POST['imagenDePerfil'];
 }
 
-$validCampo = "";
-$validApellido = "";
-$validUsuario = "";
-$validTel = "";
-$retorno = "";
-$retornoE = '';
-$validImagenDePerfil= "";
-
-if ($_POST) {
-        if ($_POST['nombre'] == "") {
-          $validCampo = "El campo esta vacio";
-        }
-        if ($_POST['apellido'] == "") {
-          $validCampo = "El campo esta vacio";
-        }
-        if ($_POST['ciudad'] == "") {
-          $validCampo = "El campo esta vacio";
-        }
-        if ($_POST['provincia'] == "") {
-          $validCampo = "El campo esta vacio";
-        }
-        if ($_POST['ciudad'] == "") {
-          $validCampo = "El campo esta vacio";
-        }
-        if ($_POST['imagenDePerfil'] == "") {
-          $validImagenDePerfil = "No se cargó imagen de perfil";
-        }
-        if (filter_var($_POST['usuario'], FILTER_VALIDATE_EMAIL) == false) {
-          $validUsuario = "El campo no contiene un email correcto";
-        }
-        if (($_POST['pass'] == "") && ($_POST['rpass'] == "")) {
-          $retorno = "Los dos campos de contraseña estan vacios";
-        } else if ($_POST['pass'] == "") {
-          $retorno = "La contraseña esta vacia";
-        } else if ($_POST['rpass'] == "") {
-          $retorno = "Falta la confirmacion de contraseña";
-        } else if ($_POST['pass'] != $_POST['rpass']) {
-          $retorno = "Las contraseñas no verifican";
-        }
-        else {  $retornoE = "El registro fue exitoso";
-                header('refresh:3; url= index.php'); }
-      }
 
 ?>
 
@@ -83,20 +48,17 @@ if ($_POST) {
         <div id="registro" class="container-fluid">
         <h1>REGISTRO</h1>   
         <form action="registro.php" method="POST" class="needs-validation" novalidate>
-          <?=$retornoE?>
           <div class="form-row">
             <div class="col-md-4 mb-3">
               <label for="nombre">Nombre</label>
               <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" value="<?=$nombre?>" required>
               <small class="text-muted">
-              <?=$validCampo?>.
               </small>
             </div>
             <div class="col-md-4 mb-3">
               <label for="apellido">Apellido</label>
               <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" value="<?=$apellido?>" required>
               <small class="text-muted">
-              <?=$validCampo?>.
               </small>
             </div>
             <div class="col-md-4 mb-3">
@@ -104,8 +66,7 @@ if ($_POST) {
               <div class="input-group">
                 <input type="email" class="form-control" id="usuario" name="usuario" placeholder="Usuario" value="<?=$usuario?>" aria-describedby="inputGroupPrepend" required>
                 <small class="text-muted">
-                <?=$validUsuario?>
-                </small>
+                  </small>
                 </div>
               </div>
             </div>
@@ -113,14 +74,12 @@ if ($_POST) {
               <label for="contra">Contraseña</label>
               <input type="password" id="contra" class="form-control mx-sm-3" name="pass" value="<?=$pass?>" aria-describedby="passwordHelpInline">
               <small id="passwordHelpInline" class="text-muted">
-              <?=$retorno?>
               </small>
             </div>
             <div class="form-group" id="contra2">
               <label for="rcontra">Repetir Contraseña</label>
               <input type="password" id="rcontra" class="form-control mx-sm-3" name="rpass" value="<?=$rpass?>" aria-describedby="passwordHelpInline">
               <small id="passwordHelpInline" class="text-muted">
-              <?=$retorno?>.
               </small>
             </div>
           <div class="form-row">
@@ -128,28 +87,24 @@ if ($_POST) {
               <label for="ciudad">Ciudad</label>
               <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad" value="<?=$ciudad?>" required>
               <small class="text-muted">
-              <?=$validCampo?>.
               </small>
             </div>
             <div class="col-md-3 mb-3">
               <label for="provincia">Provincia</label>
               <input type="text" class="form-control" id="provincia" name="provincia" placeholder="Provincia" value="<?=$provincia?>" required>
               <small class="text-muted">
-              <?=$validCampo?>.
               </small>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="pais">País</label>
                 <input type="text" class="form-control" id="pais" name="pais" placeholder="País" value="<?=$pais?>" required>
                 <small class="text-muted">
-              <?=$validCampo?>.
               </small>
               </div>
               <div class="col-md-12 mb-3">
                 <label class="imagenDePerfil"for="imagenDePerfil" id="imagenDePerfil">Foto de perfil</label>
                 <input type="file" class="form-control" id="imagenDePerfil" name="imagenDePerfil" placeholder="imagenDePerfil" value="<?=$imagenDePerfil?>" required>
                 <small class="text-muted">
-              <?=$validImagenDePerfil?>.
               </small>
               </div>
             </div>

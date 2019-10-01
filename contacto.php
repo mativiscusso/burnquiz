@@ -10,10 +10,6 @@ if ($_POST) {
     $telefono = $_POST['telefono'];
 
 }
-/* if ($_POST) {
-     validarContacto($_POST['nombre'], $_POST['email'], $_POST['telefono']);
-      } */
-      
 
 ?>
 <!DOCTYPE html>

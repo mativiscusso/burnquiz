@@ -15,7 +15,7 @@
       $retorno = "Correcto";
     }
     return $retorno;
-   }
+  }
  
 
  function validarContacto($nombre, $email, $telefono) {
@@ -35,6 +35,30 @@
    return $validacion;
  }  
  
-
+ function validarLogin($usuario, $pass) {
+    if (($usuario == '') || ($pass == '')) {
+        $resultado = "El campo esta vacio";
+    }
+  else {
+  header('Location: perfil.php');
+  }
+  
+  return $resultado;
+}
  
+function validarRegistro ($nombre,$apellido,$usuario,$ciudad,$provincia,$pais,$foto) {
+  if (($_POST['nombre'] == "") || ($_POST['apellido'] == "") || ($_POST['ciudad'] == "") || ($_POST['provincia'] == "") || ($_POST['pais'] == "")) {
+    $retorno = "Hay campos vacios";
+  }
+  else if ($_POST['imagenDePerfil'] == "") {
+    $retorno = "No se cargó imagen de perfil";
+  }
+  else if (filter_var($_POST['usuario'], FILTER_VALIDATE_EMAIL) == false) {
+    $retorno = "El campo no contiene un email correcto";
+  }
+  else { header('Location: bienvenida.php'); 
+  }
+  return $retorno;
+}
+
 ?>
