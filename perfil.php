@@ -18,11 +18,13 @@
 <body>
   <div class="body">
     <?php include("header.php"); ?>
-  
+   
+    
      <div class="container">
        <div class="perfil">
          <div class="foto_perfil">
            <img src="img/avatar-1606916_1280.png" alt="">
+           <img src="img/burnquiz_portada.png" alt="">
          </div>
          <div class="datos">
            <div class="nombre">

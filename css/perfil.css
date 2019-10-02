@@ -20,8 +20,6 @@ div.nombre{
     text-align: center;
 }
 
-
-
 img{
     flex-wrap: wrap;
     width: 100%;
@@ -29,12 +27,17 @@ img{
 }
 @media (min-width: 650px){
     div.foto_perfil{
-        background-color: brown;
         margin: 0 auto;
         display: flex;
         justify-content:center;
-        width: 60%;
-        
+        width: 200px;
+        margin: 0;
+        justify-content: flex-start;
+        margin-left: 15px;
+        padding: 10px;
+    }
+    div.foto_perfil img{
+        width: 250px;
     }
     img{
         width:100%;
