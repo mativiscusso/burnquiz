@@ -1,7 +1,6 @@
 <?php
 
-
- function validarPass($contraseña, $confirmar) {
+function validarPass($contraseña, $confirmar) {
     $retorno = "";
     if (($contraseña == "") && ($confirmar == "")) {
       $retorno = "Los dos campos de contraseña estan vacios";
@@ -15,10 +14,8 @@
       $retorno = "Correcto";
     }
     return $retorno;
-  }
- 
-
- function validarContacto($nombre, $email, $telefono) {
+}
+function validarContacto($nombre, $email, $telefono) {
   
        if ($nombre == "") {
      $validacion = "Hay campos vacios";
@@ -33,19 +30,17 @@
   
    echo $validacion;
    return $validacion;
- }  
- 
- function validarLogin($usuario, $pass) {
+}  
+function validarLogin($usuario, $pass) {
     if (($usuario == '') || ($pass == '')) {
         $resultado = "El campo esta vacio";
     }
   else {
-  header('Location: perfil.php');
+  header('Location: bienvenida.php');
   }
   
   return $resultado;
 }
- 
 function validarRegistro ($nombre,$apellido,$usuario,$ciudad,$provincia,$pais,$foto) {
   if (($_POST['nombre'] == "") || ($_POST['apellido'] == "") || ($_POST['ciudad'] == "") || ($_POST['provincia'] == "") || ($_POST['pais'] == "")) {
     $retorno = "Hay campos vacios";

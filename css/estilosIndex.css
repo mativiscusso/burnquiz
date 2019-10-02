@@ -62,13 +62,27 @@ div#contacto.container-fluid.py-3{
 span img{
     width: 30px;
 }
+#portadabienvenida {
+    width: 100%;
+    background-color:rgb(255, 152  , 52);
+    height: 80vh;
+    padding: 5%;
+}
+#left span {
+    font-size: 7em;
+}
 
 
 
-@media (min-width:380px) {
+
+@media (min-width:300px) {
     span#titulo {
     font-size: 9em;
 }
+    #left span {
+        text-align: left;
+        font-size: 2em;
+    }
 }
 @media (min-width:680px) {
     span#titulo {
