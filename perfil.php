@@ -16,27 +16,42 @@
     <title>Burn Quiz | PERFIL</title>
 </head>
 <body>
-  <?php include("header.php"); ?>
+  <div class="body">
+    <?php include("header.php"); ?>
   
-  <div id="portada" class="container-fluid">
-    <div id="datos" class="container card w-25 col-xs-12  col-md-8 col-lg-8">
-        <img id="avatar" src="img/avatar-1606916_1280.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="text-center card-title">NOMBRE USUARIO</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam veniam maxime totam quam aut soluta fugiat voluptatibus dignissimos quibusdam, laboriosam accusantium! Atque eum tempore fuga maxime adipisci similique dignissimos esse.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group">Email</li>
-          <li class="list-group">Puntaje mas alto</li>
-          <li class="list-group">Tiempo de juego</li>
-        </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Facebook</a>
-          <a href="#" class="card-link">Instagram</a>
-        </div>
-    </div>
-    
-  </div>
+     <div class="container">
+       <div class="perfil">
+         <div class="foto_perfil">
+           <img src="img/avatar-1606916_1280.png" alt="">
+         </div>
+         <div class="datos">
+           <div class="nombre">
+             <h2>
+               NOMBRE
+             </h2>
+           </div>
+           <div class="puntaje">
+             <h3>
+               PUNTAJE MAS ALTO:
+             </h3><hr>
+           </div>
+           <div class="ranking">
+             <h3>
+               RANKING:
+             </h3><hr>
+           </div>
+           <div class="tiempo">
+             <h3>
+               HORAS DE JUEGO:
+             </h3>
+           </div>
+         </div>
+       </div>
+     </div>
+
+
+     </div>
+
 
   <?php include("footer.php"); ?>
   

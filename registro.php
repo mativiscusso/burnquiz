@@ -29,6 +29,8 @@ if ($_POST) {
     $pais = $_POST['pais'];
     
 }
+$datos=json_encode($_POST);
+file_put_contents("datosDeRegistro.json",$datos);
 
 
 ?>
