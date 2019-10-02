@@ -1,6 +1,10 @@
 <?php
 include('validar.php');
 
+if ($_POST) {
+    validarContacto($_POST['nombre'], $_POST['email'], $_POST['telefono']);
+    };
+
 $nombre = '';
 $email = '';
 $telefono = '';
@@ -54,10 +58,8 @@ if ($_POST) {
                         <textarea name="comentario" id="" cols="90" rows="20"></textarea>
                     </div>
                     <button class="btn btn-dark" type="submit">Enviar</button>
-                </form> <br> 
-                <?php if ($_POST) {
-                            validarContacto($_POST['nombre'], $_POST['email'], $_POST['telefono']);
-                            };?>              
+                </form> 
+           
             </div>
      
             <div class="container py-5">

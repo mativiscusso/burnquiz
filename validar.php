@@ -26,10 +26,10 @@ function validarContacto($nombre, $email, $telefono) {
     else if (is_numeric($telefono) == false) {
      $validacion = "El campo no es un numero telefonico";
     }
-    else $validacion = "Todo ok"; 
-  
-   echo $validacion;
-   return $validacion;
+    else {
+      header('Location: index.php'); exit;
+      } 
+  return $validacion;
 }  
 function validarLogin($usuario, $pass) {
     if (($usuario == '') || ($pass == '')) {
