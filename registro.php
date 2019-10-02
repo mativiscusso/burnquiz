@@ -1,8 +1,10 @@
 <?php
 include ('validar.php');
+
 if ($_POST) {
-  validarRegistro ($_POST['nombre'],$_POST['apellido'],$usuario = $_POST['usuario'],$_POST['ciudad'],$_POST['provincia'],$_POST['pais'],$_POST['imagenDePerfil']);
+  validarRegistro ($_POST['nombre'],$_POST['apellido'],$usuario = $_POST['usuario'],$_POST['ciudad'],$_POST['provincia'],$_POST['pais']);
   validarPass ($_POST['pass'],$rpass = $_POST['rpass']);
+  validarImg ($_FILES['imagenDePerfil']['error'],$_FILES['imagenDePerfil']['name'],$_FILES['imagenDePerfil']['tmp_name']);
       };
 
 
@@ -25,7 +27,7 @@ if ($_POST) {
     $ciudad = $_POST['ciudad'];
     $provincia = $_POST['provincia'];
     $pais = $_POST['pais'];
-    $imagenDePerfil = $_POST['imagenDePerfil'];
+    
 }
 
 
@@ -47,7 +49,7 @@ if ($_POST) {
 
         <div id="registro" class="container-fluid">
         <h1>REGISTRO</h1>   
-        <form action="registro.php" method="POST" class="needs-validation" novalidate>
+        <form action="registro.php" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
           <div class="form-row">
             <div class="col-md-4 mb-3">
               <label for="nombre">Nombre</label>

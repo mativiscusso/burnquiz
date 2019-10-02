@@ -41,12 +41,9 @@ function validarLogin($usuario, $pass) {
   
   return $resultado;
 }
-function validarRegistro ($nombre,$apellido,$usuario,$ciudad,$provincia,$pais,$foto) {
+function validarRegistro ($nombre,$apellido,$usuario,$ciudad,$provincia,$pais) {
   if (($_POST['nombre'] == "") || ($_POST['apellido'] == "") || ($_POST['ciudad'] == "") || ($_POST['provincia'] == "") || ($_POST['pais'] == "")) {
     $retorno = "Hay campos vacios";
-  }
-  else if ($_POST['imagenDePerfil'] == "") {
-    $retorno = "No se cargó imagen de perfil";
   }
   else if (filter_var($_POST['usuario'], FILTER_VALIDATE_EMAIL) == false) {
     $retorno = "El campo no contiene un email correcto";
@@ -54,6 +51,18 @@ function validarRegistro ($nombre,$apellido,$usuario,$ciudad,$provincia,$pais,$f
   else { header('Location: bienvenida.php'); 
   }
   return $retorno;
+}
+function validarImg ($error,$nombre,$tmp) {
+  if ($error != 0) {
+    $retorno = "Error en la carga de archivo";
+  } else {
+    $ext = pathinfo($nombre, PATHINFO_EXTENSION);
+     if ($ext != "jpg" && $ext != "jpeg" && $ext != "png" ) {
+       $retorno = "Extension no permitida";
+     } else {
+       return move_uploaded_file($tmp, 'archivos/'.rand(0,500).'.' . $ext);
+     }
+  }
 }
 
 ?>
