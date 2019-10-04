@@ -1,4 +1,5 @@
 <?php
+$json= "datosDeRegistro.json";
 
 function validarPass($contraseña, $confirmar) {
     $retorno = "";
@@ -60,9 +61,35 @@ function validarImg ($error,$nombre,$tmp) {
      if ($ext != "jpg" && $ext != "jpeg" && $ext != "png" ) {
        $retorno = "Extension no permitida";
      } else {
-       return move_uploaded_file($tmp, 'archivos/'.rand(0,500).'.' . $ext);
+       return move_uploaded_file($tmp, 'files/'.rand(0,500).'.' . $ext);
      }
   }
+}
+function cargaDatosRegistro ($nombre,$apellido,$usuario,$pass,$ciudad,$provincia,$pais){
+   $usuarios = [
+      'nombre' => $nombre,
+      'apellido' => $apellido,
+      'usuario' => $usuario,
+      'pass' => password_hash($pass, PASSWORD_DEFAULT),
+      'ciudad' => $ciudad,
+      'provincia' => $provincia,
+      'pais' => $pais
+  ];
+  return guardardatos($usuarios, "datosDeRegistro.json");
+}
+
+function guardardatos ($que, $donde) {
+    $exito = false;
+
+    $traigoJson = file_get_contents($donde);
+    if ($traigoJson) {
+        $exito = true;
+        $jsonArray = json_decode($traigoJson, true);
+        $jsonArray[] = $que;
+        $json = json_encode($jsonArray);
+        file_put_contents($donde, $json);
+    }
+    return $exito; 
 }
 
 ?>

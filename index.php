@@ -24,7 +24,7 @@
             </div>
             <div id="right" class="col-12 col-md-6 py-2">
                 <img src="img/burnquiz_logo.png"  alt=""><br>
-                <input type="checkbox" id="cb1" /><label for="cb1"><a id="start" href="juego.php">Start</a></label>
+                <input type="checkbox" id="cb1" /><label id="cb2" for="cb1"><a id="start" href="juego.php">Start</a></label>
             </div>
         </main>
     </div>

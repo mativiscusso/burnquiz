@@ -5,7 +5,8 @@ if ($_POST) {
   validarRegistro ($_POST['nombre'],$_POST['apellido'],$usuario = $_POST['usuario'],$_POST['ciudad'],$_POST['provincia'],$_POST['pais']);
   validarPass ($_POST['pass'],$rpass = $_POST['rpass']);
   validarImg ($_FILES['imagenDePerfil']['error'],$_FILES['imagenDePerfil']['name'],$_FILES['imagenDePerfil']['tmp_name']);
-      };
+  cargaDatosRegistro ($_POST['nombre'],$_POST['apellido'],$_POST['usuario'],$_POST['pass'],$_POST['ciudad'],$_POST['provincia'],$_POST['pais']);
+};
 
 
 $nombre = '';
@@ -29,8 +30,7 @@ if ($_POST) {
     $pais = $_POST['pais'];
     
 }
-$datos=json_encode($_POST);
-file_put_contents("datosDeRegistro.json",$datos);
+
 
 ?>
 
