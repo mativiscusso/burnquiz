@@ -49,7 +49,7 @@ function validarRegistro ($nombre,$apellido,$usuario,$ciudad,$provincia,$pais) {
   else if (filter_var($_POST['usuario'], FILTER_VALIDATE_EMAIL) == false) {
     $retorno = "El campo no contiene un email correcto";
   }
-  else { header('Location: bienvenida.php'); 
+  else { return header('Location: bienvenida.php'); 
   }
   return $retorno;
 }
@@ -75,7 +75,7 @@ function cargaDatosRegistro ($nombre,$apellido,$usuario,$pass,$ciudad,$provincia
       'provincia' => $provincia,
       'pais' => $pais
   ];
-  return guardardatos($usuarios, "datosDeRegistro.json");
+  return guardarDatosUnicos($usuarios, "datosDeRegistro.json");
 }
 
 function guardardatos ($que, $donde) {
@@ -91,5 +91,38 @@ function guardardatos ($que, $donde) {
     }
     return $exito; 
 }
-
+function eliminarDatos($queEliminar,$dondeEliminar){
+  $exito = false;
+   $traigoJson = file_get_contents($dondeEliminar);
+       if($traigoJson){
+           $exito = true;
+             $arrayJson = json_decode($traigoJson, true);
+       foreach($arrayJson as $key => $array){
+           if ($queEliminar == $array) {
+               unset($arrayJson[$key]);
+            }
+              }
+   $encodeJson = json_encode($arrayJson);
+   file_put_contents($dondeEliminar, $encodeJson);
+          }
+  return $exito;
+}
+function guardarDatosUnicos($queGuardar,$dondeGuardar){
+  $exito = false;
+          $traigoJson = FILE_GET_CONTENTS($dondeGuardar);
+          if($traigoJson){
+              $exito = true;
+              $arrayJson = json_decode($traigoJson, true);
+              foreach($arrayJson as $key => $array){
+                  if ($queGuardar == $array){
+                      $exito = false;
+                      return $exito;
+                  }
+              }
+              $arrayJson [] = $queGuardar;
+              $encodeJson = json_encode($arrayJson);
+              file_put_contents($dondeGuardar, $encodeJson);
+          }
+  return $exito;
+      }
 ?>
