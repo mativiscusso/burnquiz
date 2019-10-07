@@ -15,6 +15,7 @@
     text-align: end;
 }
 #portada {
+    height: 90vh;
     background-color: rgb(255, 152  , 52);
     padding: 5% 0 5% 0;
 }
@@ -124,6 +125,9 @@ span img{
 #left span {
     font-size: 7em;
 }
+#juego {
+    font-size: 4rem;
+}
 
 
 
@@ -133,17 +137,26 @@ span img{
     text-align: center;
     font-size: 7em;
 }
+    #juego {
+        font-size: 1rem;
+}
 
 }
 @media (min-width:680px) {
     span#titulo {
     font-size: 9rem;
 }
+    #juego {
+        font-size: 2rem;
+}
 
 }
 @media (min-width:980px) {
     span#titulo {
     font-size: 13rem;
+}
+    #juego {
+    font-size: 2rem;
 }
 
 }
