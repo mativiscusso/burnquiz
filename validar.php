@@ -33,15 +33,24 @@ function validarContacto($nombre, $email, $telefono) {
   return $validacion;
 }  
 function validarLogin($usuario, $pass) {
-    if (($usuario == '') || ($pass == '')) {
-        $resultado = "El campo esta vacio";
+  //TRAER EL JSON
+  $traigoJson = FILE_GET_CONTENTS('datosDeRegistro.json');
+  //CONVERTIRLO A ARRAY
+  $arrayJson = json_decode($traigoJson, true);
+  //RECORRER EL ARRAY Y BUSCAR COINCIDENCIA ENTRE $USUARIO Y $PASS YA GUARDADOS
+  $passHash = password_hash($pass, PASSWORD_DEFAULT);
+  foreach ($arrayJson as $num => $arrayUsuario) {
+    foreach ($arrayUsuario as $key => $valor) {
+        if (($key == "usuario" && $valor == $usuario)) {
+          //el usuario fue encontrado
+          }
+          
+        }
+      
+      }
     }
-  else {
-  header('Location: bienvenida.php');
-  }
-  
-  return $resultado;
-}
+
+
 function validarRegistro ($nombre,$apellido,$usuario,$ciudad,$provincia,$pais) {
   if (($_POST['nombre'] == "") || ($_POST['apellido'] == "") || ($_POST['ciudad'] == "") || ($_POST['provincia'] == "") || ($_POST['pais'] == "")) {
     $retorno = "Hay campos vacios";
