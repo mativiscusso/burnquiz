@@ -1,14 +1,15 @@
 <?php
+include('pyr.php');
+$posicion = 0;
 if($_POST) {
-    if ($_POST['rta'] == "rtaC") {
+    if ($_POST['rta'] == $pyrArray [$posicion]['rtaC']) {
         $respuesta = "Su respuesta es Correcta"; 
     }
     else {
         $respuesta = "Su respuesta es incorrecta";
     }
+}
 
-   }
-   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,11 +30,11 @@ if($_POST) {
   <?php include("header.php"); ?>
     <div id="portada">
         <form id="juego" action="juego.php" method="POST">
-            Si en una pecera hay 12 peces y 5 de ellos se ahogan, ¿cuántos peces quedan? <br>
+            <?=$pyrArray[$posicion]['pregunta']?> <br>
             <br>
-            <input type="radio" name="rta" value="rta1">7 peces <br>
-            <input type="radio" name="rta" value="rta2">5 peces <br>
-            <input type="radio" name="rta" value="rtaC">12 peces <br>
+            <input type="radio" name="rta" value="rta1"><?=$pyrArray[$posicion]['rta1']?> <br>
+            <input type="radio" name="rta" value="rta2"><?=$pyrArray[$posicion]['rta2']?> <br>
+            <input type="radio" name="rta" value="rtaC"><?=$pyrArray[$posicion]['rtaC']?> <br>
             <br>
             <input type="submit" name="enviar" id="btnjuego"> <br>
             <div id="rta">
