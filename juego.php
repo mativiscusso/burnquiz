@@ -28,16 +28,21 @@ if($_POST) {
 <body>
   <?php include("header.php"); ?>
     <div id="portada">
-        <form id="juego" class="text-center" action="juego.php" method="POST">
-            PREGUNTA: ¿QUE ONDA? <br>
-            <input type="radio" name="rta" value="rta1">R1 <br>
-            <input type="radio" name="rta" value="rta2">R2 <br>
-            <input type="radio" name="rta" value="rtaC">R3 <br><br>
-            <input type="submit" name="enviar" id="">
-        </form>
-        <?if(isset($respuesta)) {
-            echo $respuesta;
-        }?>
+        <form id="juego" action="juego.php" method="POST">
+            Si en una pecera hay 12 peces y 5 de ellos se ahogan, ¿cuántos peces quedan? <br>
+            <br>
+            <input type="radio" name="rta" value="rta1">7 peces <br>
+            <input type="radio" name="rta" value="rta2">5 peces <br>
+            <input type="radio" name="rta" value="rtaC">12 peces <br>
+            <br>
+            <input type="submit" name="enviar" id="btnjuego"> <br>
+            <div id="rta">
+            <?php if(isset($respuesta)):?>
+            <?= $respuesta;?>
+            <?php endif ?>
+            </div>  
+         </form>
+     
     </div>
   
 

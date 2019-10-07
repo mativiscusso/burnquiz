@@ -126,8 +126,28 @@ span img{
     font-size: 7em;
 }
 #juego {
-    font-size: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }
+#btnjuego {
+    font-family: "Permanent Marker", cursive;
+    background-color: transparent;
+    border: 2px solid rgb(165,0,0);
+    border-radius: 1rem;
+    color: rgb(165,0,0);
+    padding-left: 3%;
+    padding-right: 3%;
+}
+#btnjuego:hover {
+    background-color: rgb(165,0,0);
+    color: white;
+}
+#rta {
+    text-align: end;
+    font-style: italic;
+}
+
 
 
 
@@ -138,9 +158,15 @@ span img{
     font-size: 7em;
 }
     #juego {
+        text-align: center;
+        width: 90%;
         font-size: 1rem;
 }
-
+    #rta {
+        padding-top: 2%;
+        text-align: center;
+        font-style: italic;
+    }
 }
 @media (min-width:680px) {
     span#titulo {
@@ -156,7 +182,7 @@ span img{
     font-size: 13rem;
 }
     #juego {
-    font-size: 2rem;
+    font-size: 26px;
 }
 
 }
