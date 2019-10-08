@@ -32,9 +32,9 @@ if($_POST) {
         <form id="juego" action="juego.php" method="POST">
             <?=$pyrArray[$posicion]['pregunta']?> <br>
             <br>
-            <input type="radio" name="rta" value="rta1"><?=$pyrArray[$posicion]['rta1']?> <br>
-            <input type="radio" name="rta" value="rta2"><?=$pyrArray[$posicion]['rta2']?> <br>
-            <input type="radio" name="rta" value="rtaC"><?=$pyrArray[$posicion]['rtaC']?> <br>
+            <input type="radio" name="rta" value="<?=$pyrArray[$posicion]['rta1']?>"><?=$pyrArray[$posicion]['rta1']?> <br>
+            <input type="radio" name="rta" value="<?=$pyrArray[$posicion]['rta2']?>"><?=$pyrArray[$posicion]['rta2']?> <br>
+            <input type="radio" name="rta" value="<?=$pyrArray[$posicion]['rtaC']?>"><?=$pyrArray[$posicion]['rtaC']?> <br>
             <br>
             <input type="submit" name="enviar" id="btnjuego"> <br>
             <div id="rta">
