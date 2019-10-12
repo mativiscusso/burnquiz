@@ -16,10 +16,10 @@
     <title>Burn Quiz | PERFIL</title>
 </head>
 <body>
-  <div class="body">
+
     <?php include("header.php"); ?>
    
-    
+    <div class="body">
      <div class="container">
        <div class="perfil">
          <div class="foto_perfil">
