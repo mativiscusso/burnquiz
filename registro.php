@@ -35,17 +35,12 @@ if ($_POST) {
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/estilosRegistro.css">
-    <link rel="shortcut icon" href="img/burnquiz_logow.png">
-    <title>Burn Quiz | REGISTRO</title>
-</head>
-<body>
+<?php    
+    function titulo(){
+      echo "Burn Quiz | Registro";
+    }
+    ?>
+
   <?php include("header.php"); ?>
 
         <div id="registro" class="container-fluid">
