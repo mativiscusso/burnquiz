@@ -1,126 +1,197 @@
 <?php
 include ('validar.php');
-
-if ($_POST) {
-  validarRegistro ($_POST['nombre'],$_POST['apellido'],$usuario = $_POST['usuario'],$_POST['ciudad'],$_POST['provincia'],$_POST['pais']);
-  validarPass ($_POST['pass'],$rpass = $_POST['rpass']);
-  validarImg ($_FILES['imagenDePerfil']['error'],$_FILES['imagenDePerfil']['name'],$_FILES['imagenDePerfil']['tmp_name']);
-  cargaDatosRegistro ($_POST['nombre'],$_POST['apellido'],$_POST['usuario'],$_POST['pass'],$_POST['ciudad'],$_POST['provincia'],$_POST['pais']);
-};
+	// Incluimos el controlador del registro-login
+	// De esta manera tengo el scope a la funciones que necesito
 
 
-$nombre = '';
-$apellido = '';
-$usuario = '';
-$pass = '';
-$rpass = '';
-$ciudad = '';
-$provincia = '';
-$pais = '';
-$imagenDePerfil = '';
+	// Si está logueda la persona la redirijo al profile
+	if ( isLogged() ) {
+		header('location: perfil.php');
+		exit;
+	}
 
-if ($_POST) {
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $usuario = $_POST['usuario'];
-    $pass = $_POST['pass'];
-    $rpass = $_POST['rpass'];
-    $ciudad = $_POST['ciudad'];
-    $provincia = $_POST['provincia'];
-    $pais = $_POST['pais'];
-    
-}
+	$pageTitle = 'Register';
 
 
+	$countries = [
+		'ar' => 'Argentina',
+		'bo' => 'Bolivia',
+		'br' => 'Brasil',
+		'co' => 'Colombia',
+		'cl' => 'Chile',
+		'ec' => 'Ecuador',
+		'pa' => 'Paraguay',
+		'pe' => 'Perú',
+		'uy' => 'Uruguay',
+		've' => 'Venezuela',
+	];
+
+	// Creamos esta variable con Array vacío para que no de error al entrar por GET
+	$errorsInRegister = [];
+
+	// Variables para persitir
+	$name = '';
+	$email = '';
+	$countryFromPost = '';
+
+	if ($_POST) {
+		// Las variables de persistencia les asigno el valor que vino de $_POST
+		$name = trim($_POST['name']);
+		$email = trim($_POST['email']);
+		$countryFromPost = $_POST['country'];
+
+		// La función registerValidate() nos retorna el array de errores que almacenamos en esta variable
+		$errorsInRegister = registerValidate();
+
+		// Si no hay errores en el registro
+		// Cuando no hay errores guardo la imagen y los datos
+		// if ( count($errorsInRegister) == 0 ) {
+		if ( !$errorsInRegister ) {
+
+			// Guardo la imagen y obtengo el nombre aleatorio creado
+			$imgName = saveImage();
+
+			// Creo en $_POST una posición "avatar" para guardar el nombre de la imagen
+			$_POST['avatar'] = $imgName;
+
+			// Guardo al usuario en el archivo JSON, y me devuelve al usuario que guardó en array
+			$theUser = saveUser();
+
+			// Al momento en que se registar vamos a mantener la sesión abierta
+			setcookie('userLoged', $theUser['email'], time() + 3000);
+
+			// Logueo al usuario
+			login($theUser);
+		}
+	}
+
+	require_once 'header.php';
 ?>
-
-
-<?php    
+<?php
     function titulo(){
-      echo "Burn Quiz | Registro";
+      echo "Burn Quiz | REGISTRO";
     }
     ?>
+	<!-- Register-Form -->
+	<div class="container" style="margin-top:30px; margin-bottom: 30px;">
+		<div class="row justify-content-center">
+			<div class="col-md-10">
+				<?php if ( count($errorsInRegister) > 0 ): ?>
+					<div class="alert alert-danger">
+						<ul>
+							<?php foreach ($errorsInRegister as $oneError): ?>
+								<li> <?= $oneError; ?> </li>
+							<?php endforeach; ?>
+						</ul>
+					</div>
+				<?php endif; ?>
 
-  <?php include("header.php"); ?>
 
-        <div id="registro" class="container-fluid">
-        <h1>REGISTRO</h1>   
-        <form action="registro.php" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
-          <div class="form-row">
-            <div class="col-md-4 mb-3">
-              <label for="nombre">Nombre</label>
-              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" value="<?=$nombre?>" required>
-              <small class="text-muted">
-              </small>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="apellido">Apellido</label>
-              <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" value="<?=$apellido?>" required>
-              <small class="text-muted">
-              </small>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="usuario">Usuario</label>
-              <div class="input-group">
-                <input type="email" class="form-control" id="usuario" name="usuario" placeholder="Usuario" value="<?=$usuario?>" aria-describedby="inputGroupPrepend" required>
-                <small class="text-muted">
-                  </small>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="contra">Contraseña</label>
-              <input type="password" id="contra" class="form-control mx-sm-3" name="pass" value="<?=$pass?>" aria-describedby="passwordHelpInline">
-              <small id="passwordHelpInline" class="text-muted">
-              </small>
-            </div>
-            <div class="form-group" id="contra2">
-              <label for="rcontra">Repetir Contraseña</label>
-              <input type="password" id="rcontra" class="form-control mx-sm-3" name="rpass" value="<?=$rpass?>" aria-describedby="passwordHelpInline">
-              <small id="passwordHelpInline" class="text-muted">
-              </small>
-            </div>
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="ciudad">Ciudad</label>
-              <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad" value="<?=$ciudad?>" required>
-              <small class="text-muted">
-              </small>
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="provincia">Provincia</label>
-              <input type="text" class="form-control" id="provincia" name="provincia" placeholder="Provincia" value="<?=$provincia?>" required>
-              <small class="text-muted">
-              </small>
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="pais">País</label>
-                <input type="text" class="form-control" id="pais" name="pais" placeholder="País" value="<?=$pais?>" required>
-                <small class="text-muted">
-              </small>
-              </div>
-              <div class="col-md-12 mb-3">
-                <label class="imagenDePerfil"for="imagenDePerfil" id="imagenDePerfil">Foto de perfil</label>
-                <input type="file" class="form-control" id="imagenDePerfil" name="imagenDePerfil" placeholder="imagenDePerfil" value="<?=$imagenDePerfil?>" required>
-                <small class="text-muted">
-              </small>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
-                  Acepto terminos y condiciones.
-                </label>
-                <div class="invalid-feedback">
-                  Tienes que aceptar antes de enviar.
-                </div>
-            <button type="submit" class="btn-primary">Registrarse</button>
-            </form>
-            </div>
-          </div>
-        </div>
-        </div>
+				<h2>Formulario de registro</h2>
+
+				<form method="post" enctype="multipart/form-data">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Nombre completo:</b></label>
+								<input
+									type="text"
+									name="name"
+									class="form-control <?= isset($errorsInRegister['name']) ? 'is-invalid' : null ?>"
+									value="<?= $name; ?>"
+								>
+								<div class="invalid-feedback">
+          				<?= isset($errorsInRegister['name']) ? $errorsInRegister['name'] : null; ?>
+        				</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Correo electrónico:</b></label>
+								<input
+									type="text"
+									name="email"
+									class="form-control <?= isset($errorsInRegister['email']) ? 'is-invalid' : null ?>"
+									value="<?= $email; ?>"
+								>
+								<div class="invalid-feedback">
+          				<?= isset($errorsInRegister['email']) ? $errorsInRegister['email'] : null; ?>
+        				</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Password:</b></label>
+								<input
+									type="password"
+									name="password"
+									class="form-control <?= isset($errorsInRegister['password']) ? 'is-invalid' : null ?>"
+								>
+								<div class="invalid-feedback">
+          				<?= isset($errorsInRegister['password']) ? $errorsInRegister['password'] : null; ?>
+        				</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Repetir Password:</b></label>
+								<input
+									type="password"
+									name="rePassword"
+									class="form-control <?= isset($errorsInRegister['rePassword']) ? 'is-invalid' : null; ?>"
+								>
+								<div class="invalid-feedback">
+          				<?= isset($errorsInRegister['rePassword']) ? $errorsInRegister['rePassword'] : null; ?>
+        				</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>País de nacimiento:</b></label>
+								<select
+									name="country"
+									class="form-control <?= isset($errorsInRegister['country']) ? 'is-invalid' : null; ?>"
+								>
+									<option value="">Elegí un país</option>
+									<?php foreach ($countries as $code => $country): ?>
+										<option
+											value="<?= $code ?>"
+											<?= $code == $countryFromPost ? 'selected' : null; ?>
+										>
+											<?= $country ?>
+										</option>
+									<?php endforeach; ?>
+								</select>
+								<div class="invalid-feedback">
+          				<?= isset($errorsInRegister['country']) ? $errorsInRegister['country'] : null; ?>
+        				</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Imagen de perfil:</b></label>
+								<div class="custom-file">
+									<input
+										type="file"
+									 	name="avatar"
+										class="custom-file-input <?= isset($errorsInRegister['avatar']) ? 'is-invalid' : null; ?>"
+									>
+									<label class="custom-file-label">Choose file...</label>
+									<div class="invalid-feedback">
+	          				<?= isset($errorsInRegister['avatar']) ? $errorsInRegister['avatar'] : null; ?>
+	        				</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12">
+							<button type="submit" class="btn btn-primary">Registrarse</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- //Register-Form -->
 <?php include("footer.php"); ?>
 
 </body>

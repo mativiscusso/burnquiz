@@ -1,4 +1,18 @@
-<?php    
+<?php
+
+// Incluimos el controlador del registro-login
+// De esta manera tengo el scope a la funciones que necesito
+require_once 'validar.php';
+
+// Si no está logueda la persona la redirijo al login
+if ( !isLogged() ) {
+  header('location: login.php');
+  exit;
+}
+
+$theUser = $_SESSION['userLoged'];
+?> 
+<?php   
     function titulo(){
       echo "Burn Quiz | Perfil";
     }
@@ -6,40 +20,18 @@
 
     <?php include("header.php"); ?>
    
-    <div class="body">
-     <div class="container">
-       <div class="perfil">
-         <div class="foto_perfil">
-           <img src="img/avatar-1606916_1280.png" alt="">
-           <img src="img/burnquiz_portada.png" alt="">
-         </div>
-         <div class="datos">
-           <div class="nombre">
-             <h2>
-               NOMBRE
-             </h2>
-           </div>
-           <div class="puntaje">
-             <h3>
-               PUNTAJE MAS ALTO:
-             </h3><hr>
-           </div>
-           <div class="ranking">
-             <h3>
-               RANKING:
-             </h3><hr>
-           </div>
-           <div class="tiempo">
-             <h3>
-               HORAS DE JUEGO:
-             </h3>
-           </div>
-         </div>
-       </div>
-     </div>
-
-
-     </div>
+    <div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<br>
+				<h2>Hi <?= $theUser['name']; ?></h2>
+				<img id="imgusuario" src="files/avatars/<?= $theUser['avatar']; ?>" alt="imagen usuario">
+				<br><br>
+				<a href="#" class="btn btn-info"><?= $theUser['email']; ?></a><br>
+				<a href="edit-profile.php" class="btn btn-danger">Editar información</a><br>
+			</div>
+		</div>
+	</div>
 
 
   <?php include("footer.php"); ?>

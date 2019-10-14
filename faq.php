@@ -1,13 +1,12 @@
-
-    <?php    
+<?php    
     function titulo(){
       echo "Burn Quiz | FAQs";
     }
-    ?>
+?>
     
 
   <?php include("header.php"); ?> 
-
+    <div>
     <div class="accordion" id="accordionExample">
   <div class="card">
     <div class="card-header" id="headingOne">
@@ -81,7 +80,7 @@
     </div>
   </div>
 </div>
-
+</div>
 <?php include("footer.php"); ?>
 
 </body>

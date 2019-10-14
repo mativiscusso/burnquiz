@@ -1,11 +1,7 @@
 <?php
-$logueado = false;
-
-if(isset($_SESSION['usuario'])){
-  $logueado = true;
+function logueado() {
+return isset($_SESSION['userLoged']);
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -19,12 +15,8 @@ if(isset($_SESSION['usuario'])){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="img/burnquiz_logow.png">    <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" href="img/burnquiz_logow.png">  
     <link rel="stylesheet" href="css/estilosIndex.css">
-    <link rel="stylesheet" href="css/faq.css">
-    <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/estilosRegistro.css">
-    <link rel="shortcut icon" href="img/burnquiz_logow.png">
     <title>
     <?php
     titulo();
@@ -38,7 +30,8 @@ if(isset($_SESSION['usuario'])){
       <span id="iconboton" class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-              <ul class="navbar-nav mr-auto">
+              <ul class="navbar-nav mr-auto" style="
+    margin-left: 0px">
                 <li class="nav-item active">
                   <a class="nav-link" href="index.php">HOME</a>
                 </li>
@@ -46,7 +39,7 @@ if(isset($_SESSION['usuario'])){
                   <a class="nav-link" href="faq.php">FAQs</a>
                 </li>
                 <?php
-                if(!$logueado){
+                if(!logueado()){
                   ?>
                 <li class="nav-item">
                   <a class="nav-link" href="registro.php">REGISTRO</a>
@@ -70,9 +63,27 @@ if(isset($_SESSION['usuario'])){
                     <a class="nav-link" href="ranking.php">RANKING</a>
                 </li>
               </ul>
+              <?php
+                if(!logueado()){
+              ?>
               <span class="navbar-text">
                 <img src="img/burnquiz_logow.png" width="10%" alt="">
               </span>
+              <?php
+                }
+              ?>
+              <?php
+                if(logueado()){
+              ?>
+              <li id="menulogueado">
+                    <a href=""><?= $_SESSION['userLoged']['name'] ?></a>
+                    <img id="imgperfil" src="files/avatars/<?= $_SESSION['userLoged']['avatar']; ?>">
+                    <a href="profile.php">Mi perfil</a> |
+                    <a href="logout.php">Salir</a>
+              </li>
+              <?php
+                }
+              ?>
             </div>
           </nav>
    </header>
