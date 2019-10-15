@@ -1,9 +1,3 @@
-<?php
-function logueado() {
-return isset($_SESSION['userLoged']);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +33,7 @@ return isset($_SESSION['userLoged']);
                   <a class="nav-link" href="faq.php">FAQs</a>
                 </li>
                 <?php
-                if(!logueado()){
+                if(!isLogged()){
                   ?>
                 <li class="nav-item">
                   <a class="nav-link" href="registro.php">REGISTRO</a>
@@ -64,7 +58,7 @@ return isset($_SESSION['userLoged']);
                 </li>
               </ul>
               <?php
-                if(!logueado()){
+                if(!isLogged()){
               ?>
               <span class="navbar-text">
                 <img src="img/burnquiz_logow.png" width="10%" alt="">
@@ -73,7 +67,7 @@ return isset($_SESSION['userLoged']);
                 }
               ?>
               <?php
-                if(logueado()){
+                if(isLogged()){
               ?>
               <li id="menulogueado">
                     <a href=""><?= $_SESSION['userLoged']['name'] ?></a>
