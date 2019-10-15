@@ -1,4 +1,5 @@
 <?php
+include_once('validar.php');
 include('pyr.php');
 $posicion = 0;
 if($_POST) {
