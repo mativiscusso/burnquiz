@@ -44,17 +44,20 @@
                 <?php
                 }
                 ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="contacto.php">CONTACTO</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="perfil.php">PERFIL</a>
-                </li>   
+                <?php
+                if(isLogged()){
+                  ?>
                 <li class="nav-item">
                     <a class="nav-link" href="abm.php">ABM</a>
                 </li>
+                <?php
+                }
+                ?>
                 <li class="nav-item">
                     <a class="nav-link" href="ranking.php">RANKING</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.php">CONTACTO</a>
                 </li>
               </ul>
               <?php
@@ -72,7 +75,7 @@
               <li id="menulogueado">
                     <a href=""><?= $_SESSION['userLoged']['name'] ?></a>
                     <img id="imgperfil" src="files/avatars/<?= $_SESSION['userLoged']['avatar']; ?>">
-                    <a href="profile.php">Mi perfil</a> |
+                    <a href="perfil.php">Mi perfil</a> |
                     <a href="logout.php">Salir</a>
               </li>
               <?php

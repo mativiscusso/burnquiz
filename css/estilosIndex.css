@@ -6,6 +6,7 @@ body {
     margin: 0;
 }
 #menu {
+    box-shadow: 5px 0px 5px black;
     background-color: rgb(165,0,0);
 }
 
@@ -97,11 +98,16 @@ a#start {
     top: 3px;
     box-shadow: none;
   }
-  
+footer {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 15%;
+    position: relative;
+    width: 100%;
+} 
 #footer {
     display: flex;
     justify-content: space-around;
-    width: 100%;
     padding-left: 2%;
     text-align: center;
     background-color: rgb(50, 50, 50);
@@ -169,7 +175,7 @@ textarea{
 }
 .card{
     background-color: rgb(255,150,50);
-    margin:0%;
+    margin:1%;
     width: 75%;
     border: none;
     display: flex;
