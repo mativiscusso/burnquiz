@@ -3,24 +3,30 @@ include_once('validar.php');
 
 $fileContent = file_get_contents("files/preguntas.json");
 $pyrArray = json_decode($fileContent, true);
+$longArray = count($pyrArray);
 
 if(!isset($_SESSION['posicion'])) {
     $posicion = 0;
     $_SESSION['posicion'] = $posicion;
     $_SESSION['userLoged']['puntaje'] = 0;
-} else {
-    if($_POST) {
-        if ($_POST['rta'] == $pyrArray [$_SESSION['posicion']]['rtaC']) {
-            $_SESSION['posicion']++;
-            $_SESSION['userLoged']['puntaje']++; 
-        }
-        else {
-            $respuesta = "Su respuesta es incorrecta" . "<br>"."Su puntaje ". $_SESSION['userLoged']['name']." es ". $_SESSION['userLoged']['puntaje'];
-            guardarRanking();
+} else { 
+        if($_POST) {
+            if ($_POST['rta'] == $pyrArray [$_SESSION['posicion']]['rtaC']) {
+                $_SESSION['posicion']++;
+                $_SESSION['userLoged']['puntaje']++; 
+            }
+            else {
+                $respuesta = "Su respuesta es incorrecta" . "<br>"."Su puntaje ". $_SESSION['userLoged']['name']." es ". $_SESSION['userLoged']['puntaje'];
+                guardarRanking();
 
+            }
         }
-    } 
+        if ($_SESSION['posicion'] == $longArray) {
+            header ('location: exito.php'); exit;
+        }     
 }
+
+
 ?>
 
 <?php    
