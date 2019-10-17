@@ -9,11 +9,11 @@ include_once('validar.php');
     
     <div id="portada" class="container.fluid">
         <main class="row">
-            <div id="left" class="col-12 col-md-6 py-2">
+            <div id="left" class="col-12 col-md-6 py-3">
                 <span id="titulo">BURN</span>
                 <span id="titulo">Quiz</span>
             </div>
-            <div id="right" class="col-12 col-md-6 py-2">
+            <div id="right" class="col-12 col-md-6 py-3">
                 <img src="img/burnquiz_logo.png"  alt=""><br>
                 <?php if(isLogged()) { 
                 ?> 

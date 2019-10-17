@@ -30,17 +30,17 @@ if ($_POST) {
                <form action="contacto.php" method="POST">
                     <div class="form-group">
                         <label for="formGroupExampleInput">Nombre</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" name="nombre" value="<?=$nombre?>">
+                        <input type="text" class="form-control" id="formGroupExampleInput" name="nombre" size=30 value="<?=$nombre?>">
                       
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Email</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" name="email" value="<?=$email?>">
+                        <input type="text" class="form-control" id="formGroupExampleInput2" name="email"size=30 value="<?=$email?>">
                        
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput3">Telefono</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput3" name="telefono" value="<?=$telefono?>">
+                        <input type="text" class="form-control" id="formGroupExampleInput3" name="telefono"size=30 value="<?=$telefono?>">
                         
                     </div>
                     <div class="form-group">

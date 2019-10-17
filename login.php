@@ -8,7 +8,7 @@ include('validar.php');
 
 	// Si está logueda la persona la redirijo al profile
 	if ( isLogged() ) {
-		header('location: perfil.php');
+		header('location: index.php');
 		exit;
 	}
 
@@ -67,7 +67,7 @@ include('validar.php');
 
 				<h2>Formulario de Login</h2>
 
-				<form method="post">
+				<form method="post" class="py-2">
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
