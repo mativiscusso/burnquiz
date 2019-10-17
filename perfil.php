@@ -28,7 +28,7 @@ $theUser = $_SESSION['userLoged'];
 				<img id="imgusuario" src="files/avatars/<?= $theUser['avatar']; ?>" alt="imagen usuario">
 				<br><br>
 				<a href="#" class="btn btn-info"><?= $theUser['email']; ?></a><br>
-				<a href="edit-profile.php" class="btn btn-danger">Editar información</a><br>
+				<a href="editarperfil.php" class="btn btn-danger">Editar información</a><br>
 			</div>
 		</div>
 	</div>

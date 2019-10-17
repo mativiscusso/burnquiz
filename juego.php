@@ -1,19 +1,5 @@
 <?php
 include_once('validar.php');
-<<<<<<< HEAD
-include('pyr.php');
-$_SESSION['posicion'] = 0;
-$posicion = $_SESSION['posicion'];
-if($_POST) {
-    if ($_POST['rta'] == $pyrArray [$posicion]['rtaC']) {
-        $respuesta = "Su respuesta es Correcta"; 
-        $posicion = $posicion + 1;
-
-    }
-    else {
-        $respuesta = "Su respuesta es incorrecta";
-    }
-=======
 
 $fileContent = file_get_contents("files/preguntas.json");
 $pyrArray = json_decode($fileContent, true);
@@ -38,7 +24,6 @@ if(!isset($_SESSION['posicion'])) {
         if ($_SESSION['posicion'] == $longArray) {
             header ('location: exito.php'); exit;
         }     
->>>>>>> 6d92e442309d72b88fca98d19ae7117db2657da5
 }
 
 
