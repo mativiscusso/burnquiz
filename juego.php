@@ -1,10 +1,13 @@
 <?php
 include_once('validar.php');
 include('pyr.php');
-$posicion = 0;
+$_SESSION['posicion'] = 0;
+$posicion = $_SESSION['posicion'];
 if($_POST) {
     if ($_POST['rta'] == $pyrArray [$posicion]['rtaC']) {
         $respuesta = "Su respuesta es Correcta"; 
+        $posicion = $posicion + 1;
+
     }
     else {
         $respuesta = "Su respuesta es incorrecta";
