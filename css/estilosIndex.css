@@ -251,13 +251,13 @@ footer{
 }
 @media (min-width:980px) {
     span#titulo {
-    font-size: 13rem;
+    font-size: 14rem;
 }
     #juego {
     font-size: 26px;
 }
 #portada {
-    height: 90vh;
+    height: 85vh;
 }
 #footer {
     position: relative;
