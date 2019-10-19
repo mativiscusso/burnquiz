@@ -7,6 +7,3 @@ if ($_POST) {
     file_put_contents("files/preguntas.json", json_encode($pyrArray));
     header('location: abm.php');exit;
 }
-
-
-?>

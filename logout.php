@@ -1,9 +1,9 @@
 <?php
 
-	session_start();
-	session_destroy();
+session_start();
+session_destroy();
 
-	setcookie('userLoged', null, time() - 1);
+setcookie('userLoged', null, time() - 1);
 
-	header('location: index.php');
-	exit;
+header('location: index.php');
+exit;

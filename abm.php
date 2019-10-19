@@ -1,16 +1,17 @@
 <?php
-include_once('validar.php'); 
-function titulo(){
-      echo "Burn Quiz | ABM";
+include_once('validar.php');
+function titulo()
+{
+    echo "Burn Quiz | ABM";
 }
-if($_POST) {
-    $pyrArray[]= $_POST;
+if ($_POST) {
+    $pyrArray[] = $_POST;
 }
 ?>
 <?php include("header.php"); ?>
 
-    <div class="preguntas">
-        <img id="imgpreguntas" src="img/burnquiz_logo.png" id="img" alt="logo">
+<div class="preguntas">
+    <img id="imgpreguntas" src="img/burnquiz_logo.png" id="img" alt="logo">
 
     <form action="pyr.php" method="POST">
         <label for="pregunta">Sumá tu pregunta.</label>
@@ -34,7 +35,8 @@ if($_POST) {
         <br>
         <button type="submit" class="btn-primary">Cargar</button>
     </form>
-    </div>
-    <?php include("footer.php"); ?>
+</div>
+<?php include("footer.php"); ?>
 </body>
+
 </html>
