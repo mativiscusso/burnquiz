@@ -288,7 +288,7 @@ footer {
 
 @media (min-width:980px) {
     span#titulo {
-        font-size: 14rem;
+        font-size: 12rem;
     }
     #juego {
         font-size: 26px;
