@@ -1,6 +1,7 @@
 <?php
 require_once('clases/Registro.php');
 
+
 $countries = [
 	'ar' => 'Argentina',
 	'bo' => 'Bolivia',
@@ -14,11 +15,43 @@ $countries = [
 	've' => 'Venezuela',
 ];
 
+$errorsInRegister = [];
+
 // Variables para persitir
 $name = '';
 $email = '';
 $countryFromPost = '';
 
+if ($_POST) {
+	// Las variables de persistencia les asigno el valor que vino de $_POST
+	$name = trim($_POST['name']);
+	$email = trim($_POST['email']);
+	$countryFromPost = $_POST['country'];
+
+	// La función registerValidate() nos retorna el array de errores que almacenamos en esta variable
+	$errorsInRegister = registerValidate();
+
+	// Si no hay errores en el registro
+	// Cuando no hay errores guardo la imagen y los datos
+	// if ( count($errorsInRegister) == 0 ) {
+	if (!$errorsInRegister) {
+
+		// Guardo la imagen y obtengo el nombre aleatorio creado
+		$imgName = saveImage();
+
+		// Creo en $_POST una posición "avatar" para guardar el nombre de la imagen
+		$_POST['avatar'] = $imgName;
+
+		// Guardo al usuario en el archivo JSON, y me devuelve al usuario que guardó en array
+		$theUser = saveUser();
+
+		// Al momento en que se registar vamos a mantener la sesión abierta
+		setcookie('userLoged', $theUser['email'], time() + 3000);
+
+		// Logueo al usuario
+		login($theUser);
+	}
+}
 
 
 require_once 'header.php';
