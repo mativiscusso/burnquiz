@@ -29,7 +29,6 @@ function registerValidate(){
   $email = trim($_POST['email']);
   $password = trim($_POST['password']);
   $rePassword = trim($_POST['rePassword']);
-  $country = $_POST['country'];
   $avatar = $_FILES['avatar'];
 
   // Si está vació el campo: $name
@@ -57,11 +56,6 @@ function registerValidate(){
   } elseif ($password != $rePassword) { // Si el valor de los campos $password y $rePassword son distintos
     $errors['password'] = 'Las contraseñas no coinciden';
     $errors['rePassword'] = 'Las contraseñas no coinciden';
-  }
-
-  // Si está vació el campo: $country
-  if ( empty($country) ) {
-    $errors['country'] = 'Elegí un país';
   }
 
   // Si no cargaron ningún archivo

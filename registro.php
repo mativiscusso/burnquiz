@@ -13,32 +13,17 @@ if (isLogged()) {
 $pageTitle = 'Register';
 
 
-$countries = [
-	'ar' => 'Argentina',
-	'bo' => 'Bolivia',
-	'br' => 'Brasil',
-	'co' => 'Colombia',
-	'cl' => 'Chile',
-	'ec' => 'Ecuador',
-	'pa' => 'Paraguay',
-	'pe' => 'Perú',
-	'uy' => 'Uruguay',
-	've' => 'Venezuela',
-];
-
 // Creamos esta variable con Array vacío para que no de error al entrar por GET
 $errorsInRegister = [];
 
 // Variables para persitir
 $name = '';
 $email = '';
-$countryFromPost = '';
 
 if ($_POST) {
 	// Las variables de persistencia les asigno el valor que vino de $_POST
 	$name = trim($_POST['name']);
 	$email = trim($_POST['email']);
-	$countryFromPost = $_POST['country'];
 
 	// La función registerValidate() nos retorna el array de errores que almacenamos en esta variable
 	$errorsInRegister = registerValidate();
@@ -128,41 +113,30 @@ function titulo()
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<label><b>País de nacimiento:</b></label>
-							<select name="country" class="form-control <?= isset($errorsInRegister['country']) ? 'is-invalid' : null; ?>">
-								<option value="">Elegí un país</option>
-								<?php foreach ($countries as $code => $country) : ?>
-									<option value="<?= $code ?>" <?= $code == $countryFromPost ? 'selected' : null; ?>>
-										<?= $country ?>
-									</option>
-								<?php endforeach; ?>
-							</select>
-							<div class="invalid-feedback">
-								<?= isset($errorsInRegister['country']) ? $errorsInRegister['country'] : null; ?>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<label><b>Imagen de perfil:</b></label>
-							<div class="custom-file">
-								<input type="file" name="avatar" class="custom-file-input <?= isset($errorsInRegister['avatar']) ? 'is-invalid' : null; ?>">
-								<label class="custom-file-label">Choose file...</label>
-								<div class="invalid-feedback">
-									<?= isset($errorsInRegister['avatar']) ? $errorsInRegister['avatar'] : null; ?>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12">
-						<button type="submit" class="btn btn-primary">Registrarse</button>
+					<div class="invalid-feedback">
+						<?= isset($errorsInRegister['country']) ? $errorsInRegister['country'] : null; ?>
 					</div>
 				</div>
-			</form>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				<label><b>Imagen de perfil:</b></label>
+				<div class="custom-file">
+					<input type="file" name="avatar" class="custom-file-input <?= isset($errorsInRegister['avatar']) ? 'is-invalid' : null; ?>">
+					<label class="custom-file-label">Choose file...</label>
+					<div class="invalid-feedback">
+						<?= isset($errorsInRegister['avatar']) ? $errorsInRegister['avatar'] : null; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-10">
+			<button type="submit" class="btn btn-primary">Registrarse</button>
 		</div>
 	</div>
+	</form>
+</div>
+</div>
 </div>
 <!-- //Register-Form -->
 <?php include("footer.php"); ?>
