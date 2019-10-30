@@ -11,7 +11,12 @@ if (!isset($_SESSION['posicion'])) {
     $_SESSION['userLoged']['puntaje'] = 0;
 } else {
     if ($_POST) {
-        if ($_POST['rta'] == $pyrArray[$_SESSION['posicion']]['rtaC']) {
+        $rand = range(0, 2);
+        shuffle($rand);
+        foreach ($rand as $val) {
+            $random[] = $val;
+        }
+        if ($_POST['rta'] == $pyrArray[$_SESSION['posicion']]["2"]) {
             $_SESSION['posicion']++;
             $_SESSION['userLoged']['puntaje']++;
         } else {
@@ -23,6 +28,11 @@ if (!isset($_SESSION['posicion'])) {
         header('location: exito.php');
         exit;
     }
+}
+$rand = range(0, 2);
+shuffle($rand);
+foreach ($rand as $val) {
+    $random[] = $val;
 }
 
 
@@ -40,9 +50,9 @@ function titulo()
     <form id="juego" action="juego.php" method="POST">
         <?= $pyrArray[$_SESSION['posicion']]['pregunta'] ?> <br>
         <br>
-        <input type="radio" name="rta" value="<?= $pyrArray[$_SESSION['posicion']]['rta1'] ?>"><?= $pyrArray[$_SESSION['posicion']]['rta1'] ?> <br>
-        <input type="radio" name="rta" value="<?= $pyrArray[$_SESSION['posicion']]['rta2'] ?>"><?= $pyrArray[$_SESSION['posicion']]['rta2'] ?> <br>
-        <input type="radio" name="rta" value="<?= $pyrArray[$_SESSION['posicion']]['rtaC'] ?>"><?= $pyrArray[$_SESSION['posicion']]['rtaC'] ?> <br>
+        <input type="radio" name="rta" value="<?= $pyrArray[$_SESSION['posicion']][$random[0]] ?>"><?= $pyrArray[$_SESSION['posicion']][$random[0]] ?> <br>
+        <input type="radio" name="rta" value="<?= $pyrArray[$_SESSION['posicion']][$random[1]] ?>"><?= $pyrArray[$_SESSION['posicion']][$random[1]] ?> <br>
+        <input type="radio" name="rta" value="<?= $pyrArray[$_SESSION['posicion']][$random[2]] ?>"><?= $pyrArray[$_SESSION['posicion']][$random[2]] ?> <br>
         <br>
         <input type="submit" name="enviar" id="btnjuego"> <br>
         <div id="rta">
