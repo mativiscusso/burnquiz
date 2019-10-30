@@ -334,3 +334,8 @@ function debug($dato) {
   echo "</pre>";
   exit;
 }
+
+function juegoNuevo() {
+  $_SESSION['posicion'] = 0;
+  header('refresh:7; url=index.php');
+}

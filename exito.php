@@ -17,7 +17,9 @@ function titulo()
             <img src="img/bebe_exitoso.png" alt="">
         </div>
     </main>
-    <h3><?= "Felicitaciones " . $_SESSION['userLoged']['name'] . " Su puntaje es " . $_SESSION['userLoged']['puntaje']; ?></h3>
+    <h3><?= "Felicitaciones " . $_SESSION['userLoged']['name'] . " Su puntaje es " . $_SESSION['userLoged']['puntaje']; ?></h3><br>
+    <?php juegoNuevo() ?>">
+    
 </div>
 
 
