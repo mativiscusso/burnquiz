@@ -1,8 +1,32 @@
 <?php
 require_once('clases/Login.php');
 
+// Generamos nuestro array de errores interno
+$errorsInLogin = [];
 // Persistimos el email
 $email = '';
+
+
+if ($_POST) {
+	// Persistimos el email con lo vino por $_POST
+	$email = trim($_POST['email']);
+
+	// La función loginValidate() nos retorna el array de errores que almacenamos en esta variable
+	$errorsInLogin = loginValidate();
+
+	if (!$errorsInLogin) {
+		// Traemos al usuario que vamos a loguear
+		$userToLogin = getUserByEmail($email);
+
+		// Preguntamos si quiere ser recordado
+		if (isset($_POST['rememberUser'])) {
+			setcookie('userLoged', $email, time() + 3000);
+		}
+
+		// Logeamos al usuario
+		login($userToLogin);
+	}
+}
 
 ?>
 

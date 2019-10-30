@@ -66,7 +66,7 @@ class Juego
 
     public function correrJuego()
     {
-        $fileContent = file_get_contents("files/preguntas.json");
+        $fileContent = file_get_contents("../files/preguntas.json");
         $pyrArray = json_decode($fileContent, true);
         $longArray = count($pyrArray);
 
