@@ -67,6 +67,8 @@ function titulo()
 			<?php endif; ?>
 
 			<h2>Formulario de Login</h2>
+			<br>
+			<br>
 
 			<form method="post" class="py-2">
 				<div class="row">
@@ -93,7 +95,10 @@ function titulo()
 					</div>
 					<div class="col-12">
 						<button type="submit" class="btn btn-primary">Ingresar</button>
-						¿Aún no tenés cuenta? <a href="register.php">Registrate</a>
+						<br>
+						¿Aún no tenés cuenta? <a href="registro.php">Registrate</a>
+						<br>
+						¿Olvidaste tu contraseña? <a href="recuperar.php">Recuperar Contraseña</a>
 					</div>
 				</div>
 			</form>
