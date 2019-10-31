@@ -15,7 +15,7 @@ function titulo()
             <span id="titulo">Quiz</span>
         </div>
         <div id="right" class="col-12 col-md-6 py-3">
-            <img src="img/burnquiz_logo.png" alt=""><br>
+            <img class="animated jackInTheBox delay-0.5s" src="img/burnquiz_logo.png" alt=""><br>
             <?php if (isLogged()) {
                 ?>
                 <input type="checkbox" id="cb1" /><label id="cb2" for="cb1"><a id="start" href="juego.php">Start</a></label>
