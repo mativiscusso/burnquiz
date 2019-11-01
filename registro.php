@@ -75,7 +75,7 @@ function titulo()
 
 			<h2>Formulario de registro</h2>
 
-			<form method="post" enctype="multipart/form-data">
+			<form method="post" enctype="multipart/form-data" action="procesarregistro.php">
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
