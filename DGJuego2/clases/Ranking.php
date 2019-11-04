@@ -36,4 +36,15 @@ class Ranking
             echo $allUsers[$i]['userLoged']['name'] . " | " . "Puntos: " . $allUsers[$i]['userLoged']['puntaje'] . "<br>";
         }
     }
+    public function guardarRanking() {
+        $fileContent = file_get_contents("files/ranking.json");
+        $allUsers = json_decode($fileContent, true);
+        unset($_SESSION['email']);
+        unset($_SESSION['country']);
+        unset($_SESSION['avatar']);
+        unset($_SESSION['id']);
+        $finalUser = $_SESSION;
+        $allUsers[] = $finalUser;
+        return file_put_contents("files/ranking.json", json_encode($allUsers));
+      }
 }
