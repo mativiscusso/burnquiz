@@ -1,5 +1,5 @@
 <?php
-include_once('validar.php');
+include_once('funciones.php');
 function titulo()
 {
     echo "Burn Quiz | FAQs";

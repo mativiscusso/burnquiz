@@ -75,7 +75,7 @@
         if (isLogged()) {
           ?>
           <li id="menulogueado">
-            <a href=""><?= $_SESSION['userLoged']['name'] ?></a>
+            <a href=""><?= $_SESSION['userLoged']['name']?></a>
             <img id="imgperfil" src="files/avatars/<?= $_SESSION['userLoged']['avatar']; ?>">
             <a href="perfil.php">Mi perfil</a> |
             <a href="logout.php">Salir</a>

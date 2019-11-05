@@ -5,6 +5,10 @@ define('ALLOWED_IMAGE_FORMATS', ['jpg', 'jpeg', 'png', 'gif']);
 define('IMAGE_PATH', dirname(__FILE__) . '/files/avatars/');
 define('USERS_JSON_PATH', dirname(__FILE__) . '/files/users.json');
 
+function isLogged() {
+  // El return devuelve true o false, según lo que retorne la función isset()
+  return isset($_SESSION['userLoged']);
+}
 
 // Si está la cookie almacenada y si NO está logueda la persona:
 if (isset($_COOKIE['userLoged']) && !isLogged()) {
@@ -43,21 +47,7 @@ function getAllUsers()
   // Retorno el array de usuarios
   return $allUsers;
 }
-// Función para traer a 1 usuario por email
-/*
-  Recibe como parámetro el email que quiero buscar
-*/
-function getUserByEmail($email)
-{
-  // Obtengo a todos los usuarios
-  $allUsers = getAllUsers();
 
-  // Recorro el array de usuarios
-  foreach ($allUsers as $oneUser) {
-    // Si la posición email del usuario de esa iteración es igual al email que me pasan por parámetro
-    if ($oneUser['email'] == $email) {
-      // Retorno al usuario encontrado
-      return $oneUser;
-    }
-  }
-}
+
+  
+

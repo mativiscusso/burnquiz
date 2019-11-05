@@ -2,6 +2,7 @@
 require_once('clases/Registro.php');
 
 
+
 $countries = [
 	'ar' => 'Argentina',
 	'bo' => 'Bolivia',
@@ -23,13 +24,21 @@ $email = '';
 $countryFromPost = '';
 
 if ($_POST) {
+	$registracion = new Registro();
+	$registracion->setNombre($_POST['name']);
+	$registracion->setEmail($_POST['email']);
+	$registracion->setPassword($_POST['password']);
+	$registracion->setRePassword($_POST['rePassword']);
+	$registracion->setPais($_POST['country']);
+	$registracion->setAvatar($_FILES['avatar']);
+
 	// Las variables de persistencia les asigno el valor que vino de $_POST
-	$name = trim($_POST['name']);
-	$email = trim($_POST['email']);
-	$countryFromPost = $_POST['country'];
+	$name = $registracion->getNombre();
+	$email = $registracion->getEmail();
+	$countryFromPost = $registracion->getPais();
 
 	// La función registerValidate() nos retorna el array de errores que almacenamos en esta variable
-	$errorsInRegister = registerValidate();
+	$errorsInRegister = $registracion->registerValidate();
 
 	// Si no hay errores en el registro
 	// Cuando no hay errores guardo la imagen y los datos
@@ -37,19 +46,19 @@ if ($_POST) {
 	if (!$errorsInRegister) {
 
 		// Guardo la imagen y obtengo el nombre aleatorio creado
-		$imgName = saveImage();
+		$imgName = $registracion->saveImage();
 
 		// Creo en $_POST una posición "avatar" para guardar el nombre de la imagen
 		$_POST['avatar'] = $imgName;
 
 		// Guardo al usuario en el archivo JSON, y me devuelve al usuario que guardó en array
-		$theUser = saveUser();
+		$theUser = $registracion->saveUser();
 
 		// Al momento en que se registar vamos a mantener la sesión abierta
 		setcookie('userLoged', $theUser['email'], time() + 3000);
 
 		// Logueo al usuario
-		login($theUser);
+		$registracion->userLogin($theUser);
 	}
 }
 

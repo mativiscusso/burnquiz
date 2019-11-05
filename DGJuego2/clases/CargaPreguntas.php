@@ -1,5 +1,5 @@
 <?php
-require_once('../validar.php');
+require_once('../funciones.php');
 
 class CargaPreguntas
 {
