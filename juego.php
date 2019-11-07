@@ -20,8 +20,9 @@ if (!isset($_SESSION['posicion'])) {
             $_SESSION['posicion']++;
             $_SESSION['userLoged']['puntaje']++;
         } else {
-            $respuesta = "Su respuesta es incorrecta" . "<br>" . "Su puntaje " . $_SESSION['userLoged']['name'] . " es " . $_SESSION['userLoged']['puntaje'];
+            //$respuesta = "Su respuesta es incorrecta" . "<br>" . "Su puntaje " . $_SESSION['userLoged']['name'] . " es " . $_SESSION['userLoged']['puntaje'];
             guardarRanking();
+            header('location: exito.php');
         }
     }
     if ($_SESSION['posicion'] == $longArray) {
@@ -35,6 +36,7 @@ foreach ($rand as $val) {
     $random[] = $val;
 }
 
+header("refresh:11; url=exito.php");
 
 ?>
 

@@ -11,14 +11,16 @@ function titulo()
 <div id="portada" class="container.fluid">
     <main class="row">
         <div id="left" class="col-12 col-md-6 py-3">
-            <span id="titulo">Victoria</span>
+            <span id="tituloexito"><?=$_SESSION['userLoged']['name']?></span><br>
+            <br>
+            <span id="tituloexito"><?=" Su puntaje es " . $_SESSION['userLoged']['puntaje']; ?></span><br>
         </div>
         <div id="right" class="col-12 col-md-6 py-3">
             <img src="img/bebe_exitoso.png" alt="">
         </div>
     </main>
-    <h3><?= "Felicitaciones " . $_SESSION['userLoged']['name'] . " Su puntaje es " . $_SESSION['userLoged']['puntaje']; ?></h3><br>
-    <?php juegoNuevo() ?>">
+    
+    
     
 </div>
 

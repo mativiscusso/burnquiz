@@ -254,6 +254,11 @@ div#footer.container-fluid.py-3 {
 #pregunta {
     width: 50%;
 }
+span#tituloexito {
+    padding-top:1%;
+    font-family: "Permanent Marker", cursive;
+    font-size: 2em;
+}
 
 
 footer {
@@ -266,6 +271,7 @@ footer {
         font-size: 7em;
     }
     #juego {
+        
         text-align: center;
         width: 90%;
         font-size: 1rem;
@@ -286,7 +292,11 @@ footer {
     span#titulo {
         font-size: 9rem;
     }
+    span#tituloexito {
+        font-size: 5em;
+    }
     #juego {
+        margin-top:3%;
         font-size: 2rem;
     }
     #portada {
