@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <link rel="shortcut icon" href="img/burnquiz_logow.png">
   <link rel="stylesheet" href="css/estilosIndex.css">
+  <script src="js/barra.js"></script>
   <title>
     <?php
     titulo();

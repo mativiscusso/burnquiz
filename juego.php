@@ -61,6 +61,11 @@ function titulo()
             <?php endif ?>
         </div>
     </form>
+    <div id="progresbar" class="progress">
+        <div class="progress-bar bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+          <span class="sr-only"></span>
+        </div>
+      </div>
 
 
 </div>
