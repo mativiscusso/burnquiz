@@ -108,7 +108,7 @@ class Registro
       $errors['email'] = 'El campo email es obligatorio';
     } elseif (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) { // Si el campo $email NO es un formato de email válido
       $errors['email'] = 'Introducí un formato de email válido';
-    } elseif ($this->emailExist($this->email)) { // Si el email ya existe, es porque alguien ya se registró con el mismo
+    } elseif ($this->emailExist()) { // Si el email ya existe, es porque alguien ya se registró con el mismo
       $errors['email'] = 'Ese correo ya está registrado';
     }
 
