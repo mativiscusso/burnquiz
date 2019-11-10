@@ -11,10 +11,10 @@ function titulo()
 <div class="preguntas">
     <img id="imgpreguntas" src="img/burnquiz_logo.png" id="img" alt="logo">
 
-    <form action="pyr.php" method="POST">
-        <label for="pregunta">Sumá tu pregunta.</label>
+    <form action="cargarpregunta.php" method="POST">
+        <p>Sumá tu pregunta.</p>
         <br>
-        <textarea name="pregunta" id="pregunta" cols="10" rows="5"></textarea>
+        <textarea name="pregunta" cols="10" rows="5"></textarea>
         <br>
         <label>Y ahora las posibles respuestas.</label>
         <br>
