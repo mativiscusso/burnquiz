@@ -1,69 +1,29 @@
 <?php
-require_once('clases/Login.php');
-
-// Generamos nuestro array de errores interno
-$errorsInLogin = [];
-// Persistimos el email
-$email = '';
-
-
-if ($_POST) {
-	$login = new Logueo();
-	$login->setUsuario($_POST['email']);
-	$login->setPassword($_POST['password']);
-
-	// Persistimos el email con lo vino por $_POST
-	$email = $login->getUsuario();
-
-	// La función loginValidate() nos retorna el array de errores que almacenamos en esta variable
-	$errorsInLogin = $login->loginValidate();
-
-	if (!$errorsInLogin) {
-
-		// Preguntamos si quiere ser recordado
-		if (isset($_POST['rememberUser'])) {
-			setcookie('userLoged', $login->getUsuario(), time() + 3000);
-		}
-
-		// Logeamos al usuario
-		$login->userLogin($login->getUserByEmail($email));
-	}
-}
-
-?>
-
-
-<?php
 function titulo()
 {
 	echo "Burn Quiz | LOGIN";
 }
+include("header.php"); 
+require_once('funciones.php');
 ?>
-
-<?php include("header.php"); ?>
 
 <!-- Register-Form -->
 <div class="container" style="margin-top:30px; margin-bottom: 30px;">
 	<div class="row justify-content-center">
 		<div class="col-md-10">
-			<?php if (count($errorsInLogin) > 0) : ?>
 				<div class="alert alert-danger">
 					<ul>
-						<?php foreach ($errorsInLogin as $oneError) : ?>
-							<li> <?= $oneError; ?> </li>
-						<?php endforeach; ?>
+						<?php mostrarErrores(verificarErrores('errores')) ?> 
 					</ul>
 				</div>
-			<?php endif; ?>
-
 			<h2>Formulario de Login</h2>
 
-			<form method="post" class="py-2">
+			<form method="post" class="py-2" action="procesar-login.php">
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
 							<label><b>Correo electrónico:</b></label>
-							<input type="text" name="email" class="form-control" value="<?= $email; ?>">
+							<input type="text" name="email" class="form-control" value="<?php isset($email)?>">
 						</div>
 					</div>
 					<div class="col-md-6">

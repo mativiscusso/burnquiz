@@ -1,5 +1,5 @@
 <?php
-require_once('../funciones.php');
+require_once('funciones.php');
 
 class Juego
 {
@@ -63,6 +63,7 @@ class Juego
         $this->abm = $abm;
         return $this;
     }
+    
 
     public function correrJuego()
     {

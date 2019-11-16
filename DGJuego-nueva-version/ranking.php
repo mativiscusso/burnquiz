@@ -1,5 +1,5 @@
 <?php
-require_once('clases/Ranking.php');
+
 function titulo()
 {
     echo "Burn Quiz | Ranking";
@@ -13,7 +13,7 @@ function titulo()
     </h3>
 </div>
 <div class="container py-5" id="contacto">
-    <?php getAllUsersRanking() ?>
+    <h2 id="titulo">PROXIMAMENTE</h2>
 
 </div>
 

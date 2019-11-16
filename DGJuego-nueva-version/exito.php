@@ -1,5 +1,5 @@
 <?php
-include_once('validar.php');
+
 function titulo()
 {
     echo "Burn Quiz | VICTORIA";

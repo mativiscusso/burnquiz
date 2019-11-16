@@ -1,3 +1,9 @@
+<?php
+
+function isLogged() {
+  return isset($_SESSION['correo']);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +18,7 @@
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="img/burnquiz_logow.png">
   <link rel="stylesheet" href="css/estilosIndex.css">
+  <script src="js/barra.js"></script>
   <title>
     <?php
     titulo();
@@ -75,8 +82,8 @@
         if (isLogged()) {
           ?>
           <li id="menulogueado">
-            <a href=""><?= $_SESSION['userLoged']['name']?></a>
-            <img id="imgperfil" src="files/avatars/<?= $_SESSION['userLoged']['avatar']; ?>">
+            <a href=""><?= $_SESSION['correo']?></a>
+            <img id="imgperfil" src="files/avatars/<?= $_SESSION['avatar']; ?>">
             <a href="perfil.php">Mi perfil</a> |
             <a href="logout.php">Salir</a>
           </li>

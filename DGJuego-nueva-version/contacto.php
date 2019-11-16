@@ -1,9 +1,5 @@
 <?php
-include('validar.php');
 
-if ($_POST) {
-    validarContacto($_POST['nombre'], $_POST['email'], $_POST['telefono']);
-};
 
 $nombre = '';
 $email = '';

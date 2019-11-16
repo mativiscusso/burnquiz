@@ -171,6 +171,14 @@ span img {
     width: 40%;
 }
 
+#progresbar {
+    height: 1%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+
 #btnjuego {
     font-family: "Permanent Marker", cursive;
     background-color: transparent;
