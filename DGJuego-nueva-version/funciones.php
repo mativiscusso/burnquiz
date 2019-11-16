@@ -17,7 +17,7 @@ function verificarErrores($key){
     if(isset($errores) && ($errores != "")){
       foreach($errores as $error){
         echo $error . "<br/>";
-    }
+    } 
   }
   }
 

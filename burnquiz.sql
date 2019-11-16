@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-11-2019 a las 19:43:35
+-- Tiempo de generación: 16-11-2019 a las 02:36:30
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -33,6 +33,16 @@ CREATE TABLE `preguntas` (
   `pregunta` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `preguntas`
+--
+
+INSERT INTO `preguntas` (`id`, `pregunta`) VALUES
+(9, '¿De que color son las cajas negras de los aviones?'),
+(10, 'Estás corriendo en una carrera y adelantas a la persona que esta en segundo lugar, en que posición pasas a estar?'),
+(11, 'Cuanto duro la Guerra de los 100 años?'),
+(12, '¿Que palabra usarías para describir a un hombre que no tiene todos los dedos en una mano?');
+
 -- --------------------------------------------------------
 
 --
@@ -57,6 +67,24 @@ CREATE TABLE `respuestas` (
   `id_pregunta` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `respuestas`
+--
+
+INSERT INTO `respuestas` (`id`, `respuesta`, `validacion`, `id_pregunta`) VALUES
+(28, 'Negra', 'i', 9),
+(29, 'Roja', 'i', 9),
+(30, 'Naranja', 'c', 9),
+(31, 'Primero', 'i', 10),
+(32, 'Tercero', 'i', 10),
+(33, 'Segundo', 'c', 10),
+(34, '100', 'i', 11),
+(35, '101', 'i', 11),
+(36, '116', 'c', 11),
+(37, 'Ogro', 'i', 12),
+(38, 'Mounstro', 'i', 12),
+(39, 'Hombre común', 'c', 12);
+
 -- --------------------------------------------------------
 
 --
@@ -68,8 +96,18 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(50) NOT NULL,
   `usuario` varchar(50) NOT NULL,
   `pass` varchar(100) NOT NULL,
-  `imagen` varchar(100) NOT NULL
+  `imagen` varchar(100) NOT NULL,
+  `puntaje` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `pass`, `imagen`, `puntaje`) VALUES
+(19, 'Matias', 'mativiscusso@gmail.com', '$2y$10$Xne//m88vNV4JXu7O0aTpO87aCkYzDeACoYdpTZ0tK/6E/t6qo1ra', 'img_5dce8ab289c2d.jpg', NULL),
+(20, 'DigitalHouse', 'info@digitalhouse.com', '$2y$10$IDHO4BcgccQrZYmMLzuMLO3pa9i.HZauCXjMfPclPuO45uL6wUZtC', 'img_5dcea0e3351b9.png', NULL),
+(21, '', '', '$2y$10$AUvNZ8.VnLT3FGfTbz0L2eqlHrJkrf4ZTNycIwU35sSbfJVbPRWjG', 'img_5dcea0f2b8cec.', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -92,7 +130,7 @@ ALTER TABLE `ranking`
 --
 ALTER TABLE `respuestas`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_foreaneo_pregunta` (`id_pregunta`);
+  ADD KEY `id_pregunta` (`id_pregunta`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -108,19 +146,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Restricciones para tablas volcadas
@@ -130,7 +168,7 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  ADD CONSTRAINT `id_foreaneo_pregunta` FOREIGN KEY (`id_pregunta`) REFERENCES `preguntas` (`id`);
+  ADD CONSTRAINT `respuestas_ibfk_1` FOREIGN KEY (`id_pregunta`) REFERENCES `preguntas` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
