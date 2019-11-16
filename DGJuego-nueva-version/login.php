@@ -1,4 +1,5 @@
 <?php
+session_start();
 function titulo()
 {
 	echo "Burn Quiz | LOGIN";

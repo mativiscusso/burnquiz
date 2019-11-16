@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('clases/Juego.php');
 require_once('db/databases.php');
 $db = obtenerBaseDeDatos();

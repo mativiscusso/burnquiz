@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Incluimos el controlador del registro-login
 // De esta manera tengo el scope a la funciones que necesito
 require_once 'validar.php';
