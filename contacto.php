@@ -1,21 +1,7 @@
 <?php
 include('validar.php');
 
-if ($_POST) {
-    validarContacto($_POST['nombre'], $_POST['email'], $_POST['telefono']);
-};
 
-$nombre = '';
-$email = '';
-$telefono = '';
-if ($_POST) {
-    $nombre = $_POST['nombre'];
-    $email = $_POST['email'];
-    $telefono = $_POST['telefono'];
-}
-
-?>
-<?php
 function titulo()
 {
     echo "Burn Quiz | Contacto";
@@ -23,41 +9,107 @@ function titulo()
 ?>
 
 <?php include("header.php"); ?>
-<div class="container-fluid fondoama">
-    <p class="descripcion" id="contacto">CONTACTANOS</p>
-    <main class="row">
-        <div id="left" class="container py-5">
-            <form action="contacto.php" method="POST">
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Nombre</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" name="nombre" size=30 value="<?= $nombre ?>">
 
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Email</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" name="email" size=30 value="<?= $email ?>">
 
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput3">Telefono</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput3" name="telefono" size=30 value="<?= $telefono ?>">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" content="" -->>
+    <link rel="icon" href="../image/favicon.ico">
 
+    <title>Contacto</title>
+</head>
+
+
+<body>
+
+
+<section>
+    <div class="container">
+        <div class="container">
+            <h4></h4>
+            <div class="container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.2602246461024!2d-60.6533856842138!3d-32.944138379092315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab6f7af376c1%3A0xcf2755869f7067ec!2sPunto%20ian%20Co.!5e0!3m2!1ses!2sar!4v1574108485740!5m2!1ses!2sar" style="border:0" allowfullscreen="" frameborder="0" height="250" width="100%"></iframe>
+            </div>
+            <strong>Contactenos</strong><br><strong>Oficina:</strong> 123456789
+            <hr>
+        </div>
+        <div class="container">
+            <form role="form" id="Formulario" action="contacto.php" method="POST">
+                <div class="form-group">
+                    <label class="control-label" for="Nombre">Nombres</label>
+                    <input type="text" class="form-control" id="Nombre" name="nombre" placeholder="Introduzca su nombre" required autofocus value="" />
+                </div>            
+                
+
+                <div class="form-group">
+                    <label class="control-label" for="Correo">Dirección de Correo Electrónico</label>
+                    <input type="email" class="form-control" id="Correo" name="email" placeholder="Introduzca su correo electrónico" required value=""/>
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput2"></label>
-                    <textarea name="comentario" id="" cols="90" rows="20"></textarea>
+                    <label class="control-label" for="Empresa">Telefono</label>
+                    <input type="text" class="form-control" id="Empresa" name="telefono" placeholder="Introduzca el nombre de su empresa" required value="" />
                 </div>
-                <button class="btn btn-dark" type="submit">Enviar</button>
+                <div class="form-group">
+                    <label class="control-label" for="Mensaje">Mensaje</label>
+                    <textarea rows="5" cols="30" class="form-control" id="Mensaje" name="mensaje" placeholder="Introduzca su mensaje" required ></textarea>
+                </div>
+                <div class="form-group">                
+                    <input type="submit" class="btn btn-primary" value="Enviar">
+                    <input type="reset" class="btn btn-light" value="Limpiar">                
+                </div>
+                <div id="respuesta" style="display: none;"></div>
             </form>
+        </div>       
+    </div>
+</section>
+</body>
+</html>
 
-        </div>
 
-        <div class="container py-5">
-            <section>
-                <iframe class="container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.282049390131!2d-60.65268828599803!3d-32.94356205604301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab3f847dc269%3A0xa8a707d0dded8c7e!2sC%C3%B3rdoba%202035%2C%20S2000AXG%20Rosario%2C%20Santa%20Fe!5e0!3m2!1ses-419!2sar!4v1569074935124!5m2!1ses-419!2sar" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-            </section>
-        </div>
-    </main>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <?php include("footer.php"); ?>
 
     </body>
