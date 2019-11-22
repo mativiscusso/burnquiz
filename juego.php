@@ -5,9 +5,15 @@ $fileContent = file_get_contents("files/preguntas.json");
 $pyrArray = json_decode($fileContent, true);
 $longArray = count($pyrArray);
 
+if (!isset($_SESSION['vidas'])) {
+    $vidas = 3;
+    $_SESSION['vidas'] = $vidas;
+}
 if (!isset($_SESSION['posicion'])) {
+
     $posicion = 0;
     $_SESSION['posicion'] = $posicion;
+
     $_SESSION['userLoged']['puntaje'] = 0;
 } else {
     if ($_POST) {
@@ -20,9 +26,14 @@ if (!isset($_SESSION['posicion'])) {
             $_SESSION['posicion']++;
             $_SESSION['userLoged']['puntaje']++;
         } else {
-            //$respuesta = "Su respuesta es incorrecta" . "<br>" . "Su puntaje " . $_SESSION['userLoged']['name'] . " es " . $_SESSION['userLoged']['puntaje'];
-            guardarRanking();
-            header('location: exito.php');
+            if ($_SESSION['vidas'] > 1) {
+                $_SESSION['vidas']--;
+                $_SESSION['posicion']++;
+            } else {
+                //$respuesta = "Su respuesta es incorrecta" . "<br>" . "Su puntaje " . $_SESSION['userLoged']['name'] . " es " . $_SESSION['userLoged']['puntaje'];
+                guardarRanking();
+                header('location: exito.php');
+            }
         }
     }
     if ($_SESSION['posicion'] == $longArray) {
@@ -49,6 +60,7 @@ function titulo()
 
 <?php include("header.php"); ?>
 <div id="portada">
+    <h2>VIDAS: <?= $_SESSION['vidas'] ?></h2>
     <form id="juego" action="juego.php" method="POST">
         <?= $pyrArray[$_SESSION['posicion']]['pregunta'] ?> <br>
         <br>
@@ -65,9 +77,9 @@ function titulo()
     </form>
     <div id="progresbar" class="progress">
         <div class="progress-bar bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-          <span class="sr-only"></span>
+            <span class="sr-only"></span>
         </div>
-      </div>
+    </div>
 
 
 </div>
