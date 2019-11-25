@@ -46,7 +46,7 @@ function titulo()
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<label><b>Correo electrónico:</b></label>
+							<label><b>Usuario:</b></label>
 							<input type="text" name="email" class="form-control <?= isset($_SESSION['erroresReg']['email']) ? 'is-invalid' : null ?>" value="<?= isset($_SESSION['email']); ?>">
 							<div class="invalid-feedback">
 								<?= isset($_SESSION['erroresReg']['email']) ? $_SESSION['erroresReg']['email'] : null; ?>
