@@ -181,8 +181,6 @@ class Registro
     if ($this->email == "") {
       $errors['email'] = 'El campo email es obligatorio';
     }
-    if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) { // Si el campo $email NO es un formato de email válido
-      $errors['email'] = 'Introducí un formato de email válido';
       // Si está vació el campo: $password
       if ($this->password == "") {
         $errors['password'] = 'El campo password es obligatorio';
@@ -212,6 +210,6 @@ class Registro
       }
       $_SESSION['erroresReg'] = $errors;
       return $errors;
-    }
+    
   }
 }

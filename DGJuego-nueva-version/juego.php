@@ -84,6 +84,7 @@ function titulo()
 ?>
 
 <?php include("header.php"); ?>
+<div class="container">
 <div id="portada">
     <h2>VIDAS: <?= $_SESSION['vidas'] ?></h2>
     <form id="juego" action="juego.php" method="POST">
@@ -105,7 +106,7 @@ function titulo()
             <span class="sr-only"></span>
         </div>
     </div>
-
+    </div>
 
 </div>
 

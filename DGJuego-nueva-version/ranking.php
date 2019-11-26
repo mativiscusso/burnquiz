@@ -25,9 +25,9 @@ $a = 1;
     </h3>
 </div>
 <div class="container py-1">
-    <table class="table table-bordered">
+    <table class="table table-hover">
   <thead>
-    <tr>
+  <tr class="table-warning">
       <th scope="col">#</th>
       <th scope="col">Nombre</th>
       <th scope="col">Usuario</th>

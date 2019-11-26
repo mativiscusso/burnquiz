@@ -23,7 +23,7 @@ require_once('funciones.php');
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
-							<label><b>Correo electrónico:</b></label>
+							<label><b>Usuario:</b></label>
 							<input type="text" name="email" class="form-control" value="<?php isset($email)?>">
 						</div>
 					</div>

@@ -204,6 +204,7 @@ textarea {
 }
 
 #menulogueado {
+    width: 50%;
     list-style: none;
     text-align: end;
 }

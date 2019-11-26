@@ -93,9 +93,6 @@ class Login
     if ($this->usuario == "") {
       $errors['email'] = 'El campo email es obligatorio';
     }
-    if (!filter_var($this->usuario, FILTER_VALIDATE_EMAIL)) { // Si el campo $email no es un email válido
-      $errors['email'] = 'Introducí un formato de email válido';
-    }
       if ($this->password == "") {
         $errors['password'] = 'El campo password es obligatorio';
       }
