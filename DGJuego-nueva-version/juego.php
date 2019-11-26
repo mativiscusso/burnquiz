@@ -2,6 +2,12 @@
 require_once('clases/Juego.php');
 require_once('db/databases.php');
 $db = obtenerBaseDeDatos();
+function isLogged() {
+    return isset($_SESSION['correo']);
+  }
+if (!isLogged()) {
+    header('location: login.php');
+}
 
 function traerPreguntas(PDO $db, $posicion)
 {

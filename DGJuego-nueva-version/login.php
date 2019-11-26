@@ -12,7 +12,7 @@ require_once('funciones.php');
 <div class="container" style="margin-top:30px; margin-bottom: 30px;">
 	<div class="row justify-content-center">
 		<div class="col-md-10">
-				<div class="alert alert-danger">
+				<div>
 					<ul>
 						<?php mostrarErrores(verificarErrores('errores')) ?> 
 					</ul>

@@ -4,9 +4,12 @@ function isLogged() {
   return isset($_SESSION['correo']);
 }
 function isAdmin() {
-  if ($_SESSION['correo'] == 'admin'){
-    return true;
-  }; 
+  if (isset($_SESSION['correo'])) {
+    if ($_SESSION['correo'] == 'admin'){
+      return true;
+    }; 
+  }
+
 }
 ?>
 <!DOCTYPE html>

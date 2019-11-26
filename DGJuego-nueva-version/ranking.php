@@ -8,7 +8,7 @@ function titulo()
 }
 function ranking(PDO $db)
 {
-    $consulta = $db->prepare("SELECT nombre, usuario, puntaje FROM usuarios ORDER BY puntaje DESC");
+    $consulta = $db->prepare("SELECT nombre, usuario, puntaje FROM usuarios WHERE usuario != 'admin' ORDER BY puntaje DESC");
     $consulta->execute();
     $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
     return $resultado;
