@@ -2,10 +2,10 @@
 require_once('clases/Juego.php');
 require_once('db/databases.php');
 $db = obtenerBaseDeDatos();
-function isLogged() {
+function estalogueado() {
     return isset($_SESSION['correo']);
   }
-if (!isLogged()) {
+if (!estalogueado()) {
     header('location: login.php');
 }
 
