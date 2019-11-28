@@ -107,9 +107,9 @@ function titulo()
     <form id="juego" action="juego.php" method="POST">
         <?= $pregunta['pregunta'] ?> <br>
         <br>
-        <input type="radio" name="rta" value="<?= $_SESSION['rta'][$random[0]]['respuesta'] ?>"><?= $_SESSION['rta'][$random[0]]['respuesta'] ?> <br>
-        <input type="radio" name="rta" value="<?= $_SESSION['rta'][$random[1]]['respuesta'] ?>"><?= $_SESSION['rta'][$random[1]]['respuesta'] ?> <br>
-        <input type="radio" name="rta" value="<?= $_SESSION['rta'][$random[2]]['respuesta'] ?>"><?= $_SESSION['rta'][$random[2]]['respuesta'] ?> <br>
+        <input type="radio" name="rta" value="<?= $_SESSION['rta'][$random[0]]['respuesta'] ?>" data-labelauty="<?= $_SESSION['rta'][$random[0]]['respuesta'] ?>"> <br>
+        <input type="radio" name="rta" value="<?= $_SESSION['rta'][$random[1]]['respuesta'] ?>" data-labelauty="<?= $_SESSION['rta'][$random[1]]['respuesta'] ?>"><br>
+        <input type="radio" name="rta" value="<?= $_SESSION['rta'][$random[2]]['respuesta'] ?>" data-labelauty="<?= $_SESSION['rta'][$random[2]]['respuesta'] ?>"> <br>
         <br>
         <input type="submit" name="enviar" id="btnjuego"> <br>
         <div id="rta">
@@ -126,6 +126,12 @@ function titulo()
     </div>
 
 </div>
+<script>
+			$(document).ready(function(){
+				$(":checkbox").labelauty();
+				$(":radio").labelauty();
+			});
+</script>
 
 
 <?php include("footer.php"); ?>

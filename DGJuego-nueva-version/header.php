@@ -27,6 +27,8 @@ function isAdmin() {
   <link rel="shortcut icon" href="img/burnquiz_logow.png">
   <link rel="stylesheet" href="css/estilosIndex.css">
   <script src="js/barra.js"></script>
+  <script src="source/jquery-labelauty.js"></script>
+	<link rel="stylesheet" type="text/css" href="source/jquery-labelauty.css">
   <title>
     <?php
     titulo();
