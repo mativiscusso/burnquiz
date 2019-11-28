@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <link rel="shortcut icon" href="img/burnquiz_logow.png">
   <link rel="stylesheet" href="css/estilosIndex.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="source/jquery-labelauty.js"></script>
+	<link rel="stylesheet" type="text/css" href="source/jquery-labelauty.css">
   <script src="js/barra.js"></script>
   <title>
     <?php

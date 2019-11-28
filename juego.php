@@ -47,7 +47,7 @@ foreach ($rand as $val) {
     $random[] = $val;
 }
 
-header("refresh:11; url=exito.php");
+//header("refresh:11; url=exito.php");
 
 ?>
 
@@ -64,9 +64,9 @@ function titulo()
     <form id="juego" action="juego.php" method="POST">
         <?= $pyrArray[$_SESSION['posicion']]['pregunta'] ?> <br>
         <br>
-        <input type="radio" name="rta" value="<?= $pyrArray[$_SESSION['posicion']][$random[0]] ?>"><?= $pyrArray[$_SESSION['posicion']][$random[0]] ?> <br>
-        <input type="radio" name="rta" value="<?= $pyrArray[$_SESSION['posicion']][$random[1]] ?>"><?= $pyrArray[$_SESSION['posicion']][$random[1]] ?> <br>
-        <input type="radio" name="rta" value="<?= $pyrArray[$_SESSION['posicion']][$random[2]] ?>"><?= $pyrArray[$_SESSION['posicion']][$random[2]] ?> <br>
+        <input type="radio" name="rta" value="<?= $pyrArray[$_SESSION['posicion']][$random[0]] ?>" data-labelauty="<?= $pyrArray[$_SESSION['posicion']][$random[0]] ?>"> <br>
+        <input type="radio" name="rta" value="<?= $pyrArray[$_SESSION['posicion']][$random[1]] ?>" data-labelauty="<?= $pyrArray[$_SESSION['posicion']][$random[1]] ?>"> <br>
+        <input type="radio" name="rta" value="<?= $pyrArray[$_SESSION['posicion']][$random[2]] ?>" data-labelauty="<?= $pyrArray[$_SESSION['posicion']][$random[2]] ?>"> <br>
         <br>
         <input type="submit" name="enviar" id="btnjuego"> <br>
         <div id="rta">
@@ -84,7 +84,13 @@ function titulo()
 
 </div>
 
-
+<script>
+			$(document).ready(function(){
+				$(":checkbox").labelauty();
+				$(":radio").labelauty();
+			});
+        </script>
+        
 <?php include("footer.php"); ?>
 
 </body>
