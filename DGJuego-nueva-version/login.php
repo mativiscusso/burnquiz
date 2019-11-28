@@ -12,7 +12,7 @@ require_once('funciones.php');
 <div class="container" style="margin-top:30px; margin-bottom: 30px;">
 	<div class="row justify-content-center">
 		<div class="col-md-10">
-				<div class="alert alert-danger">
+				<div>
 					<ul>
 						<?php mostrarErrores(verificarErrores('errores')) ?> 
 					</ul>
@@ -23,7 +23,7 @@ require_once('funciones.php');
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
-							<label><b>Correo electrónico:</b></label>
+							<label><b>Usuario:</b></label>
 							<input type="text" name="email" class="form-control" value="<?php isset($email)?>">
 						</div>
 					</div>

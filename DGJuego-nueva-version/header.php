@@ -3,6 +3,14 @@
 function isLogged() {
   return isset($_SESSION['correo']);
 }
+function isAdmin() {
+  if (isset($_SESSION['correo'])) {
+    if ($_SESSION['correo'] == 'admin'){
+      return true;
+    }; 
+  }
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +65,7 @@ function isLogged() {
           if (isLogged()) {
             ?>
             <li class="nav-item">
-              <a class="nav-link" href="abm.php">ABM</a>
+              <a class="nav-link" href="cargador.php">CARGA PREGUNTAS</a>
             </li>
           <?php
           }
@@ -68,6 +76,15 @@ function isLogged() {
           <li class="nav-item">
             <a class="nav-link" href="contacto.php">CONTACTO</a>
           </li>
+          <?php
+          if (isAdmin()) {
+            ?>
+            <li class="nav-item">
+              <a class="nav-link" href="abm.php">ABM</a>
+            </li>
+          <?php
+          }
+          ?>
         </ul>
         <?php
         if (!isLogged()) {

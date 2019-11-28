@@ -32,4 +32,4 @@ $id_pregunta=cargarPregunta($db, $pregunta);
 cargarRespuesta($db, $rta1, "i", $id_pregunta);
 cargarRespuesta($db, $rta2, "i", $id_pregunta);
 cargarRespuesta($db, $rtaC, "c", $id_pregunta);
-header('location:abm.php');
+header('location:cargador.php');

@@ -23,9 +23,11 @@ function titulo()
 <div class="container" style="margin-top:30px; margin-bottom: 30px;">
 	<div class="row justify-content-center">
 		<div class="col-md-10">
-				<div class="alert alert-danger">
+				<div>
 					<ul>
-					<?php mostrarErrores($_SESSION['erroresReg']) ?>
+					<?php if(isset($_SESSION['erroresReg'])) {
+						mostrarErrores($_SESSION['erroresReg']);
+					 } else $_SESSION['erroresReg'] = ""; ?>
 					</ul>
 				</div>
 

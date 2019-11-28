@@ -204,13 +204,14 @@ textarea {
 }
 
 #menulogueado {
+    width: 50%;
     list-style: none;
     text-align: end;
 }
 
 #imgperfil {
-    width: 8%;
-    height: 8%;
+    width: 10%;
+    height: 10%;
     border-radius: 15%;
     box-shadow: 2px 2px 5px black;
 }

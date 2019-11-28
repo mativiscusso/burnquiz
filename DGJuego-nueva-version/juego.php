@@ -2,6 +2,12 @@
 require_once('clases/Juego.php');
 require_once('db/databases.php');
 $db = obtenerBaseDeDatos();
+function estalogueado() {
+    return isset($_SESSION['correo']);
+  }
+if (!estalogueado()) {
+    header('location: login.php');
+}
 
 function traerPreguntas(PDO $db, $posicion)
 {
@@ -52,6 +58,11 @@ if (!isset($_SESSION['posicion'])) {
     $_SESSION['puntaje'] = 0;
 } else {
     if ($_POST) {
+        $rand = range(0, 2);
+        shuffle($rand);
+        foreach ($rand as $val) {
+            $random[] = $val;
+        }
         if ($_POST['rta'] == $_SESSION['rtaC']['respuesta']) {
             $_SESSION['posicion']++;
             $_SESSION['puntaje']++;
@@ -72,6 +83,12 @@ $id_pregunta = $pregunta['id'];
 $_SESSION['rta'] = traerRtas($db, $id_pregunta);
 $_SESSION['rtaC'] = traerRtaC($db, $id_pregunta);
 
+$rand = range(0, 2);
+shuffle($rand);
+foreach ($rand as $val) {
+    $random[] = $val;
+}
+
 header("refresh:11; url=exito.php");
 
 ?>
@@ -84,14 +101,15 @@ function titulo()
 ?>
 
 <?php include("header.php"); ?>
+<div class="container">
 <div id="portada">
     <h2>VIDAS: <?= $_SESSION['vidas'] ?></h2>
     <form id="juego" action="juego.php" method="POST">
         <?= $pregunta['pregunta'] ?> <br>
         <br>
-        <input type="radio" name="rta" value="<?= $_SESSION['rta'][0]['respuesta'] ?>"><?= $_SESSION['rta'][0]['respuesta'] ?> <br>
-        <input type="radio" name="rta" value="<?= $_SESSION['rta'][1]['respuesta'] ?>"><?= $_SESSION['rta'][1]['respuesta'] ?> <br>
-        <input type="radio" name="rta" value="<?= $_SESSION['rta'][2]['respuesta'] ?>"><?= $_SESSION['rta'][2]['respuesta'] ?> <br>
+        <input type="radio" name="rta" value="<?= $_SESSION['rta'][$random[0]]['respuesta'] ?>"><?= $_SESSION['rta'][$random[0]]['respuesta'] ?> <br>
+        <input type="radio" name="rta" value="<?= $_SESSION['rta'][$random[1]]['respuesta'] ?>"><?= $_SESSION['rta'][$random[1]]['respuesta'] ?> <br>
+        <input type="radio" name="rta" value="<?= $_SESSION['rta'][$random[2]]['respuesta'] ?>"><?= $_SESSION['rta'][$random[2]]['respuesta'] ?> <br>
         <br>
         <input type="submit" name="enviar" id="btnjuego"> <br>
         <div id="rta">
@@ -105,7 +123,7 @@ function titulo()
             <span class="sr-only"></span>
         </div>
     </div>
-
+    </div>
 
 </div>
 

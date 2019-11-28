@@ -8,7 +8,7 @@ function titulo()
 }
 function ranking(PDO $db)
 {
-    $consulta = $db->prepare("SELECT nombre, usuario, puntaje FROM usuarios ORDER BY puntaje DESC");
+    $consulta = $db->prepare("SELECT nombre, usuario, puntaje FROM usuarios WHERE usuario != 'admin' ORDER BY puntaje DESC");
     $consulta->execute();
     $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
     return $resultado;
@@ -25,9 +25,9 @@ $a = 1;
     </h3>
 </div>
 <div class="container py-1">
-    <table class="table table-bordered">
+    <table class="table table-hover">
   <thead>
-    <tr>
+  <tr class="table-warning">
       <th scope="col">#</th>
       <th scope="col">Nombre</th>
       <th scope="col">Usuario</th>

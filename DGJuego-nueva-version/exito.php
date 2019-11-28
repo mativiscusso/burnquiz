@@ -2,22 +2,17 @@
 session_start();
 function titulo()
 {
-    echo "Burn Quiz | VICTORIA";
+    echo "Burn Quiz | FINISH";
 }
 ?>
 
 <?php include("header.php"); ?>
 
-<div id="portada" class="container.fluid">
-    <main class="row">
-        <div id="left" class="col-12 col-md-6 py-3">
-            <span id="titulo">Victoria</span>
-        </div>
-        <div id="right" class="col-12 col-md-6 py-3">
-            <img src="img/bebe_exitoso.png" alt="">
-        </div>
-    </main>
-    <h3><?= "Felicitaciones " . $_SESSION['correo'] . " Su puntaje es " . $_SESSION['puntaje']; ?></h3>
+<div id="portada" class="container py-5">
+            <h1><?= "EL JUEGO HA TERMINADO"?></h1>
+            <h2>USUARIO: <?=$_SESSION['correo']?>
+            <h2>SU PUNTAJE ES:  <?=$_SESSION['puntaje']; ?></h2><br>
+            <input type="checkbox" id="cb1" /><label id="cb2" for="cb1"><a id="start" href="juego.php" onclick="<?php $_SESSION['posicion'] = 9;?>">Juego Nuevo</a></label>
 </div>
 
 
