@@ -25,7 +25,7 @@ input.labelauty { display: none !important; }
  */
 input.labelauty + label
 {
-	padding: 1%;
+	padding: 0 1% 0 1%;
 	background-color:rgba (165,0,0,0.3);
 
 	cursor: pointer;

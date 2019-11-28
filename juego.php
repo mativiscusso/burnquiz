@@ -60,7 +60,7 @@ function titulo()
 
 <?php include("header.php"); ?>
 <div id="portada">
-    <h2>VIDAS: <?= $_SESSION['vidas'] ?></h2>
+    <h3>VIDAS: <?= $_SESSION['vidas'] ?></h3>
     <form id="juego" action="juego.php" method="POST">
         <?= $pyrArray[$_SESSION['posicion']]['pregunta'] ?> <br>
         <br>
