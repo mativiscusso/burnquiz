@@ -19,12 +19,12 @@
     <p class="descripcion">La trivia estara compuesta por preguntas capciosas o de pensamiento logico, las cuales tendran 3 posibles respuestas. El objetivo del juego es acumular la mayor cantidad de preguntas acertadas en un lapso de tiempo determinado.</p>
 </section>
 
-<div class="container" id="faqs">
-  <div class="accordion" id="accordionExample">
+<div class="container-fluid py-5" id="faqs">
+  <div class="accordion container" id="accordionExample">
     <div class="card">
       <div class="card-header" id="headingOne">
         <h2 class="mb-0">
-          <button id="color" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button class="btn btn-link text-white" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             ¿Qué es Burn Quiz?
           </button>
         </h2>
@@ -39,7 +39,7 @@
     <div class="card">
       <div class="card-header" id="headingTwo">
         <h2 class="mb-0">
-          <button id="color" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <button id="" class="btn btn-link collapsed text-white" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
             ¿De qué se trata el juego?
           </button>
         </h2>
@@ -53,7 +53,7 @@
     <div class="card">
       <div class="card-header" id="headingThree">
         <h2 class="mb-0">
-          <button id="color" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <button id="" class="btn btn-link collapsed text-white" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
             ¿Cómo es el tema del puntaje?
           </button>
         </h2>
@@ -67,7 +67,7 @@
     <div class="card">
       <div class="card-header" id="headingFour">
         <h2 class="mb-0">
-          <button id="color" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <button id="" class="btn btn-link collapsed text-white" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
             ¿Dónde puedo consultar mis puntajes?
           </button>
         </h2>
@@ -81,7 +81,7 @@
     <div class="card">
       <div class="card-header" id="headingFive">
         <h2 class="mb-0">
-          <button id="color" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          <button id="" class="btn btn-link collapsed text-white" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
             ¿Si gano soy el mejor?
           </button>
         </h2>
@@ -96,9 +96,11 @@
 </div>
 
 <div id="contacto" class="container py-5 my-1">
-    <p class="descripcion" id="contacto">CONTACTANOS</p>
+    <h2 class="display-4 text-center" id="contacto">CONTACTANOS</h2>
+    <br>
     <main class="row">
-        <div id="left" class="container py-5">
+    <div class="col-12 col-md-6">
+        <div id="left" class="container-fluid">
             <form action="contacto.php" method="POST">
                 <div class="form-group">
                     <label for="formGroupExampleInput">Nombre</label>
@@ -121,13 +123,15 @@
                 </div>
                 <button class="btn btn-dark" type="submit">Enviar</button>
             </form>
-
         </div>
+      </div>
 
-        <div class="container py-5">
+      <div class="col-12 col-md-6">
+        <div class="container-fluid">
             <section>
                 <iframe class="container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.282049390131!2d-60.65268828599803!3d-32.94356205604301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab3f847dc269%3A0xa8a707d0dded8c7e!2sC%C3%B3rdoba%202035%2C%20S2000AXG%20Rosario%2C%20Santa%20Fe!5e0!3m2!1ses-419!2sar!4v1569074935124!5m2!1ses-419!2sar" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             </section>
         </div>
+      </div>
     </main>
 @endsection
