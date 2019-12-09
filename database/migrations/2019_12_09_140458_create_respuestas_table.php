@@ -16,6 +16,10 @@ class CreateRespuestasTable extends Migration
         Schema::create('respuestas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('respuesta');
+            $table->string('validacion');
+            $table->unsignedBigInteger('id_pregunta');
+            $table->foreign('id_pregunta')->references('id')->on('preguntas');
         });
     }
 
