@@ -1,0 +1,315 @@
+body {
+    background-color: rgb(255, 152, 52);
+    margin: 0;
+}
+
+.container-fluid {
+    margin: 0;
+}
+
+#menu {
+    z-index: 2;
+    box-shadow: 5px 0px 5px black;
+    background-color: rgb(165, 0, 0);
+}
+
+#menu a {
+    color: white;
+}
+
+#menu span {
+    text-align: end;
+}
+
+#portada {
+    height: 90vh;
+    background-color: rgb(255, 152, 52);
+    padding: 5% 5% 5% 5%;
+}
+
+#portada .row img {
+    width: 40%;
+}
+
+#left {
+    line-height: 0.5;
+    text-align: center;
+}
+
+#right {
+    text-align: center;
+}
+
+span#titulo {
+    color: black;
+    font-size: 9rem;
+    font-family: "Permanent Marker", cursive;
+}
+
+#menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+main.row {
+    align-items: center;
+}
+
+a#start:hover {
+    text-decoration: none;
+    color: white;
+}
+
+
+/*BOTON START*/
+
+a#start {
+    color: white;
+}
+
+#cb1[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+#cb1[type=checkbox]:checked+label:after {
+    -webkit-transform: scale(4.2);
+    transform: scale(4.2);
+}
+
+#cb2 {
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #000;
+    font-family: "Permanent Marker", cursive;
+    font-size: 2rem;
+    letter-spacing: 0.04rem;
+    padding: 2% 4%;
+    cursor: pointer;
+    border-radius: 3rem;
+    background: rgb(165, 0, 0);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0.3rem 0 0 #000;
+}
+
+#cb2::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    transition: -webkit-transform 0.3s ease-in;
+    transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+    mix-blend-mode: difference;
+    background: radial-gradient(circle at center, white 24%, #000 25%, #000 100%);
+}
+
+#cb2:active {
+    top: 3px;
+    box-shadow: none;
+}
+
+footer {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 15%;
+    position: relative;
+    width: 100%;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 2%;
+    text-align: center;
+    background-color: rgb(50, 50, 50);
+    color: white;
+}
+
+#footer ul {
+    list-style: none;
+}
+
+div#footer.container-fluid.py-3 {
+    bottom: 0;
+    position: inherit;
+}
+
+.descripcion {
+    font-family: Tahoma, monospace;
+    font-size: 1.5em;
+}
+
+span img {
+    width: 30px;
+}
+
+#portadabienvenida {
+    width: 100%;
+    background-color: rgb(255, 152, 52);
+    height: 80vh;
+    padding: 5%;
+}
+
+#left span {
+    font-size: 7em;
+}
+
+#juego {
+    margin-top: 3%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+#progresbar {
+    height: 1%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+
+#btnjuego {
+    font-family: "Permanent Marker", cursive;
+    background-color: transparent;
+    border: 2px solid rgb(165, 0, 0);
+    border-radius: 1rem;
+    color: rgb(165, 0, 0);
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#btnjuego:hover {
+    background-color: rgb(165, 0, 0);
+    color: white;
+}
+
+#rta {
+    text-align: end;
+    font-style: italic;
+}
+
+textarea {
+    width: 80%;
+}
+
+#menulogueado {
+    width: 50%;
+    list-style: none;
+    text-align: end;
+}
+
+#imgperfil {
+    width: 10%;
+    height: 10%;
+    border-radius: 15%;
+    box-shadow: 2px 2px 5px black;
+}
+
+.card {
+    background-color: rgb(255, 150, 50);
+    margin: 1%;
+    width: 75%;
+    border: none;
+    display: flex;
+}
+
+.card-header {
+    width: 35%;
+    background-color: rgba(255, 150, 50, 1);
+    border: none;
+    display: flex;
+}
+
+div#footer.container-fluid.py-3 {
+    bottom: 0;
+    position: inherit;
+}
+
+#color {
+    color: black;
+}
+
+#imgusuario {
+    width: 100%;
+}
+
+.preguntas {
+    padding: 5%;
+    width: 100%;
+}
+
+#imgpreguntas {
+    width: 10%;
+}
+
+#pregunta {
+    width: 50%;
+}
+
+footer {
+    clear: both;
+}
+
+@media (min-width:300px) {
+    span#titulo {
+        text-align: center;
+        font-size: 7em;
+    }
+    #juego {
+        text-align: center;
+        width: 90%;
+        font-size: 1rem;
+    }
+    #rta {
+        padding-top: 2%;
+        text-align: center;
+        font-style: italic;
+    }
+    #footer {
+        margin: 0;
+        width: 100%;
+        display: inline-block;
+    }
+}
+
+@media (min-width:680px) {
+    span#titulo {
+        font-size: 9rem;
+    }
+    #juego {
+        font-size: 2rem;
+    }
+    #portada {
+        height: 50vh;
+    }
+}
+
+@media (min-width:980px) {
+    span#titulo {
+        font-size: 12rem;
+    }
+    #juego {
+        font-size: 26px;
+    }
+    #portada {
+        height: 85vh;
+    }
+    #footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+    }
+}

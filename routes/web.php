@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('burnquiz.index');
+})->name('burnquiz.index');
+
+Route::get('/ranking', function () {
+    return view('burnquiz.ranking');
+})->name('burnquiz.ranking');
+Route::get('/juego', function () {
+    return view('burnquiz.juego');
+})->name('burnquiz.juego');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
