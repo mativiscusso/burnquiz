@@ -12,6 +12,7 @@
 */
 
 Route::get('/', function () {
+    //dd(Auth::user()->role);
     return view('burnquiz.index');
 })->name('burnquiz.index');
 
