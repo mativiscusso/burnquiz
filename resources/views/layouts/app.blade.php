@@ -17,6 +17,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/barra.js"></script>
     <script src="source/jquery-labelauty.js"></script>
+    <script src="js/scroll.js"></script>
+    
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -30,6 +33,7 @@
     <link rel="shortcut icon" href="img/burnquiz_logow.png">
     <link rel="stylesheet" href="css/estilosIndex.css">
     <link rel="stylesheet" type="text/css" href="source/jquery-labelauty.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 </head>
 <body>
@@ -48,13 +52,13 @@
                             <a class="nav-link" href="/">HOME</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="/#faqs">FAQs</a>
+                            <a class="nav-link" data-ancla="faqs" href="/#faqs">FAQs</a>
                         </li>                     
                         <li class="nav-item active">
                             <a class="nav-link" href="/ranking">RANKING</a>
                         </li> 
                         <li class="nav-item active">
-                            <a class="nav-link" href="/#contacto">CONTACTO</a>
+                            <a class="nav-link" href="#contacto">CONTACTO</a>
                         </li>                        
                     </ul>
 
@@ -116,5 +120,9 @@
             </ul>
         </div>
     </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

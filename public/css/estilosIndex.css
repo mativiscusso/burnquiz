@@ -229,9 +229,11 @@ textarea {
     width: 100%;
     border: none;
     display: flex;
+    background-color: transparent;
 }
 
 #faqs {
+    font-size:0.9em;
     color: white;
     background-image: url('/storage/bg_red.png');
     background-size: cover;
