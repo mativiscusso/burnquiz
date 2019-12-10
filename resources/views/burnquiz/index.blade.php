@@ -3,7 +3,7 @@
 @section('content')
 <div id="portada" class="container.fluid">
     <main class="row">
-        <div id="left" data-aos="fade-up" class="col-12 col-md-6 py-3">
+        <div id="left1" data-aos="fade-in" class="col-12 col-md-4 py-3">
             <span id="titulo">BURN</span>
             <span id="titulo">Quiz</span>
         </div>
@@ -19,7 +19,14 @@
     <p class="descripcion">La trivia estara compuesta por preguntas capciosas o de pensamiento logico, las cuales tendran 3 posibles respuestas. El objetivo del juego es acumular la mayor cantidad de preguntas acertadas en un lapso de tiempo determinado.</p>
 </section>
 
-<div class="container-fluid py-5" id="faqs">
+<div id="botonra">
+<a href="#home"></a>
+<a href="#faqs"></a>
+<a href="#contacto"></a>
+</div>
+
+
+<div class="container-fluid py-5 my-5" id="faqs">
   <div class="accordion container" id="accordionExample">
     <div class="card" data-aos="fade-right">
       <div class="card-header" id="headingOne">

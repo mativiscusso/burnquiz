@@ -37,6 +37,7 @@
 
 </head>
 <body>
+    <span id="home"></span>
     <div id="app">
         <nav id="menu" class="navbar navbar-expand-md navbar-light shadow-sm position-fixed w-100">
             <div class="container">
@@ -46,32 +47,26 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/">HOME</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" data-ancla="faqs" href="/#faqs">FAQs</a>
-                        </li>                     
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/ranking">RANKING</a>
-                        </li> 
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#contacto">CONTACTO</a>
-                        </li>                        
-                    </ul>
+
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav mr-auto">
                         <!-- Authentication Links -->
+                        <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">HOME</a>
+                        </li>                  
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/ranking">RANKING</a>
+                        </li>                      
+                    </ul>
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTRO') }}</a>
                                 </li>
                             @endif
                         @else

@@ -21,6 +21,7 @@ body {
     text-align: end;
 }
 
+
 #portada {
     height: 90vh;
     background-color: rgb(255, 152, 52);
@@ -34,6 +35,11 @@ body {
 #left {
     line-height: 0.5;
     text-align: center;
+}
+#left1 {
+    line-height: 0.5;
+    text-align: center;
+    margin: auto;
 }
 
 #right {
@@ -232,13 +238,34 @@ textarea {
     background-color: transparent;
 }
 
+#botonra {
+    display: inline-grid;
+    position: fixed;
+    top: 50%;
+    left: 2%;
+}
+
+#botonra a {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: gray;
+    margin-top: 200%;
+    box-shadow: 1px 1px 4px black;
+}
+
+
 #faqs {
-    font-size:0.9em;
+    font-size:0.8em;
     color: white;
-    background-image: url('/storage/bg_red.png');
+    background-color: rgb(165, 0, 0);
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Montserrat', sans-serif;
+}
+
+#faqs button {
+    font-size:0.4em;
 }
 
 div#footer.container-fluid.py-3 {
