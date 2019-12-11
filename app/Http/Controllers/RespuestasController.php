@@ -14,7 +14,8 @@ class RespuestasController extends Controller
      */
     public function index()
     {
-        //
+        $respuesta = Respuesta::all();
+        return view('index', compact('respuestas'));
     }
 
     /**
@@ -24,7 +25,7 @@ class RespuestasController extends Controller
      */
     public function create()
     {
-        //
+        return view('cargarrespuesta');  
     }
 
     /**
@@ -35,7 +36,11 @@ class RespuestasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request = new Respuesta;
+
+        $request->name = $request->name;
+
+        $request->save();
     }
 
     /**
@@ -46,7 +51,8 @@ class RespuestasController extends Controller
      */
     public function show(Respuesta $respuesta)
     {
-        //
+        $respuesta = Respuesta::where('respuesta', 'like', '%' . $respuesta . '%')->get();
+        return view('index', compact('respuestas'));
     }
 
     /**
@@ -55,9 +61,9 @@ class RespuestasController extends Controller
      * @param  \App\Respuesta  $respuesta
      * @return \Illuminate\Http\Response
      */
-    public function edit(Respuesta $respuesta)
+    public function edit()
     {
-        //
+        return view('cargarrespuesta');
     }
 
     /**
@@ -69,7 +75,11 @@ class RespuestasController extends Controller
      */
     public function update(Request $request, Respuesta $respuesta)
     {
-        //
+        $respuesta = Respuesta::find($request);
+
+        $respuesta->name = 'respuesta';
+
+        $respuesta->save();
     }
 
     /**
@@ -78,8 +88,9 @@ class RespuestasController extends Controller
      * @param  \App\Respuesta  $respuesta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Respuesta $respuesta)
+    public function destroy($id)
     {
-        //
+        Respuesta::destroy($id);
+        return view('index');
     }
 }

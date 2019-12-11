@@ -26,3 +26,11 @@ Route::get('/juego', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/cargarpregunta', 'PreguntasController@create');
+
+Route::post('/cargarpregunta', 'PreguntasController@store');
+
+Route::get('/cargarpregunta/{id}', 'PreguntasController@edit');
+
