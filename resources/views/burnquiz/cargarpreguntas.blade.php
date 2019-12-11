@@ -2,11 +2,12 @@
 
 @section('content')
 
-    <form action="{{ route('cargarpregunta') }}" method="POST">
+<div class="container">
+    <form class="w-100" action="/preguntas/agregar" method="POST">
     @csrf
-        <p>Sumá tu pregunta.</p>
+        <h3>Sumá tu pregunta.</h3>
         <br>
-        <textarea name="pregunta" cols="10" rows="5"></textarea>
+        <textarea name="pregunta"></textarea>
         <br>
         <label>Y ahora las posibles respuestas.</label>
         <br>
@@ -25,5 +26,6 @@
         <br>
         <button type="submit" class="btn-primary">Cargar</button>
     </form>
+    </div>
 
 @endsection

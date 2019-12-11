@@ -12,25 +12,35 @@
 */
 
 Route::get('/', function () {
-    //dd(Auth::user()->role);
     return view('burnquiz.index');
 })->name('burnquiz.index');
 
 Route::get('/ranking', function () {
     return view('burnquiz.ranking');
 })->name('burnquiz.ranking');
+
 Route::get('/juego', function () {
     return view('burnquiz.juego');
 })->name('burnquiz.juego');
+
+//listar preguntas
+Route::get('/preguntas', 'PostController@index');
+//agregar preguntas
+//mostrar formulario agregar
+Route::get('/preguntas/agregar', 'PreguntasController@create');
+//procesar formulario agregar
+Route::post('/preguntas/agregar', 'PreguntasController@store');
+//modificar preguntas
+//mostrar formulario editar
+Route::get('/preguntas/modificar/{id}', 'PreguntasController@edit');
+//procesar formulario editar
+Route::post('/preguntas/modificar', 'PreguntasController@update')->middleware('admin');
+//eliminar preguntas
+Route::get('/preguntas/eliminar/{id}', 'PreguntasController@destroy')->middleware('admin');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/cargarpregunta', 'PreguntasController@create');
-
-Route::post('/cargarpregunta', 'PreguntasController@store');
-
-Route::get('/cargarpregunta/{id}', 'PreguntasController@edit');
 

@@ -58,7 +58,10 @@
                         </li>                  
                         <li class="nav-item active">
                             <a class="nav-link" href="/ranking">RANKING</a>
-                        </li>                      
+                        </li>    
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/preguntas/agregar">CARGA PREGUNTA</a>
+                        </li>                         
                     </ul>
                         @guest
                             <li class="nav-item">

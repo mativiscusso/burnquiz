@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Pregunta;
+use App\Respuesta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PreguntasController extends Controller
 {
@@ -15,7 +17,7 @@ class PreguntasController extends Controller
     public function index()
     {
         $preguntas = Pregunta::all();
-        return view('index', compact('preguntas'));
+        return view('burnquiz.index', compact('preguntas'));
     }
 
     /**
@@ -25,7 +27,7 @@ class PreguntasController extends Controller
      */
     public function create()
     {
-        return view('cargarpregunta');  
+        return view('burnquiz.cargarpreguntas');  
     }
 
     /**
@@ -37,10 +39,28 @@ class PreguntasController extends Controller
     public function store(Request $request)
     {
         $pregunta = new Pregunta;
+        $respuesta = new Respuesta;
 
-        $pregunta->name = $request->name;
-
+        $pregunta->pregunta = $request->pregunta;
         $pregunta->save();
+        $preguntas = DB::table('preguntas')
+                ->orderBy('id', 'desc')
+                ->first();
+        $respuesta->respuesta = $request->rta1;
+        $respuesta->validacion = 'i';
+        $respuesta->id_pregunta = $preguntas->id;
+        $respuesta->save();
+        $respuesta = new Respuesta;
+        $respuesta->respuesta = $request->rta2;
+        $respuesta->validacion = 'i';
+        $respuesta->id_pregunta = $preguntas->id;
+        $respuesta->save();
+        $respuesta = new Respuesta;
+        $respuesta->respuesta = $request->rtaC;
+        $respuesta->validacion = 'c';
+        $respuesta->id_pregunta = $preguntas->id;
+        $respuesta->save();
+        return view('burnquiz.cargarpreguntas');
     }
 
     /**

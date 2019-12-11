@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Respuesta;
+use App\Pregunta;
 use Illuminate\Http\Request;
 
 class RespuestasController extends Controller
@@ -36,11 +37,23 @@ class RespuestasController extends Controller
      */
     public function store(Request $request)
     {
-        $request = new Respuesta;
-
-        $request->name = $request->name;
-
-        $request->save();
+        $preguntas = DB::table('preguntas')
+        ->orderBy('id', 'desc')
+        ->first();
+        $respuesta->validacion = 'i';
+        $respuesta->id_pregunta = $preguntas->id;
+        $respuesta->save();
+        $respuesta = new Respuesta;
+        $respuesta->respuesta = $request->rta2;
+        $respuesta->validacion = 'i';
+        $respuesta->id_pregunta = $preguntas->id;
+        $respuesta->save();
+        $respuesta = new Respuesta;
+        $respuesta->respuesta = $request->rtaC;
+        $respuesta->validacion = 'c';
+        $respuesta->id_pregunta = $preguntas->id;
+        $respuesta->save();
+        $respuesta->respuesta = $request->rta1;
     }
 
     /**
