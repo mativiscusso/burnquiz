@@ -8,19 +8,20 @@
 <div class="container">
     <div id="portada">
     <h2>VIDAS: </h2>
-    <form id="juego" action="{{('/juego')}}" method="POST">
+    <form id="juego" action="{{('burnquiz.juego')}}" method="POST">
         @csrf
         {{$pregunta['pregunta']}}
         <br>
-        <input type="radio" name="rta" value="{{$respuesta['rta1']}}" data-labelauty=""> <br>
-        <input type="radio" name="rta" value="{{$respuesta['rta2']}}" data-labelauty=""><br>
-        <input type="radio" name="rta" value="{{$respuesta['rtaC']}}" data-labelauty=""> <br>
+        <input type="radio" name="rta" value="" data-labelauty="">{{$respuesta['respuesta']}}<br>
+        <input type="radio" name="rta" value="" data-labelauty="">{{$respuesta['respuesta']}}<br>
+        <input type="radio" name="rta" value="" data-labelauty="">{{$respuesta['respuesta']}}<br>
         <br>
         <input type="submit" name="enviar" id="btnjuego"> <br>
         <div id="rta">
 
         </div>
     </form>
+
 @endforeach
 @endforeach
     <div id="progresbar" class="progress">

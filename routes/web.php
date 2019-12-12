@@ -38,7 +38,7 @@ Route::post('/preguntas/modificar', 'PreguntasController@update')->middleware('a
 //eliminar preguntas
 Route::get('/preguntas/eliminar/{id}', 'PreguntasController@destroy')->middleware('admin');
 
-Route::get('/juego', 'JuegoController@index')->middleware('auth');
+Route::get('/juego', 'JuegoController@index')->name('burnquiz.juego')->middleware('auth');
 
 Auth::routes();
 

@@ -1,9 +1,10 @@
 <?php
 
-use App\Pregunta;
-use App\Respuesta;
+
 namespace App\Http\Controllers;
 
+use App\Pregunta;
+use App\Respuesta;
 use Illuminate\Http\Request;
 
 class JuegoController extends Controller
@@ -17,6 +18,6 @@ class JuegoController extends Controller
     {
         $preguntas = Pregunta::all();
         $respuestas = Respuesta::all();
-        return view('burnquiz.index', compact('preguntas', 'respuestas'));
+        return view('burnquiz.juego', compact('preguntas', 'respuestas'));
     }
 }
