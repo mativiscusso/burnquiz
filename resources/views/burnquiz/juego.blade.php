@@ -4,12 +4,16 @@
 <div class="container">
     <div id="portada">
     <h2>VIDAS: </h2>
-    <form id="juego" action="" method="POST">
-        Pregunta
+    <form id="juego" action="/juego/next" method="POST">
+    @csrf
+        {{$pregunta->pregunta}}
         <br>
-        <input type="radio" name="rta" value="" data-labelauty=""> <br>
-        <input type="radio" name="rta" value="" data-labelauty=""><br>
-        <input type="radio" name="rta" value="" data-labelauty=""> <br>
+        <input type="hidden" value="{{$pregunta->id}}">
+        @foreach($respuestas as $respuesta)
+        <input type="radio" name="rta" value="{{$respuesta->respuesta}}" data-labelauty="{{$respuesta->respuesta}}">{{$respuesta->respuesta}}
+        <br>
+        @endforeach
+        <br>
         <br>
         <input type="submit" name="enviar" id="btnjuego"> <br>
         <div id="rta">

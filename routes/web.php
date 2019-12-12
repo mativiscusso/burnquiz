@@ -19,10 +19,9 @@ Route::get('/ranking', function () {
     return view('burnquiz.ranking');
 })->name('burnquiz.ranking');
 
-Route::get('/juego', function () {
-    return view('burnquiz.juego');
-})->name('burnquiz.juego');
+Route::get('/juego', 'JuegoController@traerDatos');
 
+Route::post('/juego/next', 'JuegoController@verificacion');
 //listar preguntas
 Route::get('/preguntas', 'PostController@index');
 //agregar preguntas
