@@ -82,9 +82,12 @@ class PreguntasController extends Controller
      * @param  \App\Pregunta  $pregunta
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return view('cargarpregunta');
+        $preguntas = Pregunta::findOrFail($id);
+        $respuestas =Respuesta ::findOrFail($id);
+        //dd($preguntas);
+        return view('burnquiz.cargarpreguntas',compact('preguntas','respuestas'));
     }
 
     /**

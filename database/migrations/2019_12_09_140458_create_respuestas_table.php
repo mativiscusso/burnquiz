@@ -19,7 +19,7 @@ class CreateRespuestasTable extends Migration
             $table->string('respuesta');
             $table->string('validacion');
             $table->unsignedBigInteger('id_pregunta');
-            $table->foreign('id_pregunta')->references('id')->on('preguntas');
+            $table->foreign('id_pregunta')->references('id')->on('preguntas')->onDelete('cascade');
         });
     }
 
