@@ -23,20 +23,37 @@ Route::get('/ranking', function () {
 Route::get('/juego', 'JuegoController@traerDatos');
 
 Route::post('/juego/next', 'JuegoController@verificacion');
-//listar preguntas
-Route::get('/preguntas', 'PostController@index');
-//agregar preguntas
+//LISTAR PREGUNTAS Y RESPUESTAS
+Route::get('/preguntas', 'PreguntasController@index')->middleware('admin');;
+
+//AGREGAR PREGUNTAS Y RESPUESTAS
 //mostrar formulario agregar
 Route::get('/preguntas/agregar', 'PreguntasController@create');
 //procesar formulario agregar
 Route::post('/preguntas/agregar', 'PreguntasController@store');
-//modificar preguntas
+
+//MODIFICAR PREGUNTAS
 //mostrar formulario editar
-Route::get('/preguntas/modificar/{id}', 'PreguntasController@edit');
+Route::get('/preguntas/modificar/{id}', 'PreguntasController@edit')->middleware('admin');;
 //procesar formulario editar
 Route::post('/preguntas/modificar', 'PreguntasController@update')->middleware('admin');
-//eliminar preguntas
+
+//ELIMINAR PREGUNTAS 
 Route::get('/preguntas/eliminar/{id}', 'PreguntasController@destroy')->middleware('admin');
+
+//MODIFICAR RESPUESTAS
+//mostrar formulario editar
+Route::get('/respuestas/modificar/{id}', 'RespuestasController@edit')->middleware('admin');;
+//procesar formulario editar
+Route::post('/respuestas/modificar', 'RespuestasController@update')->middleware('admin');
+
+//ELIMINAR RESPUESTAS
+Route::get('/respuestas/eliminar/{id}', 'RespuestasController@destroy')->middleware('admin');
+
+//PANEL ADMINISTRADOR
+Route::get('/admin', function () {
+    return view('burnquiz.admin.panel');
+})->middleware('admin');
 
 
 Auth::routes();

@@ -73,16 +73,17 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link" href="#" role="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->user }} <span class="caret"></span>
-                                </a>
-                            </li>
                             @if(Auth::user()->role =='admin') 
                             <li class="nav-item active">
                                 <a class="nav-link" href="/admin">PANEL ADMIN</a>
                             </li>  
                             @endif
+                            <ul class="navbar-nav mr-1">
+                            <li class="nav-item dropdown ">
+                                <a id="navbarDropdown" class="nav-link" href="#" role="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->user }} <span class="caret"></span>
+                                </a>
+                            </li>
                             <li>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -94,6 +95,7 @@
                                         @csrf
                                     </form>
                             </li>
+                            </ul>
                         @endguest
                     </ul>
                 </div>

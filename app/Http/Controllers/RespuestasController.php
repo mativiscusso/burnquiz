@@ -16,7 +16,7 @@ class RespuestasController extends Controller
     public function index()
     {
         $respuesta = Respuesta::all();
-        return view('index', compact('respuestas'));
+        return view('burnquizz.admin.preguntas', compact('respuestas'));
     }
 
     /**
