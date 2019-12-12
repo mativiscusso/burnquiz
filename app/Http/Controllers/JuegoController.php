@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use App\Pregunta;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class JuegoController extends Controller
 {
+
     public function traerDatos(){
         $pregunta = DB::table('preguntas')
         ->first();
@@ -37,3 +39,4 @@ class JuegoController extends Controller
         return view('burnquiz.juego', compact('pregunta', 'respuestas'));
     }
 }
+

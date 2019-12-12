@@ -1,9 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+
+@foreach($preguntas as $pregunta)
+@endforeach
+
 <div class="container">
     <div id="portada">
     <h2>VIDAS: </h2>
+
     <form id="juego" action="/juego/next" method="POST">
     @csrf
         {{$pregunta->pregunta}}
@@ -20,6 +25,7 @@
 
         </div>
     </form>
+
     <div id="progresbar" class="progress">
         <div class="progress-bar bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100">
             <span class="sr-only"></span>

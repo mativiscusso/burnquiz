@@ -19,6 +19,7 @@ Route::get('/ranking', function () {
     return view('burnquiz.ranking');
 })->name('burnquiz.ranking');
 
+
 Route::get('/juego', 'JuegoController@traerDatos');
 
 Route::post('/juego/next', 'JuegoController@verificacion');
@@ -36,6 +37,8 @@ Route::get('/preguntas/modificar/{id}', 'PreguntasController@edit');
 Route::post('/preguntas/modificar', 'PreguntasController@update')->middleware('admin');
 //eliminar preguntas
 Route::get('/preguntas/eliminar/{id}', 'PreguntasController@destroy')->middleware('admin');
+
+Route::get('/juego', 'JuegoController@index')->name('burnquiz.juego')->middleware('auth');
 
 Auth::routes();
 
