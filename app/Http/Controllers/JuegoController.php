@@ -18,14 +18,16 @@ class JuegoController extends Controller
         return view('burnquiz.juego', compact('pregunta', 'respuestas'));
     }
     public function verificacion(Request $req){
+        
         $respuesta = DB::table('respuestas')->where([
-            ['id_pregunta', '=', $req['id']],
+            ['id_pregunta', '=', $req['pregunta_id']],
             ['validacion', '=', 'c'],
         ])->get();
-        foreach($respuesta as $rtaCorrecta)
-        if ($req['rta']== $rtaCorrecta->respuesta) {
-            $preguntaAnterior = $req['id'];
-            $pregunta = DB::table('preguntas')->where('id', '=', $preguntaAnterior + 1)->first();
+        foreach($respuesta as $rtaCorrecta);
+        if ($req['rta'] == $rtaCorrecta->respuesta) {            
+            $preguntaAnterior = $req['pregunta_id'];
+            $preguntaAnterior++;
+            $pregunta = DB::table('preguntas')->where('id', '=', $preguntaAnterior)->first();
             $respuestas = DB::table('respuestas')->where('id_pregunta', '=', $pregunta->id)->get();
             return view('burnquiz.juego', compact('pregunta', 'respuestas'));;
         } else return redirect('/');

@@ -2,9 +2,6 @@
 
 @section('content')
 
-@foreach($preguntas as $pregunta)
-@endforeach
-
 <div class="container">
     <div id="portada">
     <h2>VIDAS: </h2>
@@ -13,7 +10,7 @@
     @csrf
         {{$pregunta->pregunta}}
         <br>
-        <input type="hidden" value="{{$pregunta->id}}">
+        <input type="hidden" name="pregunta_id" value="{{$pregunta->id}}">
         @foreach($respuestas as $respuesta)
         <input type="radio" name="rta" value="{{$respuesta->respuesta}}" data-labelauty="{{$respuesta->respuesta}}">{{$respuesta->respuesta}}
         <br>
