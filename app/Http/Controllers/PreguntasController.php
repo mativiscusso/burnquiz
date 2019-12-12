@@ -84,7 +84,7 @@ class PreguntasController extends Controller
      */
     public function edit()
     {
-        return view('cargarpregunta');
+        return view('burnquiz.admin.editarpregunta');
     }
 
     /**

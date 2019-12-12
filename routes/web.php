@@ -24,7 +24,7 @@ Route::get('/juego', 'JuegoController@traerDatos')->middleware('auth');
 
 Route::post('/juego/next', 'JuegoController@verificacion');
 //LISTAR PREGUNTAS Y RESPUESTAS
-Route::get('/preguntas', 'PreguntasController@index')->middleware('admin');;
+Route::get('/preguntas', 'PreguntasController@index')->middleware('admin');
 
 //AGREGAR PREGUNTAS Y RESPUESTAS
 //mostrar formulario agregar
@@ -34,7 +34,7 @@ Route::post('/preguntas/agregar', 'PreguntasController@store');
 
 //MODIFICAR PREGUNTAS
 //mostrar formulario editar
-Route::get('/preguntas/modificar/{id}', 'PreguntasController@edit')->middleware('admin');;
+Route::get('/preguntas/modificar/{id}', 'PreguntasController@edit')->middleware('admin');
 //procesar formulario editar
 Route::post('/preguntas/modificar', 'PreguntasController@update')->middleware('admin');
 
@@ -43,7 +43,7 @@ Route::get('/preguntas/eliminar/{id}', 'PreguntasController@destroy')->middlewar
 
 //MODIFICAR RESPUESTAS
 //mostrar formulario editar
-Route::get('/respuestas/modificar/{id}', 'RespuestasController@edit')->middleware('admin');;
+Route::get('/respuestas/modificar/{id}', 'RespuestasController@edit')->middleware('admin');
 //procesar formulario editar
 Route::post('/respuestas/modificar', 'RespuestasController@update')->middleware('admin');
 
