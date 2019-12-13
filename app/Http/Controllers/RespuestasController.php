@@ -74,9 +74,11 @@ class RespuestasController extends Controller
      * @param  \App\Respuesta  $respuesta
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return view('cargarrespuesta');
+        $respuestas = Respuesta::findOrFail($id);
+        //dd($respuestas);
+        return view('burnquiz.admin.editarpregunta',compact('respuestas'));
     }
 
     /**

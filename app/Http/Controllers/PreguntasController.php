@@ -85,9 +85,9 @@ class PreguntasController extends Controller
     public function edit($id)
     {
         $preguntas = Pregunta::findOrFail($id);
-        $respuestas =Respuesta ::findOrFail($id);
+        $respuestas = Respuesta ::findOrFail($id);
         //dd($preguntas);
-        return view('burnquiz.cargarpreguntas',compact('preguntas','respuestas'));
+        return view('burnquiz.admin.editarpregunta',compact('preguntas','respuestas'));
     }
 
     /**
