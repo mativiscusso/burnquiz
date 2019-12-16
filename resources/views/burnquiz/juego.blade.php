@@ -4,7 +4,9 @@
 
 <div class="container">
     <div id="portada">
-    <h2>VIDAS: </h2>
+    <h2>PUNTAJE: @isset($puntaje)
+                    {{$puntaje}}
+                 @endisset</h2>
 
     <form id="juego" action="/juego/next" method="POST">
     @csrf
@@ -12,9 +14,13 @@
         <br>
         <input type="hidden" name="pregunta_id" value="{{$pregunta->id}}">
         @foreach($respuestas as $respuesta)
-        <input type="radio" name="rta" value="{{$respuesta->respuesta}}" data-labelauty="{{$respuesta->respuesta}}">{{$respuesta->respuesta}}
-        <br>
-        @endforeach
+        <div style="padding-left: 45%">
+        <div class="text-left">
+        <input name="rta" type="radio" value="{{$respuesta->respuesta}}"/>
+        <span class="text-dark">{{$respuesta->respuesta}}</span><br>
+        </div>
+        </div>
+       @endforeach
         <br>
         <br>
         <input type="submit" name="enviar" id="btnjuego"> <br>
@@ -23,19 +29,6 @@
         </div>
     </form>
 
-    <div id="progresbar" class="progress">
-        <div class="progress-bar bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-            <span class="sr-only"></span>
-        </div>
-    </div>
-    </div>
-
 </div>
-<script>
-			$(document).ready(function(){
-				$(":checkbox").labelauty();
-				$(":radio").labelauty();
-			});
-</script>
 
 @endsection

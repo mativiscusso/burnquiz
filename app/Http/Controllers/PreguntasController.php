@@ -115,6 +115,6 @@ class PreguntasController extends Controller
     public function destroy($id)
     {
         Pregunta::destroy($id);
-        return view('index');
+        return redirect('/admin');
     }
 }

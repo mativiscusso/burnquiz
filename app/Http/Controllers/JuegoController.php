@@ -30,7 +30,7 @@ class JuegoController extends Controller
             $pregunta = DB::table('preguntas')->where('id', '=', $preguntaAnterior)->first();
             $respuestas = DB::table('respuestas')->where('id_pregunta', '=', $pregunta->id)->get();
             return view('burnquiz.juego', compact('pregunta', 'respuestas'));;
-        } else return redirect('/');
+        } else return view('burnquiz.resultado');
   
         
     }

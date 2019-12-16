@@ -23,6 +23,7 @@ Route::get('/ranking', function () {
 Route::get('/juego', 'JuegoController@traerDatos')->middleware('auth');
 
 Route::post('/juego/next', 'JuegoController@verificacion');
+
 //LISTAR PREGUNTAS Y RESPUESTAS
 Route::get('/preguntas', 'PreguntasController@index')->middleware('admin');
 

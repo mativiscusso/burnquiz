@@ -106,6 +106,6 @@ class RespuestasController extends Controller
     public function destroy($id)
     {
         Respuesta::destroy($id);
-        return view('index');
+        return redirect('/admin');
     }
 }
