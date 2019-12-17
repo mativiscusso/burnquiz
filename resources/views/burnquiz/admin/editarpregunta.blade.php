@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container py-5">
+<div class="container py-5 my-5">
     <form class="w-100" action="/preguntas/modificar" method="POST">
     @csrf
         <h3>Editá la pregunta.</h3>

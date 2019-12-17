@@ -6,7 +6,9 @@
 
 <a href="/preguntas/agregar"><button type="button" class="btn btn-primary btn-lg btn-block">Agregar Preguntas</button></a><br>
 <a href="/preguntas"><button type="button" class="btn btn-primary btn-lg btn-block">Listar Preguntas</button></a><br>
-
+<br>
+<br>
+<br>
 
 </div>
 
