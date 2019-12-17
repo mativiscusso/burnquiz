@@ -29,7 +29,7 @@ class JuegoController extends Controller
             $preguntaAnterior = $req['pregunta_id'];
             $preguntaAnterior++;
             $pregunta = DB::table('preguntas')->where('id', '=', $preguntaAnterior)->first();
-            //dd($pregunta);
+            //dd($pregunta); 
             if($pregunta == null){
                 return view('burnquiz.resultado');
             }
