@@ -12,8 +12,7 @@ class JuegoController extends Controller
 {
 
     public function traerDatos(){
-        $pregunta = DB::table('preguntas')
-        ->first();
+        $pregunta = DB::table('preguntas')->first();
         $respuestas = DB::table('respuestas')->where('id_pregunta', '=', $pregunta->id)->get();
         return view('burnquiz.juego', compact('pregunta', 'respuestas'));
     }
@@ -25,7 +24,9 @@ class JuegoController extends Controller
         ])->get();
 
         foreach($respuesta as $rtaCorrecta);
-        if ($req['rta'] == $rtaCorrecta->respuesta) {            
+        if ($req['rta'] == $rtaCorrecta->respuesta) { 
+            $puntaje = session()->get('puntaje', 0);
+            session(['puntaje' => ++$puntaje]);           
             $preguntaAnterior = $req['pregunta_id'];
             $preguntaAnterior++;
             $pregunta = DB::table('preguntas')->where('id', '=', $preguntaAnterior)->first();
@@ -33,7 +34,9 @@ class JuegoController extends Controller
             if($pregunta == null){
                 return view('burnquiz.resultado');
             }
+            //dd($preguntaAnterior, $pregunta);
             $respuestas = DB::table('respuestas')->where('id_pregunta', '=', $pregunta->id)->get();
+            //dd(session()->get('puntaje'));
             return view('burnquiz.juego', compact('pregunta', 'respuestas'));;
         } else return view('burnquiz.resultado');
     }

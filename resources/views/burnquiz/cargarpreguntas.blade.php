@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container py-5">
     <form class="w-100" action="/preguntas/agregar" method="POST">
     @csrf
         <h3>Sumá tu pregunta.</h3>
