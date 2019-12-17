@@ -4,9 +4,7 @@
 
 <div class="container">
     <div id="portada">
-    <h2>PUNTAJE: @isset($puntaje)
-                    {{$puntaje}}
-                 @endisset</h2>
+    <h2>PUNTAJE: {{ session()->get('puntaje', 0) }} </h2>
 
     <form id="juego" action="/juego/next" method="POST">
     @csrf
