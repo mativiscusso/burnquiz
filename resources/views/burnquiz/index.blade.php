@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="portada" class="container.fluid">
+<div id="portada" class="container.fluid my-5">
     <main class="row">
         <div id="left1" data-aos="fade-in" class="col-12 col-md-4 py-3">
             <span id="titulo">BURN</span>

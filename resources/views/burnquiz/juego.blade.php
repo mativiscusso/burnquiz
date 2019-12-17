@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container my-5">
     <div id="portada">
     <h2>PUNTAJE: {{ session()->get('puntaje', 0) }} </h2>
 
