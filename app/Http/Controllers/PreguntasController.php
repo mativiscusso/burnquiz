@@ -85,25 +85,26 @@ class PreguntasController extends Controller
     public function edit($id)
     {
         $preguntas = Pregunta::findOrFail($id);
-        $respuestas = Respuesta ::findOrFail($id);
-        //dd($preguntas);
-        return view('burnquiz.admin.editarpregunta',compact('preguntas','respuestas'));
+        $respuestas = DB::table('respuestas')->where('id_pregunta', '=', $id)->get();
+        $rtas = $respuestas->toArray();
+        //dd($rtas[0]->id);
+        return view('burnquiz.admin.editarpregunta',compact('preguntas','rtas'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pregunta  $pregunta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pregunta $pregunta)
+    public function update(Request $request)
     {
-        $pregunta = Pregunta::find($request);
-
-        $pregunta->name = 'pregunta';
-
-        $pregunta->save();
+        $pregunta = DB::table('preguntas')->where('id', '=', $request->id)->update(['pregunta'=>$request->pregunta]);
+        //$pregunta->save();   
+        $respuesta = DB::table('respuestas')->where('id_pregunta', '=', $request->id)->update(['respuesta'=>$request->rta1]);
+        $respuesta = DB::table('respuestas')->where('id_pregunta', '=', $request->id)->update(['respuesta'=>$request->rta2]);
+        $respuesta = DB::table('respuestas')->where('id_pregunta', '=', $request->id)->update(['respuesta'=>$request->rtaC]);
+        return redirect('/preguntas');
     }
 
     /**
@@ -115,6 +116,6 @@ class PreguntasController extends Controller
     public function destroy($id)
     {
         Pregunta::destroy($id);
-        return redirect('/admin');
+        return redirect('/preguntas');
     }
 }
