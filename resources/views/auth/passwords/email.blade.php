@@ -9,6 +9,7 @@
 
 <h4 class="descripcion text-white card-body">Tu cotraseña fue reestablecida</h4>
 
+
 @error('password')
 
 
