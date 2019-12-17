@@ -82,8 +82,10 @@
                             </li>  
                             @endif
                             </ul>
+                            <img id="imgPerfil" src="/storage/{{Auth::user()->imagen}}" alt="">
                             <ul id="user" class="navbar-nav text-right">
                             <li class="nav-item dropdown ">
+                            
                                 <a id="navbarDropdown" class="nav-link" href="#" role="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->user }} <span class="caret"></span>
                                 </a>
@@ -94,11 +96,11 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('X') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                             </li>
+                            
                         </ul>
                         @endguest
                     

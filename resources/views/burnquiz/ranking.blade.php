@@ -18,15 +18,18 @@
   </thead>
   
    <tbody>
+   @foreach($usuarios as $user)
     <tr>
-      <th scope="row"></th>
-      <td></td>
-      <td></td>
-      <td></td>
+      <th scope="row">{{$puesto++}}</th>
+      <td>{{$user->nombre}}</td>
+      <td>{{$user->user}}</td>
+      <td>{{$user->puntaje}}</td>
     </tr>
+    @endforeach
    </tbody>
  
 </table>
+{{ $usuarios->links() }}
 
 </div>
 @endsection
