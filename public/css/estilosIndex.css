@@ -360,4 +360,7 @@ footer {
         width: 100%;
         display: flex;
     }
+    #leftside {
+        width:80%;
+    }
 }

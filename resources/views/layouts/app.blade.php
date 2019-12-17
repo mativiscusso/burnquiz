@@ -53,9 +53,9 @@
 
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    
                         <!-- Authentication Links -->
-                        <ul class="navbar-nav mr-auto">
+                        <ul id="leftside" class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="/">HOME</a>
                         </li>                  
@@ -65,7 +65,7 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="/preguntas/agregar">CARGA PREGUNTA</a>
                         </li>                         
-                    </ul>
+                    
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
@@ -81,7 +81,8 @@
                                 <a class="nav-link" href="/admin">PANEL ADMIN</a>
                             </li>  
                             @endif
-                            <ul class="navbar-nav mr-1">
+                            </ul>
+                            <ul id="user" class="navbar-nav text-right">
                             <li class="nav-item dropdown ">
                                 <a id="navbarDropdown" class="nav-link" href="#" role="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->user }} <span class="caret"></span>
@@ -98,9 +99,9 @@
                                         @csrf
                                     </form>
                             </li>
-                            </ul>
+                        </ul>
                         @endguest
-                    </ul>
+                    
                 </div>
             </div>
         </nav>

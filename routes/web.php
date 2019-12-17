@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('burnquiz.index');
 })->name('burnquiz.index');
 
-Route::get('/ranking', function () {
-    return view('burnquiz.ranking');
-})->name('burnquiz.ranking');
+Route::get('/ranking', 'RankingController@listar')->name('burnquiz.ranking');
 
 
 Route::get('/juego', 'JuegoController@traerDatos')->middleware('auth');
