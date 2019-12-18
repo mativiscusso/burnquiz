@@ -3,6 +3,8 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\Ranking;
 use App\Pregunta;
 use App\Respuesta;
 use Illuminate\Http\Request;
@@ -32,6 +34,10 @@ class JuegoController extends Controller
             $pregunta = DB::table('preguntas')->where('id', '=', $preguntaAnterior)->first();
             //dd($pregunta); 
             if($pregunta == null){
+                $puntajeFinal = new Ranking;
+                $puntajeFinal->id_usuario = Auth::user()->id;
+                $puntajeFinal->puntaje = $puntaje;
+                $puntajeFinal->save();
                 return view('burnquiz.resultado');
             }
             //dd($preguntaAnterior, $pregunta);
