@@ -9,7 +9,7 @@ class Pregunta extends Model
     public $table = 'preguntas';
     public $guarded = [];
 
-    public function respuesta(){
+    public function respuestas(){
         return $this->hasMany(Respuesta::class, 'id_pregunta');
     }
 }

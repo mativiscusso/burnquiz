@@ -84,11 +84,11 @@ class PreguntasController extends Controller
      */
     public function edit($id)
     {
-        $preguntas = Pregunta::findOrFail($id);
-        $respuestas = DB::table('respuestas')->where('id_pregunta', '=', $id)->get();
-        $rtas = $respuestas->toArray();
-        //dd($rtas[0]->id);
-        return view('burnquiz.admin.editarpregunta',compact('preguntas','rtas'));
+        $pregunta = Pregunta::findOrFail($id);
+        //$respuestas = DB::table('respuestas')->where('id_pregunta', '=', $id)->get();
+        //dd($pregunta->respuestas, $respuestas );
+        //$rtas = $respuestas->toArray();
+        return view('burnquiz.admin.editarpregunta',compact('pregunta'));
     }
 
     /**
@@ -98,12 +98,19 @@ class PreguntasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
-    {
-        $pregunta = DB::table('preguntas')->where('id', '=', $request->id)->update(['pregunta'=>$request->pregunta]);
-        //$pregunta->save();   
-        $respuesta = DB::table('respuestas')->where('id_pregunta', '=', $request->id)->update(['respuesta'=>$request->rta1]);
-        $respuesta = DB::table('respuestas')->where('id_pregunta', '=', $request->id)->update(['respuesta'=>$request->rta2]);
-        $respuesta = DB::table('respuestas')->where('id_pregunta', '=', $request->id)->update(['respuesta'=>$request->rtaC]);
+    {  
+        $pregunta = Pregunta::findOrFail($request->id);
+        $pregunta->pregunta = $request->pregunta;
+        $pregunta->save();
+        foreach($request->rta as $rta) {
+            $respuesta = $pregunta->respuestas->firstWhere('id',$rta['id']);
+            if(is_object($respuesta)){
+            $respuesta->respuesta = $rta['respuesta'];
+            $respuesta->save();
+            }
+        }
+
+
         return redirect('/preguntas');
     }
 

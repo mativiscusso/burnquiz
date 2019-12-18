@@ -7,23 +7,18 @@
     @csrf
         <h3>Editá la pregunta.</h3>
         <br>
-        <input type="hidden" name="id" value="{{$preguntas->id}}">
-        <textarea name="pregunta" value="{{$preguntas->pregunta}}">{{$preguntas->pregunta}}</textarea>
+        <input type="hidden" name="id" value="{{$pregunta->id}}">
+        <textarea name="pregunta" value="{{$pregunta->pregunta}}">{{$pregunta->pregunta}}</textarea>
         <br>
         <br>
-        <label for="respuesta1">Respuesta 1:</label>
+        @foreach($pregunta->respuestas as $key => $respuesta)
+        <label for="respuesta1">Respuesta {{$key + 1}}</label>
         <br>
-        <input type="text" name="rta1" value="{{$rtas[0]->respuesta}}">
+        <input type="hidden" name="rta[{{$key}}][id]" value="{{$respuesta->id}}">
+        <input type="text" name="rta[{{$key}}][respuesta]" value="{{$respuesta->respuesta}}">
+        <input type="hidden" name="rta[{{$key}}][esCorrecta]" value="@if($respuesta->validacion=='c') 1 @else 0 @endif">
         <br>
-        <label for="respuesta2">Respuesta 2:</label>
-        <br>
-        <input type="text" name="rta2" value="{{$rtas[1]->respuesta}}">
-        <br>
-        <label for="respuesta3">Respuesta Correcta:</label>
-        <br>
-        <input type="text" name="rtaC" value="{{$rtas[2]->respuesta}}">
-        <br>
-        <br>
+        @endforeach
         <button type="submit" class="btn-primary">Cargar</button>
     </form>
     </div>
