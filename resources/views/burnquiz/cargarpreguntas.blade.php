@@ -4,7 +4,7 @@
 
 <div class="container py-5">
 @if(isset($mensaje))
-{{$mensaje}}
+<script>swal("Carga exitosa", "Pulse OK para continuar", "success");</script>
 @endif
     <form class="w-100" action="/preguntas/agregar" method="POST">
     @csrf
