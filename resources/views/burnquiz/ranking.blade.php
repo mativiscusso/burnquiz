@@ -19,17 +19,19 @@
   
    <tbody>
    @foreach($usuarios as $user)
+   @foreach($user->ranking as $rank)
     <tr>
-      <th scope="row">{{$puesto++}}</th>
+      <th scope="row"></th>
       <td>{{$user->nombre}}</td>
       <td>{{$user->user}}</td>
-      <td>{{$user->puntaje}}</td>
+      <td>{{$rank->puntaje}}</td>
     </tr>
+    @endforeach
     @endforeach
    </tbody>
  
 </table>
-{{ $usuarios->links() }}
+
 
 </div>
 @endsection
