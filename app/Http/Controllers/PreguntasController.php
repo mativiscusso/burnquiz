@@ -38,30 +38,24 @@ class PreguntasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         $pregunta = new Pregunta;
-        $respuesta = new Respuesta;
-
         $pregunta->pregunta = $request->pregunta;
         $pregunta->save();
+/* 
         $preguntas = DB::table('preguntas')
                 ->orderBy('id', 'desc')
-                ->first();
-        $respuesta->respuesta = $request->rta1;
-        $respuesta->validacion = 'i';
-        $respuesta->id_pregunta = $preguntas->id;
-        $respuesta->save();
-        $respuesta = new Respuesta;
-        $respuesta->respuesta = $request->rta2;
-        $respuesta->validacion = 'i';
-        $respuesta->id_pregunta = $preguntas->id;
-        $respuesta->save();
-        $respuesta = new Respuesta;
-        $respuesta->respuesta = $request->rtaC;
-        $respuesta->validacion = 'c';
-        $respuesta->id_pregunta = $preguntas->id;
-        $respuesta->save();
-        return view('burnquiz.cargarpreguntas');
+                ->first(); */
+        foreach ($request->rta as $key => $rta) {
+            $respuesta = new Respuesta;
+            $respuesta->respuesta = $rta;
+            $respuesta->validacion = ($key == 'C') ? 'c' : 'i' ;
+            $respuesta->id_pregunta = $pregunta->id;
+            $respuesta->save();
+        }
+
+        
+        return view('burnquiz.cargarpreguntas',['mensaje' => 'Registro cargado con exito']);
     }
 
     /**

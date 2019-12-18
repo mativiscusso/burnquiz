@@ -3,6 +3,9 @@
 @section('content')
 
 <div class="container py-5">
+@if(isset($mensaje))
+{{$mensaje}}
+@endif
     <form class="w-100" action="/preguntas/agregar" method="POST">
     @csrf
         <h3>Sumá tu pregunta.</h3>
@@ -13,15 +16,15 @@
         <br>
         <label for="respuesta1">Respuesta 1:</label>
         <br>
-        <input type="text" name="rta1" value="">
+        <input type="text" name="rta[1]" value="">
         <br>
         <label for="respuesta2">Respuesta 2:</label>
         <br>
-        <input type="text" name="rta2" value="">
+        <input type="text" name="rta[2]" value="">
         <br>
         <label for="respuesta3">Respuesta Correcta:</label>
         <br>
-        <input type="text" name="rtaC" value="">
+        <input type="text" name="rta[C]" value="">
         <br>
         <br>
 
