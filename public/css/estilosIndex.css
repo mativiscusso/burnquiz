@@ -284,6 +284,11 @@ div#footer.container-fluid.py-3 {
 #imgusuario {
     width: 100%;
 }
+button.btn.btn-link.text-body {
+    background-color: rgb(255, 152, 52);
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px black;
+}
 
 .preguntas {
     padding: 5%;

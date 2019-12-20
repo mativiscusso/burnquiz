@@ -31,7 +31,7 @@
     <div class="card" data-aos="fade-right">
       <div class="card-header" id="headingOne">
         <h2 class="mb-0">
-          <button class="btn btn-link text-white" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button class="btn btn-link text-body" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             ¿Qué es Burn Quiz?
           </button>
         </h2>
@@ -46,7 +46,7 @@
     <div class="card" data-aos="fade-right">
       <div class="card-header" id="headingTwo">
         <h2 class="mb-0">
-          <button id="" class="btn btn-link collapsed text-white" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <button id="" class="btn btn-link collapsed text-body" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
             ¿De qué se trata el juego?
           </button>
         </h2>
@@ -60,7 +60,7 @@
     <div class="card" data-aos="fade-right">
       <div class="card-header" id="headingThree">
         <h2 class="mb-0">
-          <button id="" class="btn btn-link collapsed text-white" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <button id="" class="btn btn-link collapsed text-body" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
             ¿Cómo es el tema del puntaje?
           </button>
         </h2>
@@ -74,7 +74,7 @@
     <div class="card" data-aos="fade-right">
       <div class="card-header" id="headingFour">
         <h2 class="mb-0">
-          <button id="" class="btn btn-link collapsed text-white" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <button id="" class="btn btn-link collapsed text-body" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
             ¿Dónde puedo consultar mis puntajes?
           </button>
         </h2>
@@ -88,7 +88,7 @@
     <div class="card" data-aos="fade-right">
       <div class="card-header" id="headingFive">
         <h2 class="mb-0">
-          <button id="" class="btn btn-link collapsed text-white" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          <button id="" class="btn btn-link collapsed text-body" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
             ¿Si gano soy el mejor?
           </button>
         </h2>
