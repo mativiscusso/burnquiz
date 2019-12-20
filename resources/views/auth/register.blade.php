@@ -5,14 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Registro') }}</div>
+                <h3 class="text-center">{{ __('Registro') }}</h3>
 
                 <div class="card-body">
-                    <form method="POST" enctype="multipart/form-data" action="{{ route('register') }}">
+                    <form method="POST" enctype="multipart/form-data" action="{{ route('register') }}" class="needs-validation" novalidate>
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
+                            <label for="validationCustom01" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('nombre') is-invalid @enderror" name="nombre" value="{{ old('nombre') }}" required autocomplete="nombre" autofocus>
@@ -101,4 +101,5 @@
         </div>
     </div>
 </div>
+
 @endsection
