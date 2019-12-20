@@ -11,11 +11,11 @@
         {{$pregunta->pregunta}}
         <br>
         <input type="hidden" name="pregunta_id" value="{{$pregunta->id}}">
-        @foreach($respuestas as $respuesta)
+        @foreach($respuestas as $key => $respuesta)
         <div style="padding-left: 45%">
         <div class="text-left">
         <input name="rta" type="radio" value="{{$respuesta->respuesta}}"/>
-        <span class="text-dark">{{$respuesta->respuesta}}</span><br>
+        <span class="text-dark">{{$respuestas[$random[$key]]->respuesta}}</span><br>
         </div>
         </div>
        @endforeach

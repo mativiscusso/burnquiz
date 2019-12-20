@@ -16,7 +16,15 @@ class JuegoController extends Controller
     public function traerDatos(){
         $pregunta = DB::table('preguntas')->first();
         $respuestas = DB::table('respuestas')->where('id_pregunta', '=', $pregunta->id)->get();
-        return view('burnquiz.juego', compact('pregunta', 'respuestas'));
+        $rand = range(0, 2);
+        shuffle($rand);
+        foreach ($rand as $val) {
+            $random[] = $val;
+        }
+       /*  foreach($respuestas as $key => $respuesta){
+            dd($respuestas[0]->respuesta);
+        } */
+        return view('burnquiz.juego', compact('pregunta', 'respuestas', 'random'));
     }
     public function verificacion(Request $req){
         
@@ -24,7 +32,11 @@ class JuegoController extends Controller
             ['id_pregunta', '=', $req['pregunta_id']],
             ['validacion', '=', 'c'],
         ])->get();
-
+        $rand = range(0, 2);
+        shuffle($rand);
+        foreach ($rand as $val) {
+            $random[] = $val;
+        }
         foreach($respuesta as $rtaCorrecta);
         if ($req['rta'] == $rtaCorrecta->respuesta) { 
             $puntaje = session()->get('puntaje', 0);
@@ -43,7 +55,7 @@ class JuegoController extends Controller
             //dd($preguntaAnterior, $pregunta);
             $respuestas = DB::table('respuestas')->where('id_pregunta', '=', $pregunta->id)->get();
             //dd(session()->get('puntaje'));
-            return view('burnquiz.juego', compact('pregunta', 'respuestas'));;
+            return view('burnquiz.juego', compact('pregunta', 'respuestas', 'random'));;
         } else return view('burnquiz.resultado');
     }
 
