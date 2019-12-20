@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
                 'role' => 'admin',
                 'password' => bcrypt('admin1234')
             ]);
-            factory(User::class)->times(20)->create();
+            
             
         
     }

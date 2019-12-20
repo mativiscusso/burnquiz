@@ -14,7 +14,7 @@
         @foreach($respuestas as $key => $respuesta)
         <div style="padding-left: 45%">
         <div class="text-left">
-        <input name="rta" type="radio" value="{{$respuesta->respuesta}}"/>
+        <input name="rta" type="radio" value="{{$respuestas[$random[$key]]->respuesta}}"/>
         <span class="text-dark">{{$respuestas[$random[$key]]->respuesta}}</span><br>
         </div>
         </div>
