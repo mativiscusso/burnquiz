@@ -112,8 +112,12 @@
         <main class="py-5">
             @yield('content')
         </main>
-    <footer id="footer">
-        <div class="container d-flex">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+<footer id="footer" style="margin-top: 500px;">
         <span style="width:30%;">BURN QUIZ | Un juego para pensar</span>
             <ul style="width:30%;">
                 <li>Cordoba 2035</li>
@@ -125,11 +129,6 @@
                 <li><a href="http://instagram.com">Instagram</a></li>
                 <li><a href="http://youtube.com">YouTube</a></li>
             </ul>
-        </div>
     </footer>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </body>
 </html>
