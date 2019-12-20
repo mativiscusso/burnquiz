@@ -116,7 +116,7 @@
     AOS.init();
   </script>
 
-<footer id="footer" style="margin-top: 500px;">
+<footer id="footer" style="margin-top:700px;">
         <span style="width:30%;">BURN QUIZ | Un juego para pensar</span>
             <ul style="width:30%;">
                 <li>Cordoba 2035</li>
