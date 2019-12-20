@@ -44,19 +44,15 @@ class JuegoController extends Controller
             $preguntaAnterior = $req['pregunta_id'];
             $preguntaAnterior++;
             $pregunta = DB::table('preguntas')->where('id', '=', $preguntaAnterior)->first();
-            //dd($pregunta); 
-            if($pregunta == null){
-                $puntajeFinal = new Ranking;
-                $puntajeFinal->id_usuario = Auth::user()->id;
-                $puntajeFinal->puntaje = $puntaje;
-                $puntajeFinal->save();
-                return view('burnquiz.resultado');
-            }
-            //dd($preguntaAnterior, $pregunta);
             $respuestas = DB::table('respuestas')->where('id_pregunta', '=', $pregunta->id)->get();
-            //dd(session()->get('puntaje'));
             return view('burnquiz.juego', compact('pregunta', 'respuestas', 'random'));;
-        } else return view('burnquiz.resultado');
+        } else {
+            $puntajeFinal = new Ranking;
+            $puntajeFinal->id_usuario = Auth::user()->id;
+            $puntajeFinal->puntaje = session()->get('puntaje');
+            $puntajeFinal->save();
+            return view('burnquiz.resultado');
+        }
     }
 
 
