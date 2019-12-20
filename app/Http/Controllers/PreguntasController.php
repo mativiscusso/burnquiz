@@ -96,6 +96,7 @@ class PreguntasController extends Controller
         $pregunta = Pregunta::findOrFail($request->id);
         $pregunta->pregunta = $request->pregunta;
         $pregunta->save();
+        $update="Ok";
         foreach($request->rta as $rta) {
             $respuesta = $pregunta->respuestas->firstWhere('id',$rta['id']);
             if(is_object($respuesta)){
@@ -103,9 +104,7 @@ class PreguntasController extends Controller
             $respuesta->save();
             }
         }
-
-
-        return redirect('/preguntas');
+        return redirect('/preguntas')->with('update', 'Modificacion Exitosa');
     }
 
     /**
@@ -117,6 +116,7 @@ class PreguntasController extends Controller
     public function destroy($id)
     {
         Pregunta::destroy($id);
-        return redirect('/preguntas');
+        $delete='ok';
+        return redirect('/preguntas')->with('delete', 'Eliminacion exitosa');
     }
 }

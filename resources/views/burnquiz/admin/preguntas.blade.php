@@ -2,6 +2,13 @@
 
 @section('content')
 <div class="container py-5">
+@if (session('update'))
+<script>swal("{{ session('update') }}", "Pulse OK para continuar", "success");</script>
+@endif
+@if (session('delete'))
+<script>swal("{{ session('delete') }}", "Pulse OK para continuar", "success");</script>
+@endif
+
 <h3>PREGUNTAS</h3>
     <table class="table table-hover">
         <thead>
