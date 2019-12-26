@@ -15,8 +15,8 @@ class CreateRankingTable extends Migration
     {
         Schema::create('ranking', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('puntaje');
-            $table->integer('id_usuario');
+            $table->integer('puntaje')->nullable();
+            $table->string('usuario');
             $table->timestamps();
         });
     }

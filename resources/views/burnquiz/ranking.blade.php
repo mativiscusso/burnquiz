@@ -11,22 +11,18 @@
   <thead>
   <tr class="table-warning">
       <th scope="col">#</th>
-      <th scope="col">Nombre</th>
       <th scope="col">Usuario</th>
       <th scope="col">Puntaje</th>
     </tr>
   </thead>
   
    <tbody>
-   @foreach($usuarios as $user)
-   @foreach($user->ranking as $rank)
+   @foreach($ranking as $key => $user)
     <tr>
-      <th scope="row"></th>
-      <td>{{$user->nombre}}</td>
-      <td>{{$user->user}}</td>
-      <td>{{$rank->puntaje}}</td>
+      <th scope="row">{{++$a}}</th>
+      <td>{{$ranking[$key]->usuario}}</td>
+      <td>{{$ranking[$key]->puntaje}}</td>
     </tr>
-    @endforeach
     @endforeach
    </tbody>
  

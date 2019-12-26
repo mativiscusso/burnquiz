@@ -9,7 +9,8 @@ use App\Ranking;
 class RankingController extends Controller
 {
     public function listar(){
-        $usuarios = User::all();
-        return view('burnquiz.ranking', compact('usuarios'));
+        $ranking = Ranking::orderBy('puntaje', 'desc')->get();
+        $a = 0;
+        return view('burnquiz.ranking', compact('ranking', 'a'));
     }
 }

@@ -48,7 +48,7 @@ class JuegoController extends Controller
             return view('burnquiz.juego', compact('pregunta', 'respuestas', 'random'));;
         } else {
             $puntajeFinal = new Ranking;
-            $puntajeFinal->id_usuario = Auth::user()->id;
+            $puntajeFinal->usuario = Auth::user()->user;
             $puntajeFinal->puntaje = session()->get('puntaje');
             $puntajeFinal->save();
             return view('burnquiz.resultado');

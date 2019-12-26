@@ -9,7 +9,4 @@ class Ranking extends Model
 {
     public $table = 'ranking';
 
-    public function usuario(){
-    	return $this->belongTo(User::class, 'id_usuario');
-    } 
 }
