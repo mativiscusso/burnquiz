@@ -1,3 +1,5 @@
+<h1>BURN QUIZ</h1>
+
 1- Clonar repositorio para tener el proyecto instalado de manera local. Ubicados en la ruta del proyecto ejecutar el comando:
 
 composer install
