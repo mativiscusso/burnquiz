@@ -116,14 +116,14 @@
     AOS.init();
   </script>
 
-<footer id="footer" style="margin-top:700px;">
-        <span style="width:30%;">BURN QUIZ | Un juego para pensar</span>
-            <ul style="width:30%;">
+<footer id="footer">
+        <span>BURN QUIZ | Un juego para pensar</span>
+            <ul>
                 <li>Cordoba 2035</li>
                 <li>Rosario</li>
                 <li>Argentina</li>
             </ul>
-            <ul style="width:30%;">
+            <ul>
                 <li><a href="http://facebook.com">Facebook</a></li>
                 <li><a href="http://instagram.com">Instagram</a></li>
                 <li><a href="http://youtube.com">YouTube</a></li>
