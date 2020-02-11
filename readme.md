@@ -2,7 +2,7 @@ BURN QUIZ
 
 1- Clonar repositorio para tener el proyecto instalado de manera local. Ubicados en la ruta del proyecto ejecutar el comando:
 
-composer install
+`composer install`
 
 2- Crear Base de Datos llamada "burnquiz_db"
 
@@ -12,7 +12,7 @@ Desde consola o desde phpMyAdmin.
 
 4- Ubicados por consola en el PATH donde clonaron el repositorio o desde la consola de su editor de texto correr los siguientes comandos:
 
-php artisan key:generate
+`php artisan key:generate
 
 php artisan migrate
 
@@ -20,13 +20,14 @@ php artisan db:seed (Genera usuario Administrador para interactuar con el Panel 
 
 php artisan storage:link
 
-php artisan serv 
+php artisan serv`
 
-Datos de acceso como Administrador
+DATOS DE ACCESO COMO ADMINISTRADOR
 
-Email: administrador@admin.com Password: admin1234
+Email: administrador@admin.com 
+Password: admin1234
 
-5- Inicializar programa que brinde conexion a base de datos (por ejemplo XAMPP)
+5- Inicializar programa que oficie de servidor local (por ejemplo XAMPP)
 
 6- Abrir el navegador e ingresar a la ruta
 
