@@ -12,15 +12,15 @@ Desde consola o desde phpMyAdmin.
 
 4- Ubicados por consola en el PATH donde clonaron el repositorio o desde la consola de su editor de texto correr los siguientes comandos:
 
-`php artisan key:generate
+`php artisan key:generate`
 
-php artisan migrate
+`php artisan migrate`
 
-php artisan db:seed (Genera usuario Administrador para interactuar con el Panel de Control)
+`php artisan db:seed` (Genera usuario Administrador para interactuar con el Panel de Control)
 
-php artisan storage:link
+`php artisan storage:link`
 
-php artisan serv`
+`php artisan serv`
 
 DATOS DE ACCESO COMO ADMINISTRADOR
 
